@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{%block title%} {{super()}} Welcome Page {%endblock%}
+
+{% block welcome_css %} 
+<link rel="stylesheet" href="static/css/welcome.css"/> {% endblock %}   
+{% block content %}
+<div class="row">
+    <div class="column">
+        <div>
+            <h4>Your Recent Todo Categories</h4>
+                
+                <ul id="cat_list">
+                    {% for category in category_lists %} <!-- this is the flask template(jinja2) ()for embedding python code in html-->                      
+                        <!-- <li data-category="{{category.id}}"> -->
+                        <li data-category_id="{{category.id}}" class="list">
+                            <a href="/categories/{{category.id}}"> {{category.category_name}} </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    <div class="column">
+        <div id="todos">
+            <h4>Your Recently Todo Tasks</h4>
+            <ul id="todo_list">
+                {% for todo in todo_lists[:10] | sort(reverse=true, attribute="activity_time") %} <!-- this is the flask template(jinja2) ()for embedding python code in html-->                      
+                    <li data-todo="{{todo.completed}}" class="list">
+                        {% if todo.completed == true %}
+                        <p> {{todo.description}} completed at {{todo.activity_time.strftime('%Y-%m-%d')}} </p>
+                        {% else %}
+                        <p> {{todo.description}} created at {{todo.activity_time.strftime('%Y-%m-%d')}} </p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    //must invoke this createCategory function
+    const createCategory = function() {
+        const submit_button = document.getElementById('button_id'); //listening for submit event on submit button with id=button_id on the form
+        submit_button.addEventListener('click', function(e){
+            e.preventDefault(); //with submit event triggered, prevented the default behaviour of the web browser
+            const cat_name = document.getElementById('text_id').value;
+                if(!cat_name || cat_name.length  < 1){//validation of category names: prevention of empty strings, other checks such as trim() will be implemented.
+                        alert("Invalid category")
+                        return;
+                    }
+                    fetch('/categories/create', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        'category_name': cat_name
+                        }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(function(response){
+                        console.log(response);
+                        return response.json();
+                    })
+                    .then(function(jsonResponse){
+                        console.log (jsonResponse);
+                        const anchor = document.createElement('a');
+                        anchor.href ='/todo_items/<category_id>';
+                        anchor.innerHTML = jsonResponse['category_name'];
+                        const first_list = document.createElement('LI');
+                        const delete_button = document.createElement('button');
+                        delete_button.setAttribute("classname","button");
+                        delete_button.dataset.removeid = jsonResponse['id']
+                        delete_button.innerHTML = "&cross;";
+                        first_list.append(anchor)
+                        first_list.append(delete_button);
+                        const cat_list = document.createElement('UL');
+                        cat_list.setAttribute("id", "categories");
+                        cat_list.append(first_list);
+                        document.getElementById('categories').appendChild(first_list);
+                    })
+                    .catch(   
+                        error =>{                        
+                            var err = document.getElementsByClassName('error')[0];
+                            console.log(error, err.classList.add('show'));
+                            err.setAttribute("classname", "show");
+                        } 
+                    )
+        });        
+    }
+    createCategory();
+
+
+    // Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well
+    const deleteCategoryTrigger = () =>{
+            const deleteButton = document.querySelectorAll('.button');
+            for(let i=0; i< deleteButton.length; i++){
+            
+                const deletion = deleteButton[i];
+                deletion.onclick = function (e){
+                
+                
+                    if(confirm("You are about to delete a Category, please confirm to continue")) {
+                    console.log('event', e);
+                    const cat_id = e.target.dataset['removeid'];
+                    fetch('/categories/'+cat_id+'/delete', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                    })
+                    console.log(cat_id);
+                    deletion.parentElement.remove();
+
+                };  
+                
+                
+            };
+        };
+     };
+    
+    deleteCategoryTrigger();
+
+    
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,216 @@
+#heading {
+    height: fit-content;
+    font-size: x-large;
+    color: blue;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+}
+
+hr {
+    width: 30%;
+}
+
+.general {
+    word-wrap: break-word;
+    text-align: center;
+    font-size: x-large;
+    width: 35%;
+    height: 25%;
+    padding: 0%;
+    margin: auto;
+    background-color: white;
+}
+.re_buttons{
+    margin-left: 500px;
+    width: 200px;
+    height: 35px;
+    border-radius: 8px;
+    font-size: large;
+    color:darkslategray;
+    background-color:lightgreen;
+    font-style: oblique;
+}
+.re_buttons:hover{
+    transition: all .9s ease-in;
+    font-size: x-large;
+    background-color: darkturquoise;
+    
+}
+
+#nav {
+    margin: auto;
+    text-align: center;
+    width: 60%;
+    font-size: x-large;
+
+}
+
+#reminders {
+    color: rgb(170, 170, 31);
+    border-style: solid;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding: 0%;
+    /* display: none; */
+}
+
+#gen {
+
+    background-color: rgba(119, 128, 123, 0.281);
+    padding-right: 50px;
+}
+
+#foc {
+    background-color: rgba(65, 225, 231, 0.589);
+    padding-right: 50px;
+}
+
+#urg {
+    background-color: rgba(119, 128, 123, 0.281);
+    padding-right: 50px;
+}
+
+.content {
+    text-align: center;
+}
+
+div nav:first-child a {
+    color: black;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: all .7s ease-in;
+}
+
+div nav:first-child a:hover {
+    color: red;
+    text-decoration: underline;
+    font-weight: 500;
+    border: 3px solid #000;
+    border-radius: 8px;
+    border-color: red;
+}
+
+h2 {
+    text-align: center;
+    font-size: large;
+    background-color: rgb(189, 183, 107);
+}
+
+#two {
+    display: flex;
+}
+
+#four {
+    padding-left: 60px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+.button{
+    background-color: rgb(115, 219, 219);
+    border-radius: 30px;
+    height: 60px;
+    font-size: 22px;
+    font-weight:700;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formPopup{
+    display: block;
+    padding: 50px 40px;
+    background: #cbdee2c0;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    position: absolute;
+    margin-top: 30px;
+    bottom: 30%;
+    text-align: center;
+    font-weight: 700;
+    transform: translate(0%, 0%) scale(0.1);
+    transition: transform 0.4s, top 0.4s;
+    visibility: hidden;
+    
+}
+.showFormPopup{
+    visibility: visible;
+    transform: translate(0%, 0%) scale(1.2);    
+}
+
+.formPopup label{
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    font-family: cursive;
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; */
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    /* font-family: 'Times New Roman', Times, serif; */
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+
+h3{
+    font-style: italic;
+    font-size: x-large;
+    font: optional;
+    font-weight: 1000;
+    text-decoration: underline;
+
+}
+.container .formPopup #cat_name,#todo_task {
+    width: 100%;
+    height: 3vh;
+    border-radius: 8px;
+    
+}
+
+.container .formPopup #box-check{
+    width: 20px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.container .formPopup #deadline{
+    width: 5.5cm;
+    height: 3vh;
+    border-radius: 7px;  
+}
+
+.container .formPopup #submit,#cancel{
+    width: 6.5cm;
+    height: 4vh;
+    border-radius: 7px;
+    background-color: rgb(180, 200, 238);
+    font-weight: 800;
+}
+
+#span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

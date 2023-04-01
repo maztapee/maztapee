@@ -1,0 +1,16 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from logging import FileHandler,WARNING
+
+
+app = Flask(__name__, template_folder='templates')
+file_handler = FileHandler('errorlog.txt')
+file_handler.setLevel(WARNING)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Maztapee-1989@localhost:5432/flaskr'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+todo_db = SQLAlchemy(app)
+
+todo_migrate = Migrate(app, todo_db)
+

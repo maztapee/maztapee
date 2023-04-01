@@ -1,0 +1,58 @@
+.editPopup{
+    position: absolute;
+    margin-top: -800px;
+    justify-content: center;
+    border: solid 2px black;
+    border-radius: 8px;
+    background-color:#cbdee2c0;
+    width: 37%;
+    height: 320px;
+    visibility: hidden;
+}
+.showEditPopup{
+        visibility: visible;
+        transform: translate(0%, 0%) scale(1.5);    
+}
+
+label {
+    margin-left: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+}
+h3{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#edit_cat, #cat_name {
+    width: 350px;
+    height: 25px;
+    font-style: italic;
+    border-radius: 4px;
+}
+#category_status{
+    height: 6%;
+    width: 6%;
+    border-radius: 4px;
+}
+#edit_deadline{
+    width: 200px;
+    height: 25px;
+    font-style: italic;
+    border-radius: 4px;
+}
+p{
+    font-size: x-small;
+}
+#btn_1{
+    margin-left: 50px;
+    width: 75px;
+    border-radius: 4px;
+    justify-content: center;
+    text-decoration: solid;
+}
+#btn_2{
+    margin-left: 425px;
+    border-radius: 4px;
+    justify-content: center;
+    text-decoration: solid;
+}

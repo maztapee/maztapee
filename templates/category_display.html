@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{%block title%} {{super()}} Todo Categories {%endblock%}
+
+{% block base_css %}
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}"/> 
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/category_display.css') }}"/>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_todo.css') }}"/>
+
+ {% endblock %}   
+
+{% block content %}
+
+<div class="row">
+    <div class="column">
+        <h4>Your Todo Categories</h4>    
+        <ul id="cat_list">
+            {% for category in category_lists %} <!-- this is the flask template(jinja2) ()for embedding python code in html-->                      
+                <li data-category_id="{{category.id}}" class="list">
+                    <button data-removeid="{{category.id}}" class="button1">&cross;</button> <a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" onclick="showEditPopup()">Edit</button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="column">
+        {% for category in category %}
+        <h4> Here is the list of your todo tasks for {{category.category_name}} </h4>
+        {% endfor %}
+
+        <ul id="todo_list">
+        {% for task in category_todos %}
+        <li>
+            <p><button data-removeid="{{task.id}}" class="button1">&cross;</button></p> <p><span>{{ task.description}}</span></p><p> <input type="checkbox" {% if task.completed %} checked {% endif %} id="check_status" class="check" data-id="{{task.id}}"/></p> 
+        </li>
+        {% endfor %}
+        </ul>
+
+    </div>
+</div>
+
+<script>
+    const checkboxes = document.querySelectorAll('.check');
+        for(let i = 0; i < checkboxes.length; i++){
+            const checkbox = checkboxes[i];
+            checkbox.onchange = function (e){
+                alert('Are you are changing the status of this task?')
+                console.log('event', e);
+                const newCompleted = e.target.checked;
+                const todo_id = e.target.dataset['id'];
+                fetch('todos/'+todo_id+'/boxcheck', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        'completed': newCompleted,
+                        'todoId': todo_id
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then (function(){
+                    document.getElementById('error').className = 'error_message';
+                })
+                .catch (function(){
+                    document.getElementById('error').className = '';
+            })
+            }
+        }
+
+            // Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well
+        const deleteTodoTrigger = () =>{
+            const deleteButton = document.querySelectorAll('.button');
+            for(let i=0; i< deleteButton.length; i++){
+                const deletion = deleteButton[i];
+                deletion.onclick = function (e){
+                    if(confirm("You are about to delete a Category, please confirm to continue")) {
+                    console.log('event', e);
+                    const todo_id = e.target.dataset['removeid'];
+                    fetch('/todos/'+todo_id+'/delete', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                    })
+                    console.log(todo_id);
+                    deletion.parentElement.remove();
+                };      
+            };
+        };
+     };
+    
+    deleteTodoTrigger();
+
+         // Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well
+    const deleteCategoryTrigger = () =>{
+            const deleteButton = document.querySelectorAll('.button1');
+            for(let i=0; i< deleteButton.length; i++){
+            
+                const deletion = deleteButton[i];
+                deletion.onclick = function (e){
+                    if(confirm("You are about to delete a Category, please confirm to continue")) {
+                    console.log('event', e);
+                    const cat_id = e.target.dataset['removeid'];
+                    fetch('/categories/'+cat_id+'/delete', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                    })
+                    console.log(cat_id);
+                    deletion.parentElement.remove();
+                };      
+            };
+        };
+     };
+    
+    deleteCategoryTrigger();
+
+</script>
+
+<script src="/static/todo_scripts/edit_todo.js"></script>
+{% endblock %}

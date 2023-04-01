@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{%block title%} {{super()}} Todo Categories {%endblock%}
+
+{% block base_css %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}"/>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_reminder.css') }}"/>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='app.js') }}"/>
+
+{% endblock %}   
+
+
+{% block welcome_css %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Add a Task</p>
+
+    <label for="fname">Add a Category:    </label><input id="cat_name" type="text" />
+    <br>
+    <br>
+    <label for="fname">Add a Todo:    </label><input id="todo_task" type="text" />
+    <br>
+    <br>
+    <label for="fname">Would you like a timely reminder:    </label><input type="checkbox" />
+    <br>
+    <br>
+    <label for="fname">What deadline to this task do you prefer:    </label><input id="deadline" type="datetime-local" />
+    <br>
+    <br>
+    <input id="button_id" type="submit" />
+  </div>
+
+</div>
+<script>
+    
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+    //must invoke this createCategory function
+const createCategory = function() {    
+    const submit_button = document.getElementById('button_id'); //listening for submit event on submit button with id=button_id on the form    
+    submit_button.addEventListener('click', function(e){
+        e.preventDefault(); //with submit event triggered, prevented the default behaviour of the web browser
+        const cat_name = document.getElementById('cat_name').value;
+        const todo_task = document.getElementById('todo_task').value;
+        const deadline = document.getElementById('deadline').value;
+        console.log(cat_name);
+        if(!cat_name || cat_name.length  < 1 || !todo_task || todo_task.length  < 1 || !deadline || deadline.length  < 1) {//validation of category names: prevention of empty strings, other checks such as trim() will be implemented.
+            alert("Oops! You have entered either an invalid category, todo task or deadline ! ")
+            return;
+            };
+
+
+        fetch('/categories/create', {
+            method: 'POST',
+            body: JSON.stringify({
+               'category_name': cat_name,
+               'description':todo_task,
+               'expected_time':deadline
+                }),
+            headers: {
+                'Content-Type': 'application/json'
+                }
+            })
+            .then(function(response){
+                console.log(response);
+                return response.json();
+                })
+            .then(function(jsonResponse){
+                console.log (jsonResponse);
+                const anchor = document.createElement('a');
+                anchor.href ='/todo_items/<category_id>';
+                anchor.innerHTML = jsonResponse['category_name'];
+                const first_list = document.createElement('LI');
+                const delete_button = document.createElement('button');
+                delete_button.setAttribute("classname","button");
+                delete_button.dataset.removeid = jsonResponse['id']
+                delete_button.innerHTML = "&cross;";
+                first_list.append(anchor)
+                first_list.append(delete_button);
+                const cat_list = document.createElement('UL');
+                cat_list.setAttribute("id", "categories");
+                cat_list.append(first_list);
+                document.getElementById('categories').appendChild(first_list);
+                })
+            .catch(   
+                error =>{                        
+                    var err = document.getElementsByClassName('error')[0];
+                    console.log(error, err.classList.add('show'));
+                    err.setAttribute("classname", "show");
+                    } 
+                    )
+        });        
+    };
+    createCategory();
+
+</script>
+
+
+
+{% endblock%}

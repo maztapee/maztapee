@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/base_template.css"/> 
+    <link rel="stylesheet" href="static/css/edit_todo.css"/>
+    {% block base_css %}<link rel="stylesheet" href="static/css/edit_todo.css"/> {% endblock %}
+    {% block add_remind_css %} {% endblock %}
+    {% block welcome_css %} {% endblock %}
+    {% block category_css %} {% endblock %}
+    <title>{%block title%} {%endblock%} Clara's Reminder</title>
+
+</head>
+
+<body>
+    <div id="heading">Welcome to CLARA's Reminder</div>
+    <hr>
+    <div id="nav">
+        <nav>
+            <a href="home">Home</a>
+            <a href="about">About Us</a>
+            <a href="contact_us">Contact Us</a>
+            <a href="login">Login/SignUp</a>
+        </nav>
+    </div>
+    <hr>
+    <nav id="reminders">
+        <a id="gen" class="general" href="general.html">World Reminders</a>
+        <a id="foc" class="general" href="focused.html">National Reminders</a>
+        <a id="urg" class="general" href="urgent.html">Urgent Reminders</a>
+    </nav>
+    <br>
+    
+        
+    </div>
+    <br>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+    <br>
+    
+    <div class="container">
+        <input class="button" id="button" type="button" onclick= "openFormPopup()" value="Click here to schedule a task    &#9202">
+        <div class="formPopup" id="form">
+            <h3>Schedule a task reminder</h3>
+            <label for="fname">Add category for this task:    </label><input id="cat_name" type="text" placeholder="Task Category"/>
+            <br>
+            <br>
+            <label for="fname">Add a task:    </label><input id="todo_task" type="text" placeholder="Task Description"/>
+            <br>
+            <br>
+            <span id="span"><label for="fname">Would you like a reminder for this task (optional):    </label><input type="checkbox" id="box-check"/></span>
+            <br>
+            <br>
+            <label for="fname">Choose a deadline you want for this task:    </label><input id="deadline" type="datetime-local" />
+            <br>
+            <br>
+            <input type="button" id="submit" value="Submit Task for Scheduling" onclick="closeFormPopup()"/> <button type="button" id="cancel" onclick="closeFormPopup()" style="margin-left: 250px;">Cancel</button>
+        </div>
+
+        <div class="editPopup" id="edit">
+            <h3>Edit Your Categories</h3>
+            <label for="fname">Rename this Category:    </label><input id="edit_cat" type="text" placeholder="new category name"/>
+            <br>
+            <br>
+            <div style="display:flex;"><label for="fname"> Category Completion Status:    </label><input id="category_status" type="checkbox"/> <p>(Note: tick to indicate CATEGORY is completed and will be moved to your archives)</p></div>
+            <br>
+            <label for="fname">Would you like to add a new task?:    </label><input id="cat_name" type="text" placeholder=" enter new task description for this category"/>
+            <br>
+            <br>
+            <label for="fname">Enter deadline for new task:    </label><input id="edit_deadline" type="datetime-local"/>
+            <br>
+            <br>
+            <div><button id="btn_1" onclick="editCategory()">Submit</button> <button id="btn_2" onclick="closeEditPopup()">Cancel</button></div>
+            <br>
+        </div>
+
+    </div>
+    <script src="/static/todo_scripts/add_todo.js"></script>
+</body>
+
+</html>
