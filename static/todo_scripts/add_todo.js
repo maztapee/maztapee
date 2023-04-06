@@ -1,5 +1,5 @@
 const form = document.getElementById("form");
-const button = document.getElementById("show_button");
+const button = document.querySelector(".stick");
 
 function openFormPopup() {
     

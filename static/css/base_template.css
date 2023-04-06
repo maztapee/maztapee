@@ -23,22 +23,6 @@ hr {
     margin: auto;
     background-color: white;
 }
-.re_buttons{
-    margin-left: 500px;
-    width: 200px;
-    height: 35px;
-    border-radius: 8px;
-    font-size: large;
-    color:darkslategray;
-    background-color:lightgreen;
-    font-style: oblique;
-}
-.re_buttons:hover{
-    transition: all .9s ease-in;
-    font-size: x-large;
-    background-color: darkturquoise;
-    
-}
 
 #nav {
     margin: auto;
@@ -101,14 +85,6 @@ h2 {
     background-color: rgb(189, 183, 107);
 }
 
-#two {
-    display: flex;
-}
-
-#four {
-    padding-left: 60px;
-}
-
 .column {
     float: left;
     width: 50%;
@@ -119,7 +95,7 @@ h2 {
     content: "";
     display: table;
     clear: both;
-    }
+}
 
 .button{
     background-color: rgb(115, 219, 219);
@@ -154,7 +130,7 @@ h2 {
 }
 .showFormPopup{
     top: -500px;
-    left: 600px;
+    left: 500px;
     visibility: visible;
     transform: translate(0%, 0%) scale(1.2);    
 }

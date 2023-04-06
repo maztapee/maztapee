@@ -1,15 +1,18 @@
 .editPopup{
     position: absolute;
-    margin-top: -800px;
     justify-content: center;
     border: solid 2px black;
     border-radius: 8px;
     background-color:#cbdee2c0;
     width: 37%;
     height: 320px;
+    transform: translate(0%, 0%) scale(0.1);
+    transition: transform 0.4s, top 0.4s;
     visibility: hidden;
 }
 .showEditPopup{
+        top: -500px;
+        left: 550px;
         visibility: visible;
         transform: translate(0%, 0%) scale(1.5);    
 }

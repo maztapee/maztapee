@@ -1,5 +1,3 @@
-const editList = document.getElementsByClassName('button2');
-const cat_list = editList.length;
 
 const showEditPopup = function (){
    
@@ -7,8 +5,8 @@ const showEditPopup = function (){
         button.style.visibility="hidden";
 };
 
-function closeEditPopup (){
+const closeEditPopup = function(){
 
-        button.style.visibility = "visible";
-        edit.classList.remove("showEditPopup") 
+        edit.classList.remove("showEditPopup");
+        button.style.visibility="visible";
 };
