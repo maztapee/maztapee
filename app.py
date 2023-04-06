@@ -24,53 +24,49 @@ def home():
     return redirect(url_for('welcome'))
 
 @app.route('/categories/<category_id>/home')
-def home1():
-    return redirect(url_for('welcome'))
-
-@app.route('/categories/home')
-def home2():
+def home1(category_id):
     return redirect(url_for('welcome'))
 
 @app.route('/login')
 def login():
     return render_template('login_signup.html')
 
-@app.route('/categories/login')
-def login1():
+@app.route('/categories/<category_id>/login')
+def login1(category_id):
     return redirect(url_for('login'))
 
 @app.route('/categories/<category_id>/login')
-def login2():
+def login2(category_id):
     return redirect(url_for('login'))
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-@app.route('/categories/about')
-def about1():
+@app.route('/categories/<category_id>/about')
+def about1(category_id):
     return redirect(url_for('about'))
 
 @app.route('/categories/<category_id>/about')
-def about2():
+def about2(category_id):
     return redirect(url_for('about'))
 
 @app.route('/contact_us')
 def contact_us():
     return render_template('contact_us.html')
 
-@app.route('/categories/contact_us')
-def contact_us1():
+@app.route('/categories/<category_id>/contact_us')
+def contact_us1(category_id):
     return redirect(url_for('contact_us'))
 
 @app.route('/categories/<category_id>/contact_us')
-def contact_us2():
+def contact_us2(category_id):
     return redirect(url_for('contact_us'))
 
-@app.route('/categories/<category_id>')
+@app.route('/categories/<category_id>/')
 def categoryDisplay(category_id):
     return render_template('category_display.html', 
-    category = TodoCategory.query.filter_by(id=category_id).all(), 
+    category = TodoCategory.query.filter_by(id=category_id).all(),
     category_lists = TodoCategory.query.order_by('id').all(), 
     category_todos= TodoList.query.filter_by(category_id=category_id).all())
     

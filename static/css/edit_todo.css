@@ -10,8 +10,8 @@
     visibility: hidden;
 }
 .showEditPopup{
-        visibility: visible;
-        transform: translate(0%, 0%) scale(1.5);    
+        
+    ranslate(0%, 0%) scale(1.5);    
 }
 
 label {

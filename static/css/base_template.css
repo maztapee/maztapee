@@ -123,33 +123,29 @@ h2 {
 
 .button{
     background-color: rgb(115, 219, 219);
-    border-radius: 30px;
+    border-radius: 20px;
     height: 60px;
     font-size: 22px;
     font-weight:700;
     cursor: pointer;
     text-align: center;
-    border: 0;
+    position: fixed;
+    bottom: 25px;  
+    margin-left: 500px; 
 }
 
 .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
 }
 
 .formPopup{
-    display: block;
-    padding: 50px 40px;
-    background: #cbdee2c0;
-    border-radius: 30px;
-    align-items: center;
-    justify-content: center;
-    height: 350px;
     position: absolute;
-    margin-top: 30px;
-    bottom: 30%;
-    text-align: center;
+    justify-content: center;
+    border: solid 2px black;
+    border-radius: 8px;
+    background-color:#cbdee2c0;
+    width: 50%;
+    height: 350px;
     font-weight: 700;
     transform: translate(0%, 0%) scale(0.1);
     transition: transform 0.4s, top 0.4s;
@@ -157,6 +153,8 @@ h2 {
     
 }
 .showFormPopup{
+    top: -500px;
+    left: 600px;
     visibility: visible;
     transform: translate(0%, 0%) scale(1.2);    
 }
@@ -183,7 +181,7 @@ h3{
 
 }
 .container .formPopup #cat_name,#todo_task {
-    width: 100%;
+    width: 70%;
     height: 3vh;
     border-radius: 8px;
     
@@ -201,16 +199,32 @@ h3{
     border-radius: 7px;  
 }
 
-.container .formPopup #submit,#cancel{
+.formPopup #submit{
     width: 6.5cm;
     height: 4vh;
     border-radius: 7px;
     background-color: rgb(180, 200, 238);
     font-weight: 800;
+    margin-left: 100px;
 }
+
+.formPopup #cancel{
+    width: 3.5cm;
+    height: 4vh;
+    border-radius: 7px;
+    background-color: rgb(180, 200, 238);
+    font-weight: 800;
+    float: right;
+    margin-right: 100px;
+}
+
 
 #span{
     display: flex;
+    justify-content:left;
     align-items: center;
-    justify-content: center;
+}
+.stick .button{
+    right: 10px;
+    
 }
