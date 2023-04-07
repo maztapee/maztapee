@@ -68,6 +68,7 @@ const createRecord = function() {
                         cat_anchor.innerHTML = jsonResponse['category_name'];
                         cat_list.append(cat_button, cat_anchor, del_button);
                         document.getElementById('cat_list').appendChild(cat_list);
+                        location.href=`/categories/${jsonResponse.id}`;
                         //
                         // AJAX Recent todo display
                         // const todo_list = document.createElement('UL');

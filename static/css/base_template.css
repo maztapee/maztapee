@@ -111,9 +111,8 @@ h2 {
 }
 
 .container{
-    position: relative;
+    position:sticky;
 }
-
 .formPopup{
     position: absolute;
     justify-content: center;
@@ -129,10 +128,9 @@ h2 {
     
 }
 .showFormPopup{
-    top: -500px;
-    left: 500px;
+    left: 50px;
     visibility: visible;
-    transform: translate(0%, 0%) scale(1.2);    
+    transform: translate(50%, -275%) scale(1.5);    
 }
 
 .formPopup label{
