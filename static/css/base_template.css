@@ -154,7 +154,7 @@ h3{
     text-decoration: underline;
 
 }
-.container .formPopup #cat_name,#todo_task {
+.container .formPopup #new_task,#todo_task {
     width: 70%;
     height: 3vh;
     border-radius: 8px;

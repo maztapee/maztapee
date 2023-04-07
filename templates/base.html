@@ -61,13 +61,15 @@
         </div>
 
         <div class="editPopup" id="edit">
-            <h3>Edit Your Categories</h3>
+            {% for category in category %}
+            <h3>Edit {{category.category_name}} Category</h3>
+            {% endfor %}
             <label for="fname">Rename this Category:    </label><input id="edit_cat" type="text" placeholder="new category name"/>
             <br>
             <br>
             <div style="display:flex;"><label for="fname"> Category Completion Status:    </label><input id="category_status" type="checkbox"/> <p>(Note: tick to indicate CATEGORY is completed and will be moved to your archives)</p></div>
             <br>
-            <label for="fname">Would you like to add a new task?:    </label><input id="cat_name" type="text" placeholder=" enter new task description for this category"/>
+            <label for="fname">Would you like to add a new task?:    </label><input id="new_task" type="text" placeholder=" enter new task description for this category"/>
             <br>
             <br>
             <label for="fname">Enter deadline for new task:    </label><input id="edit_deadline" type="datetime-local"/>

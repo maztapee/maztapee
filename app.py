@@ -11,6 +11,7 @@ from models import TodoCategory, TodoList
 @app.route('/')
 def welcome():
     return render_template('welcome.html', 
+    category = TodoCategory.query.all(),
     category_lists = TodoCategory.query.order_by('id').all(), 
     todo_lists = TodoList.query.order_by('id').all())
 
@@ -70,35 +71,34 @@ def categoryDisplay(category_id):
     category_lists = TodoCategory.query.order_by('id').all(), 
     category_todos= TodoList.query.filter_by(category_id=category_id).all())
     
-# @app.route('/categories/create', methods=['POST'])
-# def category():
-#     body = {}
-#     error = False
-#     try:
-#         category = request.get_json()["category_name"]
-#         description = request.get_json()["description"]
-#         cat_id = TodoCategory.id
-#         expected_time = request.get_json()["expected_time"]
-#         category_update = TodoCategory(category_name=category)
-#         todo_update = TodoList(description=description, category_id=cat_id, expected_time=expected_time)
-#         todo_db.session.add(category_update)
-#         todo_db.session.commit()
-#         todo_db.session.add(todo_update)
-#         todo_db.session.commit()
-#         body["category_name"] = category_update.category_name
-#         body["description"] = todo_update.description
-#         body["id"] = category_update.id
+@app.route('/categories/edit', methods=['POST'])
+def edit_category():
+    body = {}
+    error = False
+    try:
+        category = request.get_json()["category_name"]
+        description = request.get_json()["description"]
+        cat_id = TodoCategory.id
+        expected_time = request.get_json()["expected_time"]
+        category_update = TodoCategory(category_name=category)
+        todo_update = TodoList(description=description, category_id=cat_id, expected_time=expected_time)
+        todo_db.session.add(category_update)
+        todo_db.session.commit()
+        todo_db.session.add(todo_update)
+        todo_db.session.commit()
+        body["category_name"] = category_update.category_name
+        body["description"] = todo_update.description
+        body["id"] = category_update.id
         
-
-#     except:
-#         error = True
-#         todo_db.session.rollback()
-#         print (sys.exc_info())
+    except:
+        error = True
+        todo_db.session.rollback()
+        print (sys.exc_info())
         
-#     finally:
-#         todo_db.session.close()
-#     if not error:
-#         return json.dumps(body)
+    finally:
+        todo_db.session.close()
+    if not error:
+        return json.dumps(body)
 
 @app.route('/todos/create', methods=['POST'])
 def category():
