@@ -5,6 +5,7 @@ from flask import render_template,redirect, url_for, request, jsonify
 from datetime import date, datetime, timedelta
 from sqlalchemy import func
 from models import TodoCategory, TodoList
+from sqlalchemy.exc import IntegrityError
 
 #########################################################
 
@@ -76,29 +77,40 @@ def edit_category():
     body = {}
     error = False
     try:
-        category = request.get_json()["category_name"]
-        description = request.get_json()["description"]
-        cat_id = TodoCategory.id
-        expected_time = request.get_json()["expected_time"]
-        category_update = TodoCategory(category_name=category)
-        todo_update = TodoList(description=description, category_id=cat_id, expected_time=expected_time)
-        todo_db.session.add(category_update)
-        todo_db.session.commit()
-        todo_db.session.add(todo_update)
-        todo_db.session.commit()
-        body["category_name"] = category_update.category_name
-        body["description"] = todo_update.description
-        body["id"] = category_update.id
+        category_name = request.get_json()["category_name"]
+        newCat_name = request.get_json()["newCategory_name"].strip() or category_name
+        category_update = TodoCategory.query.filter(TodoCategory.category_name==category_name).first()
+        category_update.category_name = newCat_name
+        cat_id = category_update.id
+        # category_status = request.get_json()["category_status"] // create column with accompanying migration in the models.py
+        expected_time = request.get_json()["deadline"]
+        # print (expected_time) {value obtained successfully}
+        new_task = request.get_json()["todo"]
+        activity_time = datetime.now(tz=None)
+        # print (new_task) {value obtained successfully}
+        if new_task.strip():
+            todo_update = TodoList(description=new_task, expected_time=expected_time, activity_time=activity_time, category_id=cat_id)
+            # print (todo_update.category_id) {value of category_id obtained successfully}
+            # print (todo_update.description, todo_update.expected_time) {values changed successfully on the query object}
+            todo_db.session.add(todo_update)
+            todo_db.session.commit()
+        else:
+            pass
+        body["category_name"] = newCat_name
+        body["description"] = new_task
+        body["id"] = cat_id
         
-    except:
+    except (KeyError, AttributeError, TypeError, ValueError, IntegrityError):
         error = True
         todo_db.session.rollback()
-        print (sys.exc_info())
+        return {}, 400
+        # print (sys.exc_info())
         
     finally:
         todo_db.session.close()
     if not error:
-        return json.dumps(body)
+        return body
+
 
 @app.route('/todos/create', methods=['POST'])
 def category():
@@ -119,7 +131,7 @@ def category():
         todo_db.session.add(todo_update)
         todo_db.session.commit()
         body["category_name"] = category.category_name
-        body["todo_description"] = todo_update.description
+        body["description"] = todo_update.description
         body["id"] = category_id
         display_body = json.dumps(body)
     except:
@@ -196,49 +208,3 @@ def todoStatus(todo_id):
     finally:
         todo_db.session.close()
     return jsonify(body)
-
-       
-        
-    
-
-
-# @app.route('/categories/<category_id>', methods=['GET'])
-# def get_categories(category_id):
-#     return render_template('welcome_page.html',
-#     category_lists = TodoCategory.query.all(),
-#     todo_list = TodoList.query.filter_by(category_id=category_id).order_by('id'))
-
-# @app.route('/categories/create', methods=['POST'])
-# def create_task():
-#     error = False
-#     body = {}
-#     try:
-#         new_task = request.get_json()['description']
-#         print (new_task)
-#         create_task = TodoList(description=new_task)
-#         todo_db.session.add(create_task)
-#         todo_db.session.commit()
-#         body['description'] = create_task.description
-#         body['id'] = create_task.id
-#     except:
-#         error = True
-#         todo_db.session.rollback()
-#     finally:
-#         todo_db.session.close()
-#         if not error:
-#             return jsonify(body)
-
-# @app.route('/categories/<cat_id>/delete', methods = ['DELETE'])
-# def deleteTask(cat_id):
-#     try:
-#         TodoList.query.filter_by(id=cat_id).delete()
-#         todo_db.session.commit()
-#     except:
-#         todo_db.session.rollback()
-#     finally:
-#         todo_db.session.close()
-#     return welcome()
-
-
-# def home():
-#     return render_template ('welcome_page.html',category_lists= TodoCategory.query.order_by(id=id).all())

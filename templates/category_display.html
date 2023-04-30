@@ -31,7 +31,7 @@
         <ul id="todo_list">
         {% for task in category_todos %}
         <li>
-            <p><button data-removeid="{{task.id}}" class="button1">&cross;</button></p> <p><span>{{ task.description}}</span></p><p> <input type="checkbox" {% if task.completed %} checked {% endif %} id="check_status" class="check" data-id="{{task.id}}"/></p> 
+            <p><button data-removeid="{{task.id}}" class="button4">&cross;</button></p> <p><span>{{ task.description}}</span></p><p> <input type="checkbox" {% if task.completed %} checked {% endif %} id="check_status" class="check" data-id="{{task.id}}"/></p> 
         </li>
         {% endfor %}
         </ul>
@@ -67,9 +67,9 @@
             }
         }
 
-            // Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well
+            // Delete todo item function () ===> deleting tasks of a specified category
         const deleteTodoTrigger = () =>{
-            const deleteButton = document.querySelectorAll('.button');
+            const deleteButton = document.querySelectorAll('.button4');
             for(let i=0; i< deleteButton.length; i++){
                 const deletion = deleteButton[i];
                 deletion.onclick = function (e){
@@ -83,7 +83,7 @@
                     }
                     })
                     console.log(todo_id);
-                    deletion.parentElement.remove();
+                    deletion.parentElement.parentElement.remove();
                 };      
             };
         };
