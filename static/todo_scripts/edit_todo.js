@@ -80,7 +80,30 @@ function editCategory(e){
                 return response.json();
         })
         .then(function(editResponse){
-                console.log(editResponse['id'], editResponse['category_name'],editResponse['description'] );
+                const todo_list = document.getElementById("todo_list");
+                const todo_description = document.createElement('LI');
+                const delete_button = document.createElement('button');
+                const pTag_button = document.createElement('p');
+                const pTag_todo = document.createElement('p');
+                const pTag_checkbox = document.createElement('p');
+                const todo_span = document.createElement('span');
+                const input_check = document.createElement('input');
+                delete_button.setAttribute("classname","button4");
+                delete_button.dataset.removeid = editResponse['id']
+                delete_button.innerHTML = "&cross;";
+                pTag_button.append(delete_button);
+                todo_list.setAttribute("id", "todo_list");
+                todo_span.innerHTML = editResponse['description'];
+                pTag_todo.append(todo_span);
+                input_check.dataset.id = editResponse['id'];
+                input_check.setAttribute("classname", "check");
+                input_check.setAttribute("id", "check_status");
+                input_check.setAttribute("type", "checkbox");
+                pTag_checkbox.append(input_check);
+                todo_description.append(pTag_button);
+                todo_description.append(pTag_todo);
+                todo_description.append(pTag_checkbox);
+                todo_list.appendChild(todo_description);
 
         });
         closeEditPopup();
