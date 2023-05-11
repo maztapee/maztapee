@@ -3,11 +3,10 @@
 {%block title%} {{super()}} Todo Categories {%endblock%}
 
 {% block base_css %}
- <link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}"/> 
- <link rel="stylesheet" href="{{ url_for('static', filename='css/category_display.css') }}"/>
- <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_todo.css') }}"/>
-
- {% endblock %}   
+ <link rel="stylesheet" href="{{url_for('static', filename='css/base_template.css')}}"/> 
+ <link rel="stylesheet" href="{{url_for('static', filename='css/category_display.css')}}"/>
+ <link rel="stylesheet" href="{{url_for('static', filename='css/edit_todo.css')}}"/>
+{% endblock %}   
 
 {% block content %}
 
@@ -17,7 +16,7 @@
         <ul id="cat_list">
             {% for category in category_lists %} <!-- this is the flask template(jinja2) ()for embedding python code in html-->                      
                 <li data-category_id="{{category.id}}" class="list">
-                    <button data-removeid="{{category.id}}" class="button1">&cross;</button> <a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" data-cat_name ="{{category.category_name}}">Edit</button>
+                    <button data-removeid="{{category.id}}" class="button1">&cross;</button><a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" data-cat_name ="{{category.category_name}}">Edit</button>
                 </li>
             {% endfor %}
         </ul>
@@ -67,7 +66,7 @@
             }
         }
 
-            // Delete todo item function () ===> deleting tasks of a specified category
+        // Delete todo item function () ===> deleting tasks of a specified category
         const deleteTodoTrigger = () =>{
             const deleteButton = document.querySelectorAll('.button4');
             for(let i=0; i< deleteButton.length; i++){
@@ -87,8 +86,8 @@
                 };      
             };
         };
-     };
-    
+    };
+       
     deleteTodoTrigger();
 
          // Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well
