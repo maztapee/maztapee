@@ -130,7 +130,7 @@ h2 {
 .showFormPopup{
     left: 50px;
     visibility: visible;
-    transform: translate(50%, -275%) scale(1.5);    
+    transform: translate(50%, -105%) scale(1.5);    
 }
 
 .formPopup label{

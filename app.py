@@ -148,15 +148,21 @@ def category():
 
 @app.route('/categories/<cat_id>/delete', methods = ['DELETE'])
 def deleteTask(cat_id):
+    body = {}
     try:
         cat_id = cat_id
         TodoCategory.query.filter_by(id=cat_id).delete()
         todo_db.session.commit()
+        requestUrl = request.url
+        body['cat_id'] = cat_id
+        body['url'] = requestUrl
+        delete_body = json.dumps(body)
     except:
         todo_db.session.rollback()
     finally:
         todo_db.session.close()
-    return welcome()
+        welcome()
+        return delete_body
 
 @app.route('/todos/<todo_id>/delete', methods = ['DELETE'])
 def deleteTodo(todo_id):
@@ -191,7 +197,7 @@ def recent_todos():
         if not error:
             return jsonify(body)    
 
-@app.route('/categories/todos/<todo_id>/boxcheck', methods = ['POST'])
+@app.route('/todos/<todo_id>/boxcheck', methods = ['POST'])
 def todoStatus(todo_id):
     body ={}
     try: 
@@ -200,12 +206,13 @@ def todoStatus(todo_id):
         print(todoId)
         todo_id = TodoList.query.filter_by(id=todoId).first()
         todo_id.completed = completed
-        todo_db.session.add(todo_id)
-        todo_db.session.commit()
         body['completed'] = todo_id.completed
         body['todoId'] = todo_id.id
+        todo_db.session.add(todo_id)
+        todo_db.session.commit()
+        
     except:
         todo_db.session.rollback()
     finally:
         todo_db.session.close()
-    return jsonify(body)
+        return jsonify(body)
