@@ -42,6 +42,7 @@ const closeEditPopup = function(){
 
 function editCategory(e){
         console.log(edit);
+        const currPage = document.querySelector("#list_display");
         const todo_list1 = document.getElementById("todo_list");
         const todo_description1 = document.createElement('LI');
         const delete_button1 = document.createElement('button');
@@ -50,6 +51,15 @@ function editCategory(e){
         const pTag_checkbox1 = document.createElement('p');
         const todo_span1 = document.createElement('span');
         const input_check1 = document.createElement('input');
+
+        const todo_list = document.createElement('UL');
+        const todo_description = document.createElement('LI');
+        const delete_button = document.createElement('button');
+        const pTag_button = document.createElement('p');
+        const pTag_todo = document.createElement('p');
+        const pTag_checkbox = document.createElement('p');
+        const todo_span = document.createElement('span');
+        const input_check = document.createElement('input');
 
 // getting category name of category clicked
         const data = e.parentElement.parentElement.getElementsByTagName('h3')[0].innerHTML
@@ -81,13 +91,43 @@ function editCategory(e){
         //-------------------acceptable data input tuples are (1) only category name change, (2) New todo task and date or (3) data from 1 and 2 together
 
         //-------------------check for new task and date---------------------------------------------------------
-        
+
         if ((!deadline_change.trim() && new_task.trim()) || (deadline_change.trim() && !new_task.trim())){
                 alert("You have failed to insert either a valid deadline or task description");
         }
         //--------------------adding todo task must be accompanied by a future date, else....only category name edit permitted without date entry------
         else if ((!new_task && !deadline_change) || (new_task && deadline_change)){
-                if(confirm("Do you want to edit "+ `${cat_name}`+" task category"));    
+                if(confirm("Do you want to edit "+ `${cat_name}`+" task category"));
+                
+                if (currPage.childElementCount == 0){
+                        console.log(currPage.childElementCount);
+
+                        delete_button.setAttribute("classname","button4");
+                        //delete_button.dataset.removeid = editResponse['id'];
+                        delete_button.innerHTML = "&cross;";
+                        pTag_button.append(delete_button);
+                        todo_list.setAttribute("id", "todo_list");
+                        todo_span.innerHTML = new_task;
+                        pTag_todo.append(todo_span);
+                        //input_check.dataset.id = editResponse['id'];
+                        input_check.setAttribute("classname", "check");
+                        input_check.setAttribute("id", "check_status");
+                        input_check.setAttribute("type", "checkbox");
+                        pTag_checkbox.append(input_check);
+                        todo_description.append(pTag_button);
+                        todo_description.append(pTag_todo);
+                        todo_description.append(pTag_checkbox);
+                        todo_list.appendChild(todo_description);
+                        var list_display = document.getElementById('list_display');
+                        list_display.innerHTML = " ";
+                        list_display.classList.remove("no_task");
+                        list_display.append(todo_list);
+
+                }
+
+                else{
+                        console.log("hello world");
+                
         
                         fetch ('/categories/edit', {
                                 method: 'POST',
@@ -109,14 +149,7 @@ function editCategory(e){
                         .then(function(editResponse){
                                 // populating todo tasks list on the view
                                 // ---------------------------------------------------------------------------------------------
-                                const todo_list = document.getElementById("todo_list");
-                                const todo_description = document.createElement('LI');
-                                const delete_button = document.createElement('button');
-                                const pTag_button = document.createElement('p');
-                                const pTag_todo = document.createElement('p');
-                                const pTag_checkbox = document.createElement('p');
-                                const todo_span = document.createElement('span');
-                                const input_check = document.createElement('input');
+                                
                                 delete_button.setAttribute("classname","button4");
                                 delete_button.dataset.removeid = editResponse['id'];
                                 delete_button.innerHTML = "&cross;";
@@ -148,10 +181,11 @@ function editCategory(e){
                                 return;
 
                         });
-                        const currPage = document.querySelector("#todo_list");
-                        if (currPage.childElementCount === 0){
+                };
+                        // const currPage = document.querySelector("#todo_list");
+                        // if (currPage.childElementCount === 0){
 
-                                            }
+                        //                     }
         
         
         };

@@ -21,7 +21,7 @@ const deleteTodoTrigger = () =>{
                         })
                         
                     deletion.parentElement.parentElement.remove();
-                    console.log(deletion.parentElement.parentElement);
+                    console.log(deletion.parentElement.parentElement.parentElement);
 
                     const currentPage = document.querySelector("#todo_list");
                     if (currentPage.childElementCount === 0){
