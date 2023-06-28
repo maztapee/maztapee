@@ -3,7 +3,7 @@
     justify-content: center;
     border: solid 2px black;
     border-radius: 8px;
-    background-color:#cbdee2c0;
+    background-color:rgb(214, 207, 109);
     width: 38%;
     height: 360px;
     transform: translate(0%, 0%) scale(0.1);
@@ -11,10 +11,10 @@
     visibility: hidden;
 }
 .showEditPopup{
-        top: -500px;
-        left: 550px;
+        top: 50%;
+        left: 50%;
         visibility: visible;
-        transform: translate(15%, -155%) scale(1.5);    
+        transform: translate(-50%, -50%) scale(1.5);    
 }
 
 label {

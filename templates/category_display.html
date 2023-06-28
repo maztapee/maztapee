@@ -11,137 +11,49 @@
 {% block content %}
 
 <div class="row">
-    <div class="column">
-        <h4>Your Todo Categories</h4>    
-        <ul id="cat_list">
-            {% for category in category_lists %} <!-- this is the flask template(jinja2) ()for embedding python code in html-->                      
-                <li data-category_id="{{category.id}}" class="list">
-                    <button data-removeid="{{category.id}}" class="button1">&cross;</button><a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" data-cat_name ="{{category.category_name}}">Edit</button>
-                </li>
-            {% endfor %}
-        </ul>
+    <div class="column">  
+        <div id="first_column"> 
+            <h2>Your Todo Categories</h2> 
+            <ul id="cat_list">
+                {% for category in category_lists %} <!-- this is the flask template(jinja2) ()for embedding python code in html-->                      
+                    <li data-category_id="{{category.id}}" class="list">
+                        <button data-removeid="{{category.id}}" class="button1">&cross;</button><a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" data-cat_name ="{{category.category_name}}">Edit</button>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
     <div class="column">
-        <div id="no_task" style="display: none;"><span>"Click on a category to view task"</span></div>
-        <div id="cat_display">
-        {% for category in category %}
-        <h4> Here is the list of your todo tasks for {{category.category_name}} </h4>
-        {% endfor %}
-
-        <ul id="todo_list">
-        {% for task in category_todos %}
-        <li>
-            <p><button data-removeid="{{task.id}}" class="button4">&cross;</button></p> <p><span>{{ task.description}}</span></p><p> <input type="checkbox" {% if task.completed %} checked {% endif %} id="check_status" class="check" data-id="{{task.id}}"/></p> 
-        </li>
-        {% endfor %}
-        </ul>
+        <div id="second_column">
+            <div id="no_task" style="display: none;"><span><h1>"Click on a category to view task"</span></h1></div>
+            <div id="cat_display">
+            {% for category in category %}
+            <h2> Here is the list of your todo tasks for {{category.category_name}} </h2>
+            {% endfor %}
+                <div id="list_display">
+                    <ul id="todo_list">
+                    {% for task in category_todos %}
+                    <li>
+                        <p><button data-removeid="{{task.id}}" class="button4">&cross;</button></p> <p><span>{{ task.description}}</span></p><p> <input type="checkbox" {% if task.completed %} checked {% endif %} id="check_status" class="check" data-id="{{task.id}}"/></p> 
+                    </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-    const checkboxes = document.querySelectorAll('.check');
-        for(let i = 0; i < checkboxes.length; i++){
-            const checkbox = checkboxes[i];
-            checkbox.onchange = function (e){
-                alert('Are you are changing the status of this task?')
-                console.log('event', e);
-                const newCompleted = e.target.checked;
-                const todo_id = e.target.dataset['id'];
-                fetch('/todos/'+todo_id+'/boxcheck', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        'completed': newCompleted,
-                        'todoId': todo_id
-                    }),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then (function(checkResponse){
-                    // successful get of json response body from server!
-                    return checkResponse.json();   
-                })
-                .then(function(check){
-                    // json response body {'completed' and 'todoId'} are accessible from here
-                })
-                .catch (function(){
-            })
-            }
-        }
-
-        // Delete todo item function () ===> deleting tasks of a specified category
-        const deleteTodoTrigger = () =>{
-            const deleteButton = document.querySelectorAll('.button4');
-            for(let i=0; i< deleteButton.length; i++){
-                const deletion = deleteButton[i];
-                deletion.onclick = function (e){
-                    if(confirm("You are about to delete a Category, please confirm to continue")) {
-                    console.log('event', e);
-                    const todo_id = e.target.dataset['removeid'];
-                    fetch('/todos/'+todo_id+'/delete', {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                    })
-                    console.log(todo_id);
-                    deletion.parentElement.parentElement.remove();
-                };      
-            };
-        };
-    };
-       
-    deleteTodoTrigger();
-
-         // Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well
-    const deleteCategoryTrigger = () =>{ 
-            const deleteButton = document.querySelectorAll('.button1');
-            for(let i=0; i< deleteButton.length; i++){
-            
-                const deletion = deleteButton[i];
-                deletion.onclick = function (e){
-                    if(confirm("You are about to delete a Category, please confirm to continue")) {
-                    console.log('event', e);
-                    const cat_id = e.target.dataset['removeid'];
-                    fetch('/categories/'+cat_id+'/delete', {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                    })
-                    .then(function(deleteResponse){
+    const currentPage = document.querySelector("#todo_list");
+    if (currentPage.childElementCount === 0){
                         
-                        return deleteResponse.json();
-                    })
-                    .then(function(deleteData){
-                        const first = deleteData.url.toLowerCase();
-                        const second = (location.href + 'delete').toLowerCase();
-                        const compared = first === second;
-                        console.log(compared);
-                        if (compared){
-                            const showDisplay = document.getElementById('no_task');
-                            const cat_display = document.getElementById('cat_display');
-                            cat_display.style.display = 'none';
-                            setTimeout(function (){
-                                showDisplay.style.display = 'block';
-                            }, 
-                            5000);
-                        };
-                        
-                    })
-                    .catch(error =>{
-                        console.log('Error:', error);
-                    });
-                    console.log(cat_id);
-                    deletion.parentElement.remove(); 
-                };      
-            };
-        };
-     };
-    
-    deleteCategoryTrigger();
-
+                        setTimeout(function(){
+                                list_display.style.display = 'block';
+                                list_display.innerHTML = "There aren't any todo task for this category <br> Click on edit to add task to this category";
+                                list_display.classList.add("no_task");
+                                },1500);                                         
+                        }
 </script>
 {% endblock %}

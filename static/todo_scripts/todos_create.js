@@ -39,50 +39,8 @@ fetch('/todos/create', {
         todo_list.append(todo_description);
     })
     .catch(   
-        error =>{                        
-            // var err = document.getElementsByClassName('error')[0];
-            // console.log(error, err.classList.add('show'));
-            // err.setAttribute("classname", "show");
+        error =>{
             alert("Encountered an error");
             console.log(error);
         } 
-    )
-
-
-    // fetch('/categories/create', {
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //         'category_name': cat_name
-    //         }),
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //         }
-    //     })
-    //     .then(function(response){
-    //         console.log(response);
-    //         return response.json();
-    //     })
-    //     .then(function(jsonResponse){
-    //         console.log (jsonResponse);
-    //         const anchor = document.createElement('a');
-    //         anchor.href ='/todo_items/<category_id>';
-    //         anchor.innerHTML = jsonResponse['category_name'];
-    //         const first_list = document.createElement('LI');
-    //         const delete_button = document.createElement('button');
-    //         delete_button.setAttribute("classname","button");
-    //         delete_button.dataset.removeid = jsonResponse['id']
-    //         delete_button.innerHTML = "&cross;";
-    //         first_list.append(anchor)
-    //         first_list.append(delete_button);
-    //         const cat_list = document.createElement('UL');
-    //         cat_list.setAttribute("id", "categories");
-    //         cat_list.append(first_list);
-    //         document.getElementById('categories').appendChild(first_list);
-    //     })
-    //     .catch(   
-    //         error =>{                        
-    //             var err = document.getElementsByClassName('error')[0];
-    //             console.log(error, err.classList.add('show'));
-    //             err.setAttribute("classname", "show");
-    //         } 
-    //     );
+    );

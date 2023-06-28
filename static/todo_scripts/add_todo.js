@@ -2,7 +2,7 @@ const form = document.getElementById("form");
 const button = document.querySelector(".stick");
 
 function openFormPopup() {
-    
+    console.log(form);
     form.classList.add("showFormPopup");
     button.style.visibility="hidden";
 };

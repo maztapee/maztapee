@@ -5,10 +5,6 @@
 {% block base_css %} 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}"/>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/add_reminder.css') }}"/>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='app.js') }}"/>
-
 {% endblock %}   
 
 
@@ -19,37 +15,8 @@
 
 {% block content %}
 
-<h2>Modal Example</h2>
 
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Add a Task</p>
-
-    <label for="fname">Add a Category:    </label><input id="cat_name" type="text" />
-    <br>
-    <br>
-    <label for="fname">Add a Todo:    </label><input id="todo_task" type="text" />
-    <br>
-    <br>
-    <label for="fname">Would you like a timely reminder:    </label><input type="checkbox" />
-    <br>
-    <br>
-    <label for="fname">What deadline to this task do you prefer:    </label><input id="deadline" type="datetime-local" />
-    <br>
-    <br>
-    <input id="button_id" type="submit" />
-  </div>
-
-</div>
 <script>
-
     //must invoke this createCategory function
 const createCategory = function() {    
     const submit_button = document.getElementById('button_id'); //listening for submit event on submit button with id=button_id on the form    
@@ -109,7 +76,4 @@ const createCategory = function() {
     createCategory();
 
 </script>
-
-
-
 {% endblock%}

@@ -41,8 +41,7 @@
         {% block content %} {% endblock %}
     </div>
     <br>
-    <div class="stick"><input class="button" id="click_button" type="button" onclick= "openFormPopup()" value="Click here to schedule a task    &#9202"></div>
-    <div class="container">
+    <div class="stick"><input class="button" id="click_button" type="button" onclick="openFormPopup()" value="Click here to schedule a task    &#9202"></div>
         <div class="formPopup" id="form">
             <h3>Schedule a task reminder</h3>
             <label for="fname">Add category for this task:    </label><input id="cat_name" type="text" placeholder="Task Category"/>
@@ -59,39 +58,40 @@
             <br>
             <input type="button" id="submit" value="Submit Task for Scheduling" onclick="closeFormPopup()"/> <button type="button" id="cancel" onclick="closeFormPopup()" style="margin-left: 250px;">Cancel</button>
         </div>
-
-        <div class="editPopup" id="edit">
-            {% for category in category %}
-            <h3>Edit {{category.category_name}} Category</h3>
-            {% endfor %}
+    <div class="editPopup" id="edit">
+        {% for category in category %}
+        <h3>Edit {{category.category_name}} Category</h3>
+        {% endfor %}
+        <div>
             <div>
-                <div>
-                    <label for="fname">Would you like to rename this Category: </label>
-                        <input type="radio" id="yes" name="rename_cat" value="YES"/>
-                        <label for="yes">YES</label>
-                        <input type="radio" id="no" name="rename_cat" value="NO" checked/>
-                        <label for="no">NO</label>
-                </div>
-                <div id="rename_input" style="visibility: hidden;">
-                    <label for="fname">Enter new name for this category:    </label>
-                    <input id="edit_cat" type="text" placeholder="new category name"/>
-                </div>
+                <label for="fname">Would you like to rename this Category: </label>
+                    <input type="radio" id="yes" name="rename_cat" value="YES"/>
+                    <label for="yes">YES</label>
+                    <input type="radio" id="no" name="rename_cat" value="NO" checked/>
+                    <label for="no">NO</label>
             </div>
-            <div style="display:flex;"><label for="fname"> Category Completion Status:    </label><input id="category_status" type="checkbox"/> <p>(Note: tick to indicate CATEGORY is completed and will be moved to your archives)</p></div>
-            <br>
-            <label for="fname">Would you like to add a new task?:    </label><input id="new_task" type="text" placeholder=" enter new task description for this category"/>
-            <br>
-            <br>
-            <label for="fname">Enter deadline for new task:    </label><input id="edit_deadline" type="datetime-local"/>
-            <br>
-            <br>
-            <div><button id="btn_1" onclick="editCategory(this)">Submit</button> <button id="btn_2" onclick="closeEditPopup()">Cancel</button></div>
-            <br>
+            <div id="rename_input" style="visibility: hidden;">
+                <label for="fname">Enter new name for this category:    </label>
+                <input id="edit_cat" type="text" placeholder="new category name"/>
+            </div>
         </div>
-
+        <div style="display:flex;"><label for="fname"> Category Completion Status:    </label><input id="category_status" type="checkbox"/> <p>(Note: tick to indicate CATEGORY is completed and will be moved to your archives)</p></div>
+        <br>
+        <label for="fname">Would you like to add a new task?:    </label><input id="new_task" type="text" placeholder=" enter new task description for this category"/>
+        <br>
+        <br>
+        <label for="fname">Enter deadline for new task:    </label><input id="edit_deadline" type="datetime-local"/>
+        <br>
+        <br>
+        <div><button id="btn_1" onclick="editCategory(this)">Submit</button> <button id="btn_2" onclick="closeEditPopup()">Cancel</button></div>
+        <br>
     </div>
     <script src="/static/todo_scripts/add_todo.js"></script>
     <script src="/static/todo_scripts/edit_todo.js"></script>
+    <script src="/static/todo_scripts/deleteTodo.js"></script>
+    <script src="/static/todo_scripts/deleteCategory.js"></script>
+    <script src="/static/todo_scripts/checkBox.js"></script>
+    <!-- <script src="/static/todo_scripts/todos_create.js"></script> -->
 </body>
 
 </html>

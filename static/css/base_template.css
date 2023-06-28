@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 #heading {
     height: fit-content;
     font-size: x-large;
@@ -81,8 +84,13 @@ div nav:first-child a:hover {
 
 h2 {
     text-align: center;
-    font-size: large;
+    font-size: larger;
     background-color: rgb(189, 183, 107);
+    width: 90%;
+    height: 25px;
+    border: solid 2px;
+    border-radius: 4px;
+    margin-left: 20px;
 }
 
 .column {
@@ -97,8 +105,18 @@ h2 {
     clear: both;
 }
 
+#first_column, #second_column {
+    border: solid 3px;
+    border-style: ridge;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-color: rgb(189, 183, 107);
+}
+
 .button{
-    background-color: rgb(115, 219, 219);
+    background-color: rgb(179, 175, 119);
     border-radius: 20px;
     height: 60px;
     font-size: 22px;
@@ -111,14 +129,19 @@ h2 {
 }
 
 .container{
-    position:sticky;
+    position:relative;
+    height: 100%;
+    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 .formPopup{
     position: absolute;
     justify-content: center;
     border: solid 2px black;
     border-radius: 8px;
-    background-color:#cbdee2c0;
+    background-color:rgb(214, 207, 109);
     width: 50%;
     height: 350px;
     font-weight: 700;
@@ -202,3 +225,38 @@ h3{
     right: 10px;
     
 }
+
+@keyframes wriggle {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(10deg);
+    }
+    40% {
+      transform: rotate(-10deg);
+    }
+    60% {
+      transform: rotate(6deg);
+    }
+    80% {
+      transform: rotate(-6deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+}
+
+.no_task {
+    text-align: center;
+    margin-left: 26%;
+    width: 50%;
+    border: solid 2px;
+    border-radius: 8px;
+    background-color: rgb(196, 191, 128);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: larger;
+    height: 50px;
+    animation: wriggle 2s ease-in-out infinite;
+ }

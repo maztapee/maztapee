@@ -26,6 +26,7 @@ function RenameCat(){
 };
 
 function showEditPopup (e){
+        console.log(edit, typeof edit);
         edit.classList.add("showEditPopup");
         button.style.visibility="hidden";
         const edit_title = e.target.dataset['cat_name'];
@@ -40,28 +41,51 @@ const closeEditPopup = function(){
 };
 
 function editCategory(e){
-        // getting category name of category clicked
+        console.log(edit);
+        const todo_list1 = document.getElementById("todo_list");
+        const todo_description1 = document.createElement('LI');
+        const delete_button1 = document.createElement('button');
+        const pTag_button1 = document.createElement('p');
+        const pTag_todo1 = document.createElement('p');
+        const pTag_checkbox1 = document.createElement('p');
+        const todo_span1 = document.createElement('span');
+        const input_check1 = document.createElement('input');
+
+// getting category name of category clicked
         const data = e.parentElement.parentElement.getElementsByTagName('h3')[0].innerHTML
         const arrayOfData = data.split(' ');
         let newData = '';
         for(let i =0; i < arrayOfData.length; i++){
-           
+                   
                 if(i === 0 || i === arrayOfData.length - 1){
                         continue
-                }
-
+                        }
+        
                 newData += ` ${arrayOfData[i]}`;                
         }
+
+        //---------------------getting users' inputs from form------------------------------------------------
+
         const cat_name = newData.trim();
-        
         const rename = document.getElementById('edit_cat').value;
         const cat_status = document.getElementById('category_status').value;
         const deadline_change = document.getElementById('edit_deadline').value;
         const new_task = document.getElementById('new_task').value;
+
+        //-------------------validation check for logic implementation for acceptable data edit-----------------
+
+        //-------------------checking for missing data input for acceptable transaction at the back end-----------
+        //-------------------changing name of category, addition of todo tasks------------------------------------
+        //-------------------category name change requires only one field from form-------------------------------
+        //-------------------adding todo task requires no name change, but can happen with a name change----------
+        //-------------------acceptable data input tuples are (1) only category name change, (2) New todo task and date or (3) data from 1 and 2 together
+
+        //-------------------check for new task and date---------------------------------------------------------
         
         if ((!deadline_change.trim() && new_task.trim()) || (deadline_change.trim() && !new_task.trim())){
                 alert("You have failed to insert either a valid deadline or task description");
         }
+        //--------------------adding todo task must be accompanied by a future date, else....only category name edit permitted without date entry------
         else if ((!new_task && !deadline_change) || (new_task && deadline_change)){
                 if(confirm("Do you want to edit "+ `${cat_name}`+" task category"));    
         
@@ -124,6 +148,10 @@ function editCategory(e){
                                 return;
 
                         });
+                        const currPage = document.querySelector("#todo_list");
+                        if (currPage.childElementCount === 0){
+
+                                            }
         
         
         };
