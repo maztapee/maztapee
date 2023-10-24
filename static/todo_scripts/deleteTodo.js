@@ -1,11 +1,11 @@
-// Delete todo item function () ===> deleting tasks of a specified category
+//Delete todo item function () ===> deleting tasks of a specified category
 
 
 const deleteTodoTrigger = () =>{
     //--------------------global variable declaration---------------------------------------------------------------------------------------
         const deleteButton = document.querySelectorAll('.button4');
         const list_display = document.getElementById('list_display');
-        const cat_display = document.getElementById('cat_display');
+        // const cat_display = document.getElementById('cat_display');
     
         for(let i=0; i< deleteButton.length; i++){
             const deletion = deleteButton[i];
@@ -20,11 +20,11 @@ const deleteTodoTrigger = () =>{
                         }
                         })
                         
-                    deletion.parentElement.parentElement.remove();
-                    console.log(deletion.parentElement.parentElement.parentElement);
+                    .then(function (){
+                        deletion.parentElement.parentElement.remove();
 
-                    const currentPage = document.querySelector("#todo_list");
-                    if (currentPage.childElementCount === 0){
+                        const currentPage = document.querySelector("#todo_list");
+                        if (currentPage.childElementCount === 0){
                                         
                                         setTimeout(function(){
                                                 list_display.style.display = 'block';
@@ -32,27 +32,9 @@ const deleteTodoTrigger = () =>{
                                                 list_display.classList.add("no_task");
                                                 },1500);                                         
                                         }
+                                    });
                     }
                 };
           };
       };
     deleteTodoTrigger();
-
-
-//----------------------trying to create a callable function to execute in other context whenever, front end renders no todo task--------------------------------
-    // function no_task(){
-    //     const curPage = document.querySelector("#todo_list");
-    //     if (curPage.childElementCount == 0){
-    //         const showDisplay = document.getElementById('no_task');
-    //         const cat_display = document.getElementById('cat_display');
-    //         cat_display.style.display = 'none';
-    //         setTimeout(function(){
-    //         showDisplay.style.display = 'block';
-    //         cat_display.style.display = 'block';
-    //         cat_display.innerHTML = "You have not selected any category to view";
-    //         cat_display.classList.add("no_task");
-    //         }, 
-    //         3000);                                                
-    //     }
-    // };
-    // no_task();
