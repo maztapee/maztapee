@@ -1,5 +1,4 @@
-//Delete todo item function () ===> deleting tasks of a specified category
-
+// deleteTodoTrigger-------------generative AI improvision 
 const deleteTodoTrigger = () => {
     const list_display = document.getElementById('list_display');
 
@@ -33,4 +32,5 @@ const deleteTodoTrigger = () => {
         }
     });
 };
+
 deleteTodoTrigger();
