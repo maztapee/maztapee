@@ -17,7 +17,7 @@
             <ul id="cat_list">
                 {% for category in category_lists %} <!-- this is the flask template(jinja2) ()for embedding python code in html-->                      
                     <li data-category_id="{{category.id}}" class="list">
-                        <button data-removeid="{{category.id}}" class="button1">&cross;</button><a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" data-cat_name ="{{category.category_name}}">Edit</button>
+                        <button data-removeid="{{category.id}}" class="button1">&cross;</button><a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" data-cat_name ="{{category.category_name}}" onclick="clickEditEvent()">Edit</button>
                     </li>
                 {% endfor %}
             </ul>
@@ -44,9 +44,6 @@
         </div>
     </div>
 </div>
-<script src="/static/todo_scripts/edit_todo.js"></script>
-<script src="/static/todo_scripts/deleteTodo.js"></script>
-<script src="/static/todo_scripts/deleteCategory.js"></script>
 <script>
     const currentPage = document.querySelector("#todo_list");
     if (currentPage.childElementCount === 0){

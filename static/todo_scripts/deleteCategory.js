@@ -1,4 +1,4 @@
-// Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well
+/*// Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well */
 const deleteCategoryTrigger = () =>{ 
     const deleteButton = document.querySelectorAll('.button1');
     for(let i=0; i< deleteButton.length; i++){
