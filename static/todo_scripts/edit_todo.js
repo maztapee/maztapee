@@ -69,7 +69,8 @@ function returnClickEvent(event_click) {
 };
 
 function editCategory(e) {
-        /*
+        try {
+                     /*
         Function to perform edit operations on Todo Tasks and their Categories
         * Add new category
         * Delete existing category
@@ -90,9 +91,7 @@ function editCategory(e) {
 
         // getting category name of category clicked
         const data = e.parentElement.parentElement.getElementsByTagName('h3')[0].innerHTML
-        /*
-        above line of code throws an error in the browser executes as expected
-        */
+        
         const arrayOfData = data.split(' ');
 
         let newData = ''; //Available in the function scope
@@ -132,23 +131,34 @@ function editCategory(e) {
         else if ((!new_task && !deadline_change) || (new_task && deadline_change)) {
                 if (confirm("Do you want to edit " + `${cat_name}` + " task category"));
 
-                fetch('/categories/edit', {
-                        method: 'POST',
-                        body: JSON.stringify({
-                                'category_name': cat_name,
-                                'newCategory_name': rename,
-                                'category_status': cat_status,
-                                'deadline': deadline_change,
-                                'todo': new_task
-                        }),
-                        headers: {
-                                'Content-Type': 'application/json'
-                        }
-                })
-                        .then(function (response) {
+                const obj = {
+                        'category_name': cat_name,
+                        'newCategory_name': rename,
+                        'category_status': cat_status,
+                        'deadline': deadline_change,
+                        'todo': new_task
+                };
 
-                                return response.json();
-                        }).then(function (editResponse) {
+               async  function postResource(obj){
+                        return new Promise( async function(resolve, reject){
+                                try {
+                                        const result = await fetch('/categories/edit', {
+                                                method: 'POST',
+                                                body: JSON.stringify(obj),
+                                                headers: {
+                                                        'Content-Type': 'application/json'
+                                                }
+                                        });
+                                        result? resolve(result.json()): reject(new Error('no result'))
+                                } catch (error) {
+                                     reject(new Error(error.message));   
+                                }     
+                        });
+                        
+                }
+
+                postResource(obj).then(function (editResponse) {
+
                                 if (currPage.childElementCount == 0) {
                                         delete_button.setAttribute("classname", "button4");
                                         delete_button.dataset.removeid = editResponse['id'];
@@ -175,10 +185,14 @@ function editCategory(e) {
                                 else {
                                         // populating todo tasks list on the view
                                         // ---------------------------------------------------------------------------------------------
-
+                                        
                                         delete_button.setAttribute("classname", "button4");
                                         delete_button.dataset.removeid = editResponse['id'];
                                         delete_button.innerHTML = "&cross;";
+                                        delete_button.onclick = function(){
+                                                document.getElementById('todo_list').removeChild(todo_description);
+                                                // remove by id from db
+                                        };
                                         pTag_button.append(delete_button);
                                         todo_span.innerHTML = editResponse['description'];
                                         pTag_todo.append(todo_span);
@@ -214,7 +228,10 @@ function editCategory(e) {
 
 
         };
-        closeEditPopup();
+        closeEditPopup();   
+        } catch (error) {
+           console.log(error);     
+        }
 };
 
 editCategory(false);
