@@ -75,6 +75,8 @@ def categoryDisplay(category_id):
 @app.route('/categories/edit', methods=['POST'])
 def edit_category():
     body = {}
+    todo_id = 0
+    todo_update= {}
     error = False
     try:
         category_name = request.get_json()["category_name"]
@@ -103,6 +105,7 @@ def edit_category():
         body["category_name"] = newCat_name
         body["description"] = new_task
         body["id"] = cat_id
+        body["todo_id"] = todo_update.id
         
     except (KeyError, AttributeError, TypeError, ValueError, IntegrityError) as e:
         error = True
@@ -175,7 +178,7 @@ def deleteTodo(todo_id):
         todo_db.session.rollback()
     finally:
         todo_db.session.close()
-    return welcome()
+    return jsonify(todo_id)
 
 @app.route('/recent_todos', methods=['POST'])
 def recent_todos():

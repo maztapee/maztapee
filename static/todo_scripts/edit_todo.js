@@ -160,6 +160,7 @@ function editCategory(e) {
                 postResource(obj).then(function (editResponse) {
 
                                 if (currPage.childElementCount == 0) {
+                                        
                                         delete_button.setAttribute("classname", "button4");
                                         delete_button.dataset.removeid = editResponse['id'];
                                         delete_button.innerHTML = "&cross;";
@@ -187,12 +188,8 @@ function editCategory(e) {
                                         // ---------------------------------------------------------------------------------------------
                                         
                                         delete_button.setAttribute("classname", "button4");
-                                        delete_button.dataset.removeid = editResponse['id'];
+                                        delete_button.dataset.removeid = editResponse['todo_id'];
                                         delete_button.innerHTML = "&cross;";
-                                        delete_button.onclick = function(){
-                                                document.getElementById('todo_list').removeChild(todo_description);
-                                                // remove by id from db
-                                        };
                                         pTag_button.append(delete_button);
                                         todo_span.innerHTML = editResponse['description'];
                                         pTag_todo.append(todo_span);
@@ -206,10 +203,28 @@ function editCategory(e) {
                                         todo_description.append(pTag_checkbox);
                                         const todoList = document.getElementById('todo_list')
                                         todoList.appendChild(todo_description);
-                                        // const delete_btn = document.document.querySelectorAll('.button4');
-                                        // delete_btn.addEventListener('click', function (e){
-                                        //         e.target.parent.parent.remove()
-                                        // });
+                                        delete_button.onclick = async function(e){
+                                                if (confirm("You are deleting a newly created task, do you want to proceed?")){
+                                                        // console.log(e);
+                                                        const todo_id = editResponse['todo_id'];                                                        
+                                                        try {
+                                                                const response = await fetch('/todos/'+ todo_id + '/delete', {
+                                                                    method: 'DELETE',
+                                                                    headers: {
+                                                                        'Content-Type': 'application/json'
+                                                                    }
+                                                                });
+                                                                if (response.ok) {
+                                                                        console.log("gone past delete function");
+                                                                        document.getElementById('todo_list').removeChild(todo_description);
+                                                                }
+                                                            } catch (error) {
+                                                                console.error('An error occurred:', error);
+                                                            }
+                                                        
+                                                }
+                                                // remove by id from db
+                                        };
                                         // ------------------------------------------------------------------------------------------------
                                         // changing category name from edit response if there is any change in its initial name!
                                         //--------------------------------------------------------------------------------------------------
