@@ -35,7 +35,6 @@ function showEditPopup(e) {
 };
 
 const closeEditPopup = function () { // Close Edit PopUp
-
         edit.classList.remove("showEditPopup");
         button.style.visibility = "visible";
 };
@@ -90,7 +89,9 @@ function editCategory(e) {
         const input_check = document.createElement('input');
 
         // getting category name of category clicked
-        const data = e.parentElement.parentElement.getElementsByTagName('h3')[0].innerHTML
+        let data = "";
+
+        data = e.parentElement.parentElement.getElementsByTagName('h3')[0].innerHTML;
         
         const arrayOfData = data.split(' ');
 
@@ -104,14 +105,44 @@ function editCategory(e) {
 
                 newData += ` ${arrayOfData[i]}`;
         }
-
+        // console.log('newData');
+        // console.log(newData.trim());
         //---------------------getting users' inputs from form------------------------------------------------
-
         const cat_name = newData.trim();
         const rename = document.getElementById('edit_cat').value;
         const cat_status = document.getElementById('category_status').value;
         const deadline_change = document.getElementById('edit_deadline').value;
         const new_task = document.getElementById('new_task').value;
+        
+        const obj = {
+                'category_name': cat_name,
+                'newCategory_name': rename,
+                'category_status': cat_status,
+                'deadline': deadline_change,
+                'todo': new_task
+        };
+
+        
+        async  function postResource(obj){
+                return new Promise( async function(resolve, reject){
+                        try {
+                                // console.log('fetching');
+                                const result = await fetch('/categories/edit', {
+                                        method: 'POST',
+                                        body: JSON.stringify(obj),
+                                        headers: {
+                                                'Content-Type': 'application/json'
+                                        }
+                                });
+                                result? resolve(result.json()): reject(new Error('no result'))
+                        } catch (error) {
+                             reject(new Error(error.message));   
+                        }     
+                });
+                
+        };
+
+        // console.log('fetched');
 
         //-------------------validation check for logic implementation for acceptable data edit-----------------
 
@@ -127,35 +158,35 @@ function editCategory(e) {
                 console.log("no valid input inserted");
                 alert("You have failed to insert a valid input for a either a category name change, task description or task deadline");
         }
-        //--------------------adding todo task must be accompanied by a future date, else....only category name edit permitted without date entry------
-        else if ((!new_task && !deadline_change) || (new_task && deadline_change)) {
-                if (confirm("Do you want to edit " + `${cat_name}` + " task category"));
 
-                const obj = {
-                        'category_name': cat_name,
-                        'newCategory_name': rename,
-                        'category_status': cat_status,
-                        'deadline': deadline_change,
-                        'todo': new_task
-                };
+        if (rename.trim()) {
+                // console.log('only cat_name changed');
+                if (confirm("Do you want to edit " + `${cat_name}` + " task category")){
+                        postResource(obj).then(function(editResponse){
+                                
+                                if (editResponse){
 
-               async  function postResource(obj){
-                        return new Promise( async function(resolve, reject){
-                                try {
-                                        const result = await fetch('/categories/edit', {
-                                                method: 'POST',
-                                                body: JSON.stringify(obj),
-                                                headers: {
-                                                        'Content-Type': 'application/json'
+                                        console.log(editResponse);
+                                }
+                        // ------------------------------------------------------------------------------------------------
+                        // changing category name from edit response if there is any change in its initial name!
+                        //--------------------------------------------------------------------------------------------------
+                                const category_list = document.querySelectorAll(".list");
+                                for (let i = 0; i < category_list.length; i++) {
+                                        if (category_list[i].dataset.category_id == editResponse.id) { //the if condition was not met
+                                                const atagElement = category_list[i].children[1];
+                                                atagElement.innerHTML = editResponse.category_name;
+                                                console.log(rename);
+                                                break;
                                                 }
-                                        });
-                                        result? resolve(result.json()): reject(new Error('no result'))
-                                } catch (error) {
-                                     reject(new Error(error.message));   
-                                }     
-                        });
+                                        };
                         
-                }
+                        })
+                };
+        }
+        //--------------------adding todo task must be accompanied by a future date, else....only category name edit permitted without date entry------
+        else if (((!new_task && !deadline_change) || (new_task && deadline_change)) && (!rename.trim())) {
+                if (confirm("Do you want to edit " + `${cat_name}` + " task category"));
 
                 postResource(obj).then(function (editResponse) {
                         if (cat_name){
@@ -237,31 +268,21 @@ function editCategory(e) {
                                                         }
                                                         // remove by id from db
                                                 };
-                                                // ------------------------------------------------------------------------------------------------
-                                                // changing category name from edit response if there is any change in its initial name!
-                                                //--------------------------------------------------------------------------------------------------
-                                                const category_list = document.querySelectorAll(".list");
-                                                for (let i = 0; i < category_list.length; i++) {
-                                                        if (category_list[i].dataset.category_id == editResponse.id) { //the if condition was not met
-                                                                const atagElement = category_list[i].children[1];
-                                                                atagElement.innerHTML = editResponse.category_name;
-                                                                break;
-                                                        }
-                                                };
         
                                                 return;
                                         };
                                 }
 
                         };
-                        });
+                });
 
 
         };
+        
         closeEditPopup();   
         } catch (error) {
            console.log(error);     
         }
 };
 
-editCategory(false);
+// editCategory(false);

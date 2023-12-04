@@ -79,44 +79,54 @@ def edit_category():
     todo_update= {}
     error = False
     try:
+        # Extracting data from the JSON request
         category_name = request.get_json()["category_name"]
-        newCat_name = request.get_json()["newCategory_name"].strip() or category_name
-        category_update = TodoCategory.query.filter(TodoCategory.category_name==category_name).first()
-        category_update.category_name = newCat_name
-        print(newCat_name)
-        todo_db.session.add(category_update)
-        todo_db.session.commit()
-        cat_id = category_update.id
-        # category_status = request.get_json()["category_status"] // create column with accompanying migration in the models.py
-        expected_time = request.get_json()["deadline"]
-        # print (expected_time) {value obtained successfully}
-        new_task = request.get_json()["todo"]
-        activity_time = datetime.now(tz=None)
-        # print (new_task) {value obtained successfully}
-        if new_task.strip() and expected_time:
-            todo_update = TodoList(description=new_task, expected_time=expected_time, activity_time=activity_time, category_id=cat_id)
-            todo_db.session.add(todo_update)
-            # print (todo_update.category_id) {value of category_id obtained successfully}
-            # print (todo_update.description, todo_update.expected_time) {values changed successfully on the query object}
-        elif not new_task.strip() or not expected_time:
-            print("you are changing the name of this category!")
-            pass
-        todo_db.session.commit()
-        body["category_name"] = newCat_name
-        body["description"] = new_task
-        body["id"] = cat_id
-        body["todo_id"] = todo_update.id
-        
+        newCat_name = request.get_json().get("newCategory_name", category_name).strip()
+
+        # Retrieving the category to be updated from the database
+        category_update = TodoCategory.query.filter_by(category_name=category_name).first()
+
+        if category_update:
+            # Updating the category name
+            cat_id = category_update.id
+            category_update.category_name = newCat_name
+            todo_db.session.add(category_update)
+            todo_db.session.commit()
+
+            # Extracting additional data for TodoList
+            expected_time = request.get_json().get("deadline")
+            new_task = request.get_json().get("todo")
+            activity_time = datetime.now(tz=None)
+
+            if new_task and expected_time:
+                # Creating a new TodoList entry
+                todo_update = TodoList(description=new_task, expected_time=expected_time, activity_time=activity_time, category_id=cat_id)
+                todo_db.session.add(todo_update)
+                todo_db.session.commit()
+            elif not (new_task and expected_time):
+                print("You are only changing the name of this category!")
+
+            # Populating the response body
+            body["category_name"] = newCat_name
+            body["description"] = new_task
+            body["category_id"] = cat_id
+            body["todo_id"] = todo_update.id if todo_update else None
+            print(body)
+        else:
+            error = True
+            return jsonify({"error": "Category not found"}), 404
+
     except (KeyError, AttributeError, TypeError, ValueError, IntegrityError) as e:
         error = True
         todo_db.session.rollback()
         return jsonify({"error": "Invalid Operation: " + str(e)}), 400
-        # print (sys.exc_info())
-        
+
     finally:
         todo_db.session.close()
+
     if not error:
         return body
+    
 
 @app.route('/todos/create', methods=['POST'])
 def category():
