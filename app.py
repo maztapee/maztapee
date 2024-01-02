@@ -111,7 +111,6 @@ def edit_category():
             body["description"] = new_task
             body["category_id"] = cat_id
             body["todo_id"] = todo_update.id if todo_update else None
-            print(body)
         else:
             error = True
             return jsonify({"error": "Category not found"}), 404

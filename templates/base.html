@@ -56,9 +56,9 @@
             <br>
             <input type="button" id="submit" value="Submit Task for Scheduling" onclick="closeFormPopup()"/> <button type="button" id="cancel" onclick="closeFormPopup()" style="margin-left: 250px;">Cancel</button>
         </div>
-    <div class="editPopup" id="edit">
+    <form class="editPopup" id="edit">
         {% for category in category %}
-        <h3>Edit {{category.category_name}} Category</h3>
+        <h3 id="category_header">Edit [{{category.category_name}}] Category</h3>
         {% endfor %}
         <div>
             <div>
@@ -81,9 +81,9 @@
         <label for="fname">Enter deadline for new task:    </label><input id="edit_deadline" type="datetime-local"/>
         <br>
         <br>
-        <div><button id="btn_1" onclick="editCategory(this)">Submit</button> <button id="btn_2" onclick="closeEditPopup()">Cancel</button></div>
+        <div><button type="button" id="btn_1" onclick="editCategory(this)">Submit</button> <button type="button" id="btn_2" onclick="closeEditPopup()">Cancel</button></div>
         <br>
-    </div>
+    </form>
     <script src="/static/todo_scripts/add_todo.js"></script>
     <script src="/static/todo_scripts/edit_todo.js"></script>
     <script src="/static/todo_scripts/deleteTodo.js"></script>
