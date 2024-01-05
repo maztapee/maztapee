@@ -77,11 +77,11 @@ def edit_category():
     body = {}
     error = False
     try:
-        category_name = request.get_json()["category_name"]
-        newCat_name = request.get_json()["newCategory_name"].strip() or category_name
+        cat_name = request.get_json()["category_name"]
+        category_name = cat_name.strip()
+        newCat_name = request.get_json()["newCategory_name"] or category_name
         category_update = TodoCategory.query.filter(TodoCategory.category_name==category_name).first()
         category_update.category_name = newCat_name
-        print(newCat_name)
         todo_db.session.add(category_update)
         todo_db.session.commit()
         cat_id = category_update.id
@@ -90,6 +90,7 @@ def edit_category():
         # print (expected_time) {value obtained successfully}
         new_task = request.get_json()["todo"]
         activity_time = datetime.now(tz=None)
+        print(cat_id, expected_time, new_task, activity_time)
         # print (new_task) {value obtained successfully}
         if new_task.strip() and expected_time:
             todo_update = TodoList(description=new_task, expected_time=expected_time, activity_time=activity_time, category_id=cat_id)
@@ -109,7 +110,6 @@ def edit_category():
         todo_db.session.rollback()
         return jsonify({"error": "Invalid Operation: " + str(e)}), 400
         # print (sys.exc_info())
-        
     finally:
         todo_db.session.close()
     if not error:
