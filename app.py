@@ -79,11 +79,18 @@ def edit_category():
     try:
         cat_name = request.get_json()["category_name"]
         category_name = cat_name.strip()
+        category_id = request.get_json()["category_id"]
         newCat_name = request.get_json()["newCategory_name"] or category_name
-        category_update = TodoCategory.query.filter(TodoCategory.category_name==category_name).first()
-        category_update.category_name = newCat_name
-        todo_db.session.add(category_update)
-        todo_db.session.commit()
+        category_update = TodoCategory.query.filter(TodoCategory.id==category_id).first()
+        if category_update:
+            category_update.category_name = newCat_name
+            todo_db.session.add(category_update)
+            todo_db.session.commit()
+        else:
+            # Generate an error response when the category is not found
+            error_message = f"Category with name {category_name} not found."
+            return jsonify({"error": error_message}), 404 
+            
         cat_id = category_update.id
         # category_status = request.get_json()["category_status"] // create column with accompanying migration in the models.py
         expected_time = request.get_json()["deadline"]

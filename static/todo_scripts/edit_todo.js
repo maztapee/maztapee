@@ -70,7 +70,9 @@ for MANIPULATION
         async function postData() {
                 try {
                 //----------------------------Grabbing text input values from the form------------------------------
-                        const categoryName = clickedButton.target.previousSibling.innerHTML
+                        const category_id = clickedButton.target.dataset['editid'];
+                        const cat_name = clickedButton.target.previousSibling.innerHTML
+                        const categoryName = cat_name.trimLeft();
                         const rename = document.getElementById('edit_cat').value;
                         const cat_status = document.getElementById('category_status').value;
                         const deadline_change = document.getElementById('edit_deadline').value;
@@ -80,6 +82,7 @@ for MANIPULATION
                         const response = await fetch('/categories/edit', {
                                 method: 'POST',
                                 body: JSON.stringify({
+                                'category_id': category_id,
                                 'category_name': categoryName,
                                 'newCategory_name': rename,
                                 'category_status': cat_status,
@@ -117,9 +120,6 @@ for MANIPULATION
                 };
         };
 
-
-
-
 //--> Form OnReset Event Handler Function {To restore all form values to default whenever any edit button is clicked}
 
         function formReset(){
@@ -129,13 +129,7 @@ for MANIPULATION
                 console.log("form has been reset");
         };
 
-//----------------------------------Form OnReset Function works as expected------------------------------
-
-
-
-
-
-
+//----------------------------------Form OnReset Function works as expected-----------------------------------
 
 //(3)-->Close Edit PopUp Function { For hiding any open edit forms}
         const closeEditPopup = function(){
@@ -146,14 +140,15 @@ for MANIPULATION
         };
 //----------------------------------close edit popup works as expected----------------------------------------
 
-
-
-
 //(5)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
                 async function submitButton (event){
                         event.preventDefault();
                         
-                        postData();
+                        postData().then(result =>{
+                                if (result) {
+                                        console.log(result.status)
+                                }
+                        });
                         
                 };
                 if (clickedButton){
