@@ -46,6 +46,7 @@
 </div>
 <script src="/static/todo_scripts/edit_todo.js"></script>
 <script src="/static/todo_scripts/deleteTodo.js"></script>
+<script src="/static/todo_scripts/deleteCategory.js"></script>
 <script>
     const currentPage = document.querySelector("#todo_list");
     if (currentPage.childElementCount === 0){
@@ -55,13 +56,6 @@
                                 list_display.innerHTML = "There aren't any todo task for this category <br> Click on edit to add task to this category";
                                 list_display.classList.add("no_task");
                                 },1500);                                         
-                        }
-    // const deleteTodo = document.querySelectorAll('.button4');
-    // deleteTodo.forEach(element => {
-    //     element.addEventListener('click', function handleClick(event){
-    //     });
-    // });
-    import {editCategory} from '/static/todo_scripts/edit_todo.js';
-    editCategory(); 
+                        } 
 </script>
 {% endblock %}

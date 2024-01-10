@@ -47,3 +47,4 @@ const deleteCategoryTrigger = () =>{
     };
 };
 };
+deleteCategoryTrigger();
