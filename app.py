@@ -76,6 +76,7 @@ def categoryDisplay(category_id):
 def edit_category():
     body = {}
     error = False
+    todo_id = 0
     try:
         cat_name = request.get_json()["category_name"]
         category_name = cat_name.strip()
@@ -102,15 +103,18 @@ def edit_category():
         if new_task.strip() and expected_time:
             todo_update = TodoList(description=new_task, expected_time=expected_time, activity_time=activity_time, category_id=cat_id)
             todo_db.session.add(todo_update)
+            todo_db.session.commit()
+            todo_id = todo_update.id
             # print (todo_update.category_id) {value of category_id obtained successfully}
             # print (todo_update.description, todo_update.expected_time) {values changed successfully on the query object}
         elif not new_task.strip() or not expected_time:
             print("you are changing the name of this category!")
             pass
-        todo_db.session.commit()
         body["category_name"] = newCat_name
         body["description"] = new_task
-        body["id"] = cat_id
+        body["category_id"] = cat_id
+        body["todo_id"] = todo_id
+        
         
     except (KeyError, AttributeError, TypeError, ValueError, IntegrityError) as e:
         error = True

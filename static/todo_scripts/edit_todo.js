@@ -46,7 +46,7 @@ for MANIPULATION
                 };
 //----------------------------------OpenEditForm function works as expected---------------------------------------
 
-//--> RenameCat Function for listening and showing form input text-field for accepting category name change input data string
+//(4)--> RenameCat Function for listening and showing form input text-field for accepting category name change input data string
         function RenameCat(){
                 const targetList = document.getElementsByName('rename_cat');
                 let a = targetList.length;
@@ -66,7 +66,7 @@ for MANIPULATION
         };
 //----------------------------------RenameCat Function works as expected------------------------------------------
 
-//--> Category Edit Fetch Function for posting data to effect category name changes and addition of todo tasks
+//(5)--> Category Edit Fetch Function for posting data to effect category name changes and addition of todo tasks
         async function postData() {
                 try {
                 //----------------------------Grabbing text input values from the form------------------------------
@@ -94,7 +94,7 @@ for MANIPULATION
                                 }
                         })
                         const responseData = await response.json();
-                        console.log('Response data:', responseData);
+                        return responseData;
                         
                 } catch (error) {
                         // Handle errors here
@@ -120,7 +120,7 @@ for MANIPULATION
                 };
         };
 
-//--> Form OnReset Event Handler Function {To restore all form values to default whenever any edit button is clicked}
+//(6)--> Form OnReset Event Handler Function {To restore all form values to default whenever any edit button is clicked}
 
         function formReset(){
                 //resetting all fields in edit category forms back to their default values
@@ -131,7 +131,7 @@ for MANIPULATION
 
 //----------------------------------Form OnReset Function works as expected-----------------------------------
 
-//(3)-->Close Edit PopUp Function { For hiding any open edit forms}
+//(7)-->Close Edit PopUp Function { For hiding any open edit forms}
         const closeEditPopup = function(){
                 edit.classList.remove("showEditPopup");
                 button.style.visibility="visible";
@@ -140,16 +140,68 @@ for MANIPULATION
         };
 //----------------------------------close edit popup works as expected----------------------------------------
 
-//(5)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
+
+//(8)-->Category Name change Function{ For detecting if category name and changing respective DOM element}
+        const categoryNameChange=function (name,id) {
+                //Manipulate the DOM elements holding Category Elements Display
+                /*TODO:
+                1. Determine what aspect of todo task user is edit 
+                        (a) Category Name change only {Addition of Category is in another module}
+                        (b) Completion Status****{To be implemented later}
+                        (c) Category Name and Addition of Sub-tasks (todos) {No name change for sub-tasks}
+                */
+
+                const category_list = document.querySelectorAll(".list");
+                for (let i=0; i<category_list.length; i++){
+                        if (category_list[i].dataset.category_id == id){ 
+                        const atagElement = category_list[i].children[1];
+                        atagElement.innerHTML = name;
+                        break;
+                        }
+                        else{
+                                // TODO: what if the IF considtion is not met?????
+                        }
+                };
+                
+        };
+//(9)--> Add Todo Task Function { for adding new task to the DOM when each category editing receives new todo task to add}
+        const addTodoTask = function(newTask, taskID){
+                //TODO: Use server response to extract new task added to a specific category to display on the DOM
+                // 1. Use click event to get category that was edited. 
+                // 2. Determine if Category that was edited has any existing todo tasks displayed on the DOM
+                // 2a. If no todo task displayed, implement with appending an element to an existing element
+                // 2b. Else, implement by appending task to the existing LIST ELEMENT holding the list of tasks 
+                console.log(`Received new todo task: ${newTask} >>>>> with task id${taskID}`);
+
+               //--> CurrPage>>>> To help determine current number of subtasks displayed by a category!
+               const currPage = document.querySelector("#list_display");
+
+               //-->todo_list1>>>>
+               const todo_list1 = document.getElementById("todo_list");
+
+               //DOM Elements created to add new subtask to a specific Category.
+               const todo_description1 = document.createElement('LI');
+               const delete_button1 = document.createElement('button');
+               const pTag_button1 = document.createElement('p');
+               const pTag_todo1 = document.createElement('p');
+               const pTag_checkbox1 = document.createElement('p');
+               const todo_span1 = document.createElement('span');
+               const input_check1 = document.createElement('input');
+               //---------------------For Adding subtasks to a specific category---------------------------
+        };
+
+//(?)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
                 async function submitButton (event){
                         event.preventDefault();
                         
-                        postData().then(result =>{
-                                if (result) {
-                                        console.log(result.status)
-                                }
-                        });
-                        
+                        const response = await postData();
+                        const new_cat_name = response['category_name'];
+                        const category_id = response['category_id'];
+                        const new_task = response['description'];
+                        const task_id = response['todo_id'];
+                        categoryNameChange(new_cat_name, category_id);
+                        addTodoTask(new_task, task_id);
+                        //TODO--> Implement DOM Manipulation in the category name change function  categoryNameChange()   
                 };
                 if (clickedButton){
                         clickedButton = null;
