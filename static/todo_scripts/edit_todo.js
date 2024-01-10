@@ -168,26 +168,85 @@ for MANIPULATION
         const addTodoTask = function(newTask, taskID){
                 //TODO: Use server response to extract new task added to a specific category to display on the DOM
                 // 1. Use click event to get category that was edited. 
-                // 2. Determine if Category that was edited has any existing todo tasks displayed on the DOM
-                // 2a. If no todo task displayed, implement with appending an element to an existing element
-                // 2b. Else, implement by appending task to the existing LIST ELEMENT holding the list of tasks 
+                // 2. Is the current URL same with that of the URL of the category that was clicked
+                // 2a. {if YES}>>>>>Add to the DOM with AJAX
+                // 2b. {if NO}>>>>>>Do nothing to the DOM
+                // 3. {if 2a}>>>>>>Determine if Category that was edited has any existing todo tasks displayed on the DOM
+                // 3a. If no todo task displayed, implement with appending an element to an existing element
+                // 3b. Else, implement by appending task to the existing LIST ELEMENT holding the list of tasks 
                 console.log(`Received new todo task: ${newTask} >>>>> with task id${taskID}`);
 
-               //--> CurrPage>>>> To help determine current number of subtasks displayed by a category!
-               const currPage = document.querySelector("#list_display");
+               //DOM Elements created to add new subtask to a specific Category..................................
+               const display_list = document.createElement('ul')
+               const todo_list = document.createElement('li');
+               const delete_button = document.createElement('button');
+               const pTag_button = document.createElement('p');
+               const pTag_todo = document.createElement('p');
+               const pTag_checkbox = document.createElement('p');
+               const todo_span = document.createElement('span');
+               const input_check = document.createElement('input');
+               const task_list = document.getElementById("todo_list");//List housing todo task
+               const list_display = document.getElementById('list_display');//Unorder List housing todo_list
+               //---------------------For Adding subtasks to a specific category---------------------------------
 
-               //-->todo_list1>>>>
-               const todo_list1 = document.getElementById("todo_list");
+                let catIdFromURL = window.location.pathname;
+                let currURL = clickedButton.target.previousSibling.pathname;
+                let curr_URL = currURL + '/';
+                if(catIdFromURL==curr_URL){
+                        console.log(`Both current URL ${curr_URL} and ${catIdFromURL} are the same`);
+                        //--> CurrPage>>>> To help determine current number of subtasks loaded and displayed by a category!
+                        //--> CurrPage is the div created to house todo list
+                        const currPage = document.querySelector("#list_display");
+                        if(currPage.children.length > 0){
+                                console.log(currPage.children);
+                                delete_button.setAttribute("classname","button4");
+                                delete_button.dataset.removeid = taskID;
+                                delete_button.innerHTML = "&cross;";
+                                pTag_button.append(delete_button);
+                                todo_list.setAttribute("id", "todo_list");
+                                todo_span.innerHTML = newTask;
+                                pTag_todo.append(todo_span);
+                                input_check.dataset.id = taskID;
+                                input_check.setAttribute("classname", "check");
+                                input_check.setAttribute("id", "check_status");
+                                input_check.setAttribute("type", "checkbox");
+                                pTag_checkbox.append(input_check);
+                                todo_list.append(pTag_button);
+                                todo_list.append(pTag_todo);
+                                todo_list.append(pTag_checkbox);
+                                task_list.appendChild(todo_list);
+                                alert(`New Tasks Have Been Added Successfully!`)
+                        }else{
+                                delete_button.setAttribute("classname","button4");
+                                delete_button.dataset.removeid = taskID;
+                                delete_button.innerHTML = "&cross;";
+                                pTag_button.append(delete_button);
+                                todo_list.setAttribute("id", "todo_list");
+                                todo_span.innerHTML = newTask;
+                                pTag_todo.append(todo_span);
+                                input_check.dataset.id = taskID;
+                                input_check.setAttribute("classname", "check");
+                                input_check.setAttribute("id", "check_status");
+                                input_check.setAttribute("type", "checkbox");
+                                pTag_checkbox.append(input_check);
+                                todo_list.append(pTag_button);
+                                todo_list.append(pTag_todo);
+                                todo_list.append(pTag_checkbox);
+                                display_list.setAttribute("id", "todo_list");
+                                display_list.appendChild(todo_list);
+                                list_display.innerHTML = " ";
+                                list_display.classList.remove("no_task");
+                                list_display.appendChild(display_list);
+                                alert(`New Tasks Have Been Created Successfully!`)
+                        }
+                }else{
+                        //--> Todo List already loaded on the DOM
+                        const todo_list1 = document.getElementById("todo_list");
+                        console.log(`Both current URL ${curr_URL} and ${catIdFromURL} are NOT the same`);
+                };
+                console.log(catIdFromURL, curr_URL);
+               
 
-               //DOM Elements created to add new subtask to a specific Category.
-               const todo_description1 = document.createElement('LI');
-               const delete_button1 = document.createElement('button');
-               const pTag_button1 = document.createElement('p');
-               const pTag_todo1 = document.createElement('p');
-               const pTag_checkbox1 = document.createElement('p');
-               const todo_span1 = document.createElement('span');
-               const input_check1 = document.createElement('input');
-               //---------------------For Adding subtasks to a specific category---------------------------
         };
 
 //(?)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
