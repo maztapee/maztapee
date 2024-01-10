@@ -174,7 +174,7 @@ for MANIPULATION
                 // 3. {if 2a}>>>>>>Determine if Category that was edited has any existing todo tasks displayed on the DOM
                 // 3a. If no todo task displayed, implement with appending an element to an existing element
                 // 3b. Else, implement by appending task to the existing LIST ELEMENT holding the list of tasks 
-                console.log(`Received new todo task: ${newTask} >>>>> with task id${taskID}`);
+                // console.log(`Received new todo task: ${newTask} >>>>> with task id${taskID}`);
 
                //DOM Elements created to add new subtask to a specific Category..................................
                const display_list = document.createElement('ul')
@@ -193,7 +193,7 @@ for MANIPULATION
                 let currURL = clickedButton.target.previousSibling.pathname;
                 let curr_URL = currURL + '/';
                 if(catIdFromURL==curr_URL){
-                        console.log(`Both current URL ${curr_URL} and ${catIdFromURL} are the same`);
+                        // console.log(`Both current URL ${curr_URL} and ${catIdFromURL} are the same`);
                         //--> CurrPage>>>> To help determine current number of subtasks loaded and displayed by a category!
                         //--> CurrPage is the div created to house todo list
                         const currPage = document.querySelector("#list_display");
@@ -244,9 +244,6 @@ for MANIPULATION
                         const todo_list1 = document.getElementById("todo_list");
                         console.log(`Both current URL ${curr_URL} and ${catIdFromURL} are NOT the same`);
                 };
-                console.log(catIdFromURL, curr_URL);
-               
-
         };
 
 //(?)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
@@ -265,6 +262,17 @@ for MANIPULATION
                 if (clickedButton){
                         clickedButton = null;
                 };
-//TODO grab edit field values
-//TODO validate field values 
-//TODO send data to database for CRUD of todo_list
+
+
+/*TODO:
+        1. Implement self disappearing messages for confirmation of successful operations after:
+                a. Delete
+                b. Status Update
+                c. Creation
+                d. Add Category Name/Todo Task Validator to block same name in Category Creation and Change and Todo Task Creation
+        2. Bubble the edit button with animation after a period of time any category is highlighted or hovered
+        3. Add APIs for World Reminder, National Reminders
+        4. Construct the rchitecture for implementing URGENT Reminders
+        5. Optimize the other files/functions already scripted
+
+*/
