@@ -156,12 +156,14 @@ for MANIPULATION
                         if (category_list[i].dataset.category_id == id){ 
                         const atagElement = category_list[i].children[1];
                         atagElement.innerHTML = name;
+                        clickedButton.target.dataset['cat_name'] = name;
                         break;
                         }
                         else{
                                 // TODO: what if the IF considtion is not met?????
                         }
                 };
+                console.log(clickedButton);
                 
         };
 //(9)--> Add Todo Task Function { for adding new task to the DOM when each category editing receives new todo task to add}
@@ -265,14 +267,6 @@ for MANIPULATION
 
 
 /*TODO:
-        1. Implement self disappearing messages for confirmation of successful operations after:
-                a. Delete
-                b. Status Update
-                c. Creation
-                d. Add Category Name/Todo Task Validator to block same name in Category Creation and Change and Todo Task Creation
-        2. Bubble the edit button with animation after a period of time any category is highlighted or hovered
-        3. Add APIs for World Reminder, National Reminders
-        4. Construct the rchitecture for implementing URGENT Reminders
-        5. Optimize the other files/functions already scripted
+
 
 */
