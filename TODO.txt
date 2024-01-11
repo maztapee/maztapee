@@ -1,0 +1,24 @@
+TODID:
+        1. Embedded a Jinja 2.o Base Template into the HTML (base.html) file to support the following HTML pages
+                (a) about.html (b) category_display.html (c) contact_us.html (d) login_signup.html (e) welcome.html
+                (f) add_reminder.html
+        2. Modelled a database with Postgres, and created 3 tables (a) todo_category (b) todo_database
+                (c)world_reminder {configuration in config.py}
+        3. Delete Functionality for both category and todo task implemented
+        4. Add Category Functionality implemented
+        5. Edit Catefory Functionality implemented
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+TODO:
+        1. Implement self disappearing messages for confirmation of successful operations after:
+                a. Delete
+                b. Status Update
+                c. Creation
+                d. Add Category Name/Todo Task Validator to block same name in Category Creation and Change and Todo Task Creation
+        2. Bubble the edit button with animation after a period of time any category is highlighted or hovered
+        3. Add APIs for World Reminder, National Reminders
+        4. Construct the rchitecture for implementing URGENT Reminders
+        5. Optimize the other files/functions already scripted

@@ -1,3 +1,4 @@
+
 const edit_buttons = document.querySelectorAll('.button2');
 edit_buttons.forEach(edit_button => {
         edit_button.addEventListener('click', function handleClick(event) {
@@ -140,8 +141,8 @@ function editCategory(e) {
                                 'category_status': cat_status,
                                 'deadline': deadline_change,
                                 'todo': new_task
-                        }),
-                        headers: {
+                                }),
+                                headers: {
                                 'Content-Type': 'application/json'
                         }
                 })
