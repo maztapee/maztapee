@@ -6,6 +6,7 @@
  <link rel="stylesheet" href="{{url_for('static', filename='css/base_template.css')}}"/> 
  <link rel="stylesheet" href="{{url_for('static', filename='css/category_display.css')}}"/>
  <link rel="stylesheet" href="{{url_for('static', filename='css/edit_todo.css')}}"/>
+ <link rel="stylesheet" href="{{url_for('static', filename='css/message.css')}}"/>
 {% endblock %}   
 
 {% block content %}
@@ -17,7 +18,7 @@
             <ul id="cat_list">
                 {% for category in category_lists %} <!-- this is the flask template(jinja2) ()for embedding python code in html-->                      
                     <li data-category_id="{{category.id}}" class="list">
-                        <button data-removeid="{{category.id}}" class="button1">&cross;</button><a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" data-cat_name ="{{category.category_name}}" onclick="clickEditEvent()">Edit</button>
+                        <button data-removeid="{{category.id}}" class="button1">&cross;</button><a href="/categories/{{category.id}}"> {{category.category_name}} </a><button data-editid="{{category.id}}" class="button2" data-cat_name ="{{category.category_name}}" onclick="editClickEvent(event)">Edit</button>
                     </li>
                 {% endfor %}
             </ul>
@@ -44,6 +45,9 @@
         </div>
     </div>
 </div>
+<script src="/static/todo_scripts/edit_todo.js"></script>
+<script src="/static/todo_scripts/deleteTodo.js"></script>
+<script src="/static/todo_scripts/message.js"></script>
 <script>
     const currentPage = document.querySelector("#todo_list");
     if (currentPage.childElementCount === 0){

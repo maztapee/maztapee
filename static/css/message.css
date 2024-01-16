@@ -1,0 +1,32 @@
+.message {
+  opacity: 0;
+  color: #0ba310;
+  position: fixed;
+  top: 40px;
+  left:60%;
+
+  }
+  .success {
+    visibility: visible;
+    position: absolute;
+    right: 50px;
+    top: 150px;
+    opacity: 1;
+    color: #ffffff;
+    background-color: black;
+    border-radius: 5px;
+    width: 400px;
+    height: 20px;
+    padding: 10px;
+    text-decoration: solid;
+    text-align: center;
+    transform: translateX(-50%);
+    transition: opacity 5.5s ease-in-out;
+  }
+  .error {
+    background-color: #FF5733;
+    visibility: visible;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: opacity 3.5s ease-in-out;
+  }
