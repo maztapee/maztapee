@@ -173,9 +173,7 @@ for MANIPULATION
                         else{
                                 // TODO: what if the IF considtion is not met?????
                         }
-                };
-                console.log(clickedButton);
-                
+                };        
         };
 //(9)--> Add Todo Task Function { for adding new task to the DOM when each category editing receives new todo task to add}
         const addTodoTask = function(newTask, taskID){
@@ -212,7 +210,6 @@ for MANIPULATION
                         const currPage = document.querySelector("#list_display");
                         if(currPage.children.length > 0){
                                 if(newTask.trim()){
-                                        console.log(currPage.children);
                                         delete_button.setAttribute("classname","button4");
                                         delete_button.dataset.removeid = taskID;
                                         delete_button.innerHTML = "&cross;";
@@ -229,7 +226,7 @@ for MANIPULATION
                                         todo_list.append(pTag_todo);
                                         todo_list.append(pTag_checkbox);
                                         task_list.appendChild(todo_list);
-                                        showMessage(`New Tasks Have Been Added Successfully!`, "success");
+                                        showMessage("New Tasks Have Been Added Successfully!", "success");
                                 }
                         }else{
                                 delete_button.setAttribute("classname","button4");
@@ -293,4 +290,8 @@ for MANIPULATION
                         f. Task Addition to a Category
                 2. Add Category Name/Todo Task Validator to block same name in Category Creation and Change and Todo Task Creation
                 3. Delete immediately added todo tasks
+*/
+/*
+TODID:
+                1. Successfully constructed a disappearing message template. (To Replicate Them All Over)
 */
