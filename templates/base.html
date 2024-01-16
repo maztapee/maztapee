@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/base_template.css"/> 
+    <link rel="stylesheet" href="static/css/message.css"/> 
     <link rel="stylesheet" href="static/css/edit_todo.css"/>
-    {% block base_css %}<link rel="stylesheet" href="static/css/edit_todo.css"/> {% endblock %}
+    
+    {% block base_css %} {% endblock %}
     {% block add_remind_css %} {% endblock %}
     {% block welcome_css %} {% endblock %}
     {% block category_css %} {% endblock %}
@@ -33,6 +35,9 @@
         <a id="urg" class="general" href="urgent.html">Urgent Reminders</a>
     </nav>
     <br>
+    <br>
+    <div id="message" class="message"><h2>I am here</h2></div>
+    
     
         
     </div>
@@ -94,3 +99,14 @@
 </body>
 
 </html>
+
+
+
+/*
+    TODO:
+        (1) Theme Colors Selection
+        (2) App Logo Design
+        (3) How to integrate any of the front-end flavours 
+        (4) Remove all non-repetitive elements from BASE Template
+        (5) Use app state management to manage login sessions and enhance security of the app
+*/

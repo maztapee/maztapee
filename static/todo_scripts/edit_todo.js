@@ -21,7 +21,7 @@ for MANIPULATION
         });
 //----------------------------------click event listener works as expected-------------------------------------
 
-//(2)-->Edit Button Click Handler{For handling and return edit button click event}
+//(2)-->Edit Button Click Handler{For handling and returning the click event of the edit button that was clicked}
         function editClickEvent(event){
                 if(event){
                         openEditForm(event);
@@ -66,6 +66,7 @@ for MANIPULATION
         };
 //----------------------------------RenameCat Function works as expected------------------------------------------
 
+
 //(5)--> Category Edit Fetch Function for posting data to effect category name changes and addition of todo tasks
         async function postData() {
                 try {
@@ -77,7 +78,15 @@ for MANIPULATION
                         const cat_status = document.getElementById('category_status').value;
                         const deadline_change = document.getElementById('edit_deadline').value;
                         const new_task = document.getElementById('new_task').value;
-                        console.log(categoryName, rename, cat_status, deadline_change, new_task);
+                        // //console.log(categoryName, rename, cat_status, deadline_change, new_task);
+
+                        if((!new_task && deadline_change) || (new_task && !deadline_change)){
+                                alert("To add a task to a category, you must enter a task and expected date of completion");
+                                throw new Error("Missing or Invalid Values for Task Description or Task Reminder Date");
+                        };
+                //--------------------------------------------------------------------------------------------------
+
+                //--------------------------------------------------------------------------------------------------
                         // Perform the fetch operation
                         const response = await fetch('/categories/edit', {
                                 method: 'POST',
@@ -119,6 +128,8 @@ for MANIPULATION
                                 }, 1500); 
                 };
         };
+//----------------------------------PostData Function works as expected-------------------------------------------
+
 
 //(6)--> Form OnReset Event Handler Function {To restore all form values to default whenever any edit button is clicked}
 
@@ -162,9 +173,7 @@ for MANIPULATION
                         else{
                                 // TODO: what if the IF considtion is not met?????
                         }
-                };
-                console.log(clickedButton);
-                
+                };        
         };
 //(9)--> Add Todo Task Function { for adding new task to the DOM when each category editing receives new todo task to add}
         const addTodoTask = function(newTask, taskID){
@@ -200,24 +209,25 @@ for MANIPULATION
                         //--> CurrPage is the div created to house todo list
                         const currPage = document.querySelector("#list_display");
                         if(currPage.children.length > 0){
-                                console.log(currPage.children);
-                                delete_button.setAttribute("classname","button4");
-                                delete_button.dataset.removeid = taskID;
-                                delete_button.innerHTML = "&cross;";
-                                pTag_button.append(delete_button);
-                                todo_list.setAttribute("id", "todo_list");
-                                todo_span.innerHTML = newTask;
-                                pTag_todo.append(todo_span);
-                                input_check.dataset.id = taskID;
-                                input_check.setAttribute("classname", "check");
-                                input_check.setAttribute("id", "check_status");
-                                input_check.setAttribute("type", "checkbox");
-                                pTag_checkbox.append(input_check);
-                                todo_list.append(pTag_button);
-                                todo_list.append(pTag_todo);
-                                todo_list.append(pTag_checkbox);
-                                task_list.appendChild(todo_list);
-                                alert(`New Tasks Have Been Added Successfully!`)
+                                if(newTask.trim()){
+                                        delete_button.setAttribute("classname","button4");
+                                        delete_button.dataset.removeid = taskID;
+                                        delete_button.innerHTML = "&cross;";
+                                        pTag_button.append(delete_button);
+                                        todo_list.setAttribute("id", "todo_list");
+                                        todo_span.innerHTML = newTask;
+                                        pTag_todo.append(todo_span);
+                                        input_check.dataset.id = taskID;
+                                        input_check.setAttribute("classname", "check");
+                                        input_check.setAttribute("id", "check_status");
+                                        input_check.setAttribute("type", "checkbox");
+                                        pTag_checkbox.append(input_check);
+                                        todo_list.append(pTag_button);
+                                        todo_list.append(pTag_todo);
+                                        todo_list.append(pTag_checkbox);
+                                        task_list.appendChild(todo_list);
+                                        showMessage("New Tasks Have Been Added Successfully!", "success");
+                                }
                         }else{
                                 delete_button.setAttribute("classname","button4");
                                 delete_button.dataset.removeid = taskID;
@@ -248,24 +258,40 @@ for MANIPULATION
                 };
         };
 
-//(?)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
+//(10)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
                 async function submitButton (event){
                         event.preventDefault();
-                        
-                        const response = await postData();
-                        const new_cat_name = response['category_name'];
-                        const category_id = response['category_id'];
-                        const new_task = response['description'];
-                        const task_id = response['todo_id'];
-                        categoryNameChange(new_cat_name, category_id);
-                        addTodoTask(new_task, task_id);
-                        //TODO--> Implement DOM Manipulation in the category name change function  categoryNameChange()   
+                        try {
+                                const response = await postData();
+                                const new_cat_name = response['category_name'];
+                                const category_id = response['category_id'];
+                                const new_task = response['description'];
+                                const task_id = response['todo_id'];
+                                categoryNameChange(new_cat_name, category_id);
+                                addTodoTask(new_task, task_id);
+                                //TODO--> Implement DOM Manipulation in the category name change function  categoryNameChange()
+                        } catch (error) {
+                                return ("This error has occurred: " + error.message);
+                        }   
                 };
+//---------------------------------Resetting the variable holding the click event to null---------------------                
                 if (clickedButton){
                         clickedButton = null;
                 };
 
 
 /*TODO:
-        #Comments or Suggestions for Future Recommendations, Features, Functionalities, Code Base Management or Optimization
+                1. Implement self disappearing messages for successfully completing the following edit operations:
+                        a. Category Delete
+                        b. Category Status Update
+                        c. Category Creation(***)
+                        d. Task Delete
+                        e. Task Status Update
+                        f. Task Addition to a Category
+                2. Add Category Name/Todo Task Validator to block same name in Category Creation and Change and Todo Task Creation
+                3. Delete immediately added todo tasks
+*/
+/*
+TODID:
+                1. Successfully constructed a disappearing message template. (To Replicate Them All Over)
 */
