@@ -1,0 +1,39 @@
+        const validate = (cid, cname, crename, cdaate, ctask, cstatus) => {
+                
+                try {
+                      if(!cid) return "Category ID must be provided";  
+                      if(!cname) return "Category nsme not found";
+                      if(crename && crename.length > 50) return "New name too long";
+                      if((cdaate && !ctask) || (!cdaate && ctask)) return "task depends on date.";
+                      return true;
+                } catch (error) {
+                        console.log(error, error.message);     
+                        return (error?.message);    
+                }
+        }
+//(5)-->Form Value Constructor Function {for gathering EDIT form input values to pass to the fetch request declared in postData()}
+        function editFormValues(cid,cname, crename, cdate, ctask, cstatus){
+                const validated = validate(cid, cname, crename, cdate, ctask, cstatus);   
+               if(validated !== true){
+                 throw(new Error(validated));
+               }
+                return validated;
+
+        };
+//---------------------------------EditFormValues Function works as expected--------------------------------------
+
+
+//()--> Category Edit Fetch Function for posting data to effect category name changes and addition of todo tasks
+        async function postData() {
+                try {
+                //----------------------------Grabbing text input values from the form------------------------------
+                        const category_id = clickedButton.target.dataset['editid'];
+                        const cat_name = clickedButton.target.previousSibling.innerHTML
+                        const categoryName = cat_name.trimLeft();
+                        const rename = document.getElementById('edit_cat').value;
+                        const cat_status = document.getElementById('category_status').value;
+                        const deadline_change = document.getElementById('edit_deadline').value;
+                        const new_task = document.getElementById('new_task').value;
+                        //console.log(categoryName, rename, cat_status, deadline_change, new_task);
+                //--------------------------------------------------------------------------------------------------
+                        const isvalid = editFormValues(category_id, categoryName, rename, deadline_change, new_task);
