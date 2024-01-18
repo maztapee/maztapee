@@ -91,40 +91,7 @@
                     )
         });        
     }
-    createCategory();
-
-
-    // Delete () ===> deleting a category of todo items implies deleting the relational items related in the database as well
-    const deleteCategoryTrigger = () =>{
-            const deleteButton = document.querySelectorAll('.button');
-            for(let i=0; i< deleteButton.length; i++){
-            
-                const deletion = deleteButton[i];
-                deletion.onclick = function (e){
-                
-                
-                    if(confirm("You are about to delete a Category, please confirm to continue")) {
-                    console.log('event', e);
-                    const cat_id = e.target.dataset['removeid'];
-                    fetch('/categories/'+cat_id+'/delete', {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                    })
-                    console.log(cat_id);
-                    deletion.parentElement.remove();
-
-                };  
-                
-                
-            };
-        };
-     };
-    
-    deleteCategoryTrigger();
-
-    
+    createCategory();    
 </script>
 
 

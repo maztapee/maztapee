@@ -12,6 +12,7 @@ function closeFormPopup() {
 
     form.classList.remove("showFormPopup");
     button.style.visibility="visible";
+    form.reset();
 };
 
 
@@ -21,13 +22,12 @@ const createRecord = function() {
     submit_button.addEventListener('click', function(e){
         e.preventDefault(); //with submit event triggered, prevented the default behaviour of the web browser
 
-        //global variable declaration in function "createRecord"
-        const cat_name = document.getElementById('cat_name').value;
-        const todo_task = document.getElementById('todo_task').value;
-        const deadline = document.getElementById('deadline').value;
-        const  time = new Date();
-        const selectedDate = new Date(deadline);
-
+            //global variable declaration in function "createRecord"
+            const cat_name = document.getElementById('cat_name').value;
+            const todo_task = document.getElementById('todo_task').value;
+            const deadline = document.getElementById('deadline').value;
+            const  time = new Date();
+            const selectedDate = new Date(deadline);
             //Validation of values from user
             if(!cat_name || cat_name.length < 1 || !todo_task || todo_task.length < 1 || !deadline || selectedDate < time){//validation of category names: prevention of empty strings, other checks such as trim() will be implemented.
                 //Need to validate for duplicate cat_name from database table of category names (todo_category under flaskr)
@@ -72,6 +72,7 @@ const createRecord = function() {
                         //
                         // AJAX Recent todo display
                         // const todo_list = document.createElement('UL');
+                        addForm.reset();
  
                     })
                     .catch(   
@@ -86,3 +87,12 @@ const createRecord = function() {
     });        
 }
 createRecord();
+
+/*
+    TODO:
+        1. Optimize this script
+        2. Insert appropriate documentary comments for maintainability
+        3. Add disappearing messages for both successful and erroneous category addition
+*/
+
+

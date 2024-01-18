@@ -1,39 +1,41 @@
-        const validate = (cid, cname, crename, cdaate, ctask, cstatus) => {
+const deleteButton = document.querySelectorAll('.button1');
+    for(let i=0; i< deleteButton.length; i++){
+    
+        const deletion = deleteButton[i];
+        deletion.onclick = function (e){
+            if(confirm("You are about to delete a Category, please confirm to continue")) {
+            console.log('event', e);
+            const cat_id = e.target.dataset['removeid'];
+             
+            .then(function(deleteResponse){
                 
-                try {
-                      if(!cid) return "Category ID must be provided";  
-                      if(!cname) return "Category nsme not found";
-                      if(crename && crename.length > 50) return "New name too long";
-                      if((cdaate && !ctask) || (!cdaate && ctask)) return "task depends on date.";
-                      return true;
-                } catch (error) {
-                        console.log(error, error.message);     
-                        return (error?.message);    
-                }
-        }
-//(5)-->Form Value Constructor Function {for gathering EDIT form input values to pass to the fetch request declared in postData()}
-        function editFormValues(cid,cname, crename, cdate, ctask, cstatus){
-                const validated = validate(cid, cname, crename, cdate, ctask, cstatus);   
-               if(validated !== true){
-                 throw(new Error(validated));
-               }
-                return validated;
+                return deleteResponse.json();
+            })
+            .then(function(deleteData){
+                const first = deleteData.url.toLowerCase();
+                const second = (location.href + 'delete').toLowerCase();
+                const compared = first === second;
+                console.log(compared);
 
-        };
-//---------------------------------EditFormValues Function works as expected--------------------------------------
-
-
-//()--> Category Edit Fetch Function for posting data to effect category name changes and addition of todo tasks
-        async function postData() {
-                try {
-                //----------------------------Grabbing text input values from the form------------------------------
-                        const category_id = clickedButton.target.dataset['editid'];
-                        const cat_name = clickedButton.target.previousSibling.innerHTML
-                        const categoryName = cat_name.trimLeft();
-                        const rename = document.getElementById('edit_cat').value;
-                        const cat_status = document.getElementById('category_status').value;
-                        const deadline_change = document.getElementById('edit_deadline').value;
-                        const new_task = document.getElementById('new_task').value;
-                        //console.log(categoryName, rename, cat_status, deadline_change, new_task);
-                //--------------------------------------------------------------------------------------------------
-                        const isvalid = editFormValues(category_id, categoryName, rename, deadline_change, new_task);
+                if (compared){
+                    const showDisplay = document.getElementById('no_task');
+                    const cat_display = document.getElementById('cat_display');
+                    cat_display.style.display = 'none';
+                    setTimeout(function (){
+                        showDisplay.style.display = 'block';
+                        cat_display.style.display = 'block';
+                        cat_display.innerHTML = "Select any other category to view";
+                        cat_display.classList.add("no_task");
+                    }, 
+                    3000);
+                };
+                
+            })
+            .catch(error =>{
+                console.log('Error:', error);
+            });
+            console.log(cat_id);
+            deletion.parentElement.remove(); 
+        };      
+    };
+};

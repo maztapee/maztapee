@@ -161,13 +161,14 @@ for MANIPULATION
                         (b) Completion Status****{To be implemented later}
                         (c) Category Name and Addition of Sub-tasks (todos) {No name change for sub-tasks}
                 */
-
                 const category_list = document.querySelectorAll(".list");
                 for (let i=0; i<category_list.length; i++){
                         if (category_list[i].dataset.category_id == id){ 
                         const atagElement = category_list[i].children[1];
+                        const oldName = atagElement.innerHTML;
                         atagElement.innerHTML = name;
                         clickedButton.target.dataset['cat_name'] = name;
+                        showMessage(`${oldName} category has been renamed to ${name} successfully`, 'success');
                         break;
                         }
                         else{
@@ -199,7 +200,6 @@ for MANIPULATION
                const task_list = document.getElementById("todo_list");//List housing todo task
                const list_display = document.getElementById('list_display');//Unorder List housing todo_list
                //---------------------For Adding subtasks to a specific category---------------------------------
-
                 let catIdFromURL = window.location.pathname;
                 let currURL = clickedButton.target.previousSibling.pathname;
                 let curr_URL = currURL + '/';
@@ -249,12 +249,13 @@ for MANIPULATION
                                 list_display.innerHTML = " ";
                                 list_display.classList.remove("no_task");
                                 list_display.appendChild(display_list);
-                                alert(`New Tasks Have Been Created Successfully!`)
+                                showMessage("New task has been added to your category successfully!", "success");
                         }
                 }else{
                         //--> Todo List already loaded on the DOM
                         const todo_list1 = document.getElementById("todo_list");
                         console.log(`Both current URL ${curr_URL} and ${catIdFromURL} are NOT the same`);
+                        //todo tasks are added only to the database
                 };
         };
 

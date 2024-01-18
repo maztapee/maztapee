@@ -22,6 +22,7 @@ const deleteTodoTrigger = () =>{
                         
                     .then(function (){
                         deletion.parentElement.parentElement.remove();
+                        showMessage("Task has been deleted successfully!", "success");
 
                         const currentPage = document.querySelector("#todo_list");
                         if (currentPage.childElementCount === 0){
