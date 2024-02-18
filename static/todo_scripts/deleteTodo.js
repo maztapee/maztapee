@@ -1,6 +1,12 @@
-//Delete todo item function () ===> deleting tasks of a specified category
-
-
+const deleteReq = async function (todo_id){
+    
+    fetch('/todos/'+todo_id+'/delete', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+        })
+};
 const deleteTodoTrigger = () =>{
     //--------------------global variable declaration---------------------------------------------------------------------------------------
         const deleteButton = document.querySelectorAll('.button4');
@@ -13,14 +19,8 @@ const deleteTodoTrigger = () =>{
                 if(confirm("You are about to delete a task in this category, please confirm to continue")) {
                     
                     const todo_id = e.target.dataset['removeid'];
-                    fetch('/todos/'+todo_id+'/delete', {
-                        method: 'DELETE',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                        })
-                        
-                    .then(function (){
+                    const todo_delete = deleteReq(todo_id);
+                    todo_delete.then(function (){
                         deletion.parentElement.parentElement.remove();
                         showMessage("Task has been deleted successfully!", "success");
 
