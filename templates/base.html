@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/base_template.css"/> 
-    <link rel="stylesheet" href="static/css/message.css"/> 
-    <link rel="stylesheet" href="static/css/edit_todo.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_template.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/message.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_todo.css') }}">
+
+    <!-- ----------------------------javascript files imports-------------------------------------------- -->
+    
+
     
     {% block base_css %} {% endblock %}
     {% block add_remind_css %} {% endblock %}
@@ -37,17 +41,13 @@
     <br>
     <br>
     <div id="message" class="message"><h2>I am here</h2></div>
-    
-    
-        
-    </div>
     <br>
     <div class="content">
         {% block content %} {% endblock %}
     </div>
     <br>
     <div class="stick"><input class="button" id="click_button" type="button" onclick="openFormPopup()" value="Click here to schedule a task    &#9202"></div>
-        <div class="formPopup" id="form">
+    <form class="formPopup" id="form">
             <h3>Schedule a task reminder</h3>
             <label for="fname">Add category for this task:    </label><input id="cat_name" type="text" placeholder="Task Category"/>
             <br>
@@ -61,8 +61,8 @@
             <label for="fname">Choose a deadline you want for this task:    </label><input id="deadline" type="datetime-local" />
             <br>
             <br>
-            <input type="button" id="submit" value="Submit Task for Scheduling" onclick="closeFormPopup()"/> <button type="button" id="cancel" onclick="closeFormPopup()" style="margin-left: 250px;">Cancel</button>
-        </div>
+            <input type="button" id="submit" value="Submit Task for Scheduling" onclick="createCategory()"/> <button type="button" id="cancel" onclick="closeFormPopup()" style="margin-left: 250px;">Cancel</button>
+    </form>
     <form class="editPopup" id="edit" onreset="formReset()">
         {% for category in category %}
         <h3>Edit {{category.category_name}} Category</h3>
@@ -91,16 +91,15 @@
         <div><button id="btn_1" onclick="submitButton(event)">Submit</button> <button id="btn_2" onclick="closeEditPopup()">Cancel</button></div>
         <br>
     </form>
-    <script src="/static/todo_scripts/add_todo.js"></script>
-    <script src="/static/todo_scripts/edit_todo.js"></script>
-    <script src="/static/todo_scripts/deleteTodo.js"></script>
-    <script src="/static/todo_scripts/deleteCategory.js"></script>
-    <script src="/static/todo_scripts/checkBox.js"></script>
+    <!-- --------------------------------------------javascript file imports--------------------------------- -->
+    <script src="{{ url_for('static', filename='todo_scripts/edit_todo.js') }}"></script>
+    <script src="{{ url_for('static', filename='todo_scripts/deleteTodo.js') }}"></script>
+    <script src="{{ url_for('static', filename='todo_scripts/deleteCategory.js') }}"></script>
+    <script src="{{ url_for('static', filename='todo_scripts/add_todo.js') }}"></script>
+    <script src="{{ url_for('static', filename='todo_scripts/checkBox.js') }}"></script>
+    <script src="{{ url_for('static', filename='todo_scripts/message.js') }}"></script>
 </body>
-
 </html>
-
-
 
 /*
     TODO:

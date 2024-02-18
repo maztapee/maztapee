@@ -2,8 +2,6 @@ function showMessage(message, type) {
     const messageDiv = document.getElementById('message');
     messageDiv.classList.replace('message', type);
     messageDiv.innerHTML = message;
-    console.log(messageDiv);
-    console.log(messageDiv.classList.contains(type));
     messageDiv.style.opacity = 1;
     setTimeout(() => {
       messageDiv.style.opacity = 0;

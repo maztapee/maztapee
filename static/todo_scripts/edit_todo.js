@@ -137,7 +137,6 @@ for MANIPULATION
                 //resetting all fields in edit category forms back to their default values
                 let rename_input = document.getElementById('rename_input');
                 rename_input.style.visibility ="hidden";
-                console.log("form has been reset");
         };
 
 //----------------------------------Form OnReset Function works as expected-----------------------------------
@@ -161,21 +160,39 @@ for MANIPULATION
                         (b) Completion Status****{To be implemented later}
                         (c) Category Name and Addition of Sub-tasks (todos) {No name change for sub-tasks}
                 */
-
                 const category_list = document.querySelectorAll(".list");
                 for (let i=0; i<category_list.length; i++){
                         if (category_list[i].dataset.category_id == id){ 
                         const atagElement = category_list[i].children[1];
+                        const oldName = atagElement.innerHTML;
                         atagElement.innerHTML = name;
                         clickedButton.target.dataset['cat_name'] = name;
+                        showMessage(`${oldName} category has been renamed to ${name} successfully`, 'success');
                         break;
                         }
                         else{
                                 // TODO: what if the IF considtion is not met?????
                         }
-                };        
+                };  
         };
-//(9)--> Add Todo Task Function { for adding new task to the DOM when each category editing receives new todo task to add}
+// (9)-->Function to handle the delete button click
+        const handleDeleteClick = function (event) {
+                // Get the parent element of the delete button
+                const parentElement = event.target.parentElement.parentElement;
+      
+                // Get the ID of the parent element (assuming it has an ID attribute)
+                const todoId = event.target.dataset.removeid;
+      
+                // Call the function to delete from the database
+                deleteReq(todoId);
+      
+                // // Call deleteTodoTrigger
+                // deleteTodoTrigger(); // Assuming deleteTodoTrigger is defined globally and accessible here
+      
+                // Remove the parent element from the DOM
+                parentElement.remove();
+        };
+//(10)--> Add Todo Task Function { for adding new task to the DOM when each category editing receives new todo task to add}
         const addTodoTask = function(newTask, taskID){
                 //TODO: Use server response to extract new task added to a specific category to display on the DOM
                 // 1. Use click event to get category that was edited. 
@@ -199,7 +216,6 @@ for MANIPULATION
                const task_list = document.getElementById("todo_list");//List housing todo task
                const list_display = document.getElementById('list_display');//Unorder List housing todo_list
                //---------------------For Adding subtasks to a specific category---------------------------------
-
                 let catIdFromURL = window.location.pathname;
                 let currURL = clickedButton.target.previousSibling.pathname;
                 let curr_URL = currURL + '/';
@@ -227,6 +243,7 @@ for MANIPULATION
                                         todo_list.append(pTag_checkbox);
                                         task_list.appendChild(todo_list);
                                         showMessage("New Tasks Have Been Added Successfully!", "success");
+                                        delete_button.addEventListener('click', handleDeleteClick);
                                 }
                         }else{
                                 delete_button.setAttribute("classname","button4");
@@ -249,16 +266,18 @@ for MANIPULATION
                                 list_display.innerHTML = " ";
                                 list_display.classList.remove("no_task");
                                 list_display.appendChild(display_list);
-                                alert(`New Tasks Have Been Created Successfully!`)
+                                showMessage("New task has been added to your category successfully!", "success");
                         }
                 }else{
                         //--> Todo List already loaded on the DOM
                         const todo_list1 = document.getElementById("todo_list");
                         console.log(`Both current URL ${curr_URL} and ${catIdFromURL} are NOT the same`);
+                        //todo tasks are added only to the database
                 };
+                deleteTodoTrigger();
         };
 
-//(10)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
+//(11)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
                 async function submitButton (event){
                         event.preventDefault();
                         try {
