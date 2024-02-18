@@ -131,31 +131,39 @@ def category():
     body = {}
     error = False
     try:
-        description = request.get_json()["todo_description"]
-        print(description)
-        cat_name = request.get_json()["category_name"]
-        expected_time = request.get_json()["completed"]
         activity_time = datetime.now(tz=None)
-        print(activity_time)
+
+        description = request.get_json()["todo_description"].strip()
+        cat_name = request.get_json()["category_name"].strip()
+        expected_time = request.get_json()["completed"]
+
+        if(not cat_name or not description):
+            error = True
+            raise Exception("New Todo Task Description or Category Name not found")
         category = TodoCategory(category_name=cat_name, create_time=activity_time)
         todo_db.session.add(category)
         todo_db.session.commit()
+
         category_id = category.id
+
         todo_update = TodoList(description=description, category_id=category_id, expected_time=expected_time, activity_time=activity_time)
         todo_db.session.add(todo_update)
         todo_db.session.commit()
+        
         body["category_name"] = category.category_name
         body["description"] = todo_update.description
         body["id"] = category_id
-        display_body = json.dumps(body)
-    except:
-        error = True
-        todo_db.session.rollback()
-        print (sys.exc_info())
+        todo_db.session.commit()
+
+    except Exception as e:
+        if error:
+            todo_db.session.rollback()
+            return json.dumps({"error": str(e)}), 400
+        
     finally:
         todo_db.session.close()
-    if not error:
-        return display_body
+
+    return json.dumps(body)
 
 @app.route('/categories/<cat_id>/delete', methods = ['DELETE'])
 def deleteTask(cat_id):
