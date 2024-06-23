@@ -5,7 +5,7 @@ const deleteReq = async function (todo_id){
         headers: {
             'Content-Type': 'application/json'
         }
-        })
+    })
 };
 const deleteTodoTrigger = () =>{
     //--------------------global variable declaration---------------------------------------------------------------------------------------
@@ -52,5 +52,5 @@ const deleteTodoTrigger = () =>{
                 };
             };
         };
-};
-deleteTodoTrigger()
+}; 
+deleteTodoTrigger();
