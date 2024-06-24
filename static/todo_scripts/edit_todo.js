@@ -278,25 +278,55 @@ for MANIPULATION
         };
 
 //(11)--> Submit Edit PopUp Function{ For submitting input fields to the server, closing and resetting form}
-                async function submitButton (event){
-                        event.preventDefault();
-                        try {
-                                const response = await postData();
-                                const new_cat_name = response['category_name'];
-                                const category_id = response['category_id'];
-                                const new_task = response['description'];
-                                const task_id = response['todo_id'];
-                                categoryNameChange(new_cat_name, category_id);
-                                addTodoTask(new_task, task_id);
-                                //TODO--> Implement DOM Manipulation in the category name change function  categoryNameChange()
-                        } catch (error) {
-                                return ("This error has occurred: " + error.message);
-                        }   
-                };
+        async function submitButton (event){
+                event.preventDefault();
+                try {
+                        const response = await postData();
+                        const new_cat_name = response['category_name'];
+                        const category_id = response['category_id'];
+                        const new_task = response['description'];
+                        const task_id = response['todo_id'];
+                        categoryNameChange(new_cat_name, category_id);
+                        addTodoTask(new_task, task_id);
+                        //TODO--> Implement DOM Manipulation in the category name change function  categoryNameChange()
+                } catch (error) {
+                        return ("This error has occurred: " + error.message);
+                }   
+        };
+
+//--> Bubble the edit button every 5 seconds once mouse highlights a category in the category list display
+        document.addEventListener('DOMContentLoaded', function () {
+                const parentElements = document.getElementsByClassName('list');
+        
+                Array.from(parentElements).forEach(parentElement => {
+                        const bubbleButton = parentElement.querySelector('.button2');
+                        let bubbleInterval;
+                
+                        parentElement.addEventListener('mouseenter', function () {
+                                // Clear any previous timeout to prevent multiple timers
+                                clearInterval(bubbleInterval);
+                
+                                // Set a timeout to add the bubble class after 5 seconds
+                                bubbleInterval = setInterval(function () {
+                                        bubbleButton.classList.add('bubble');
+                        
+                                        // Remove the bubble class after the animation completes to allow for re-triggering
+                                        setTimeout(function () {
+                                                bubbleButton.classList.remove('bubble');
+                                        }, 200); // Match the duration of the animation defined in CSS
+                                }, 5000);
+                        });
+                
+                        parentElement.addEventListener('mouseleave', function () {
+                                // Clear the timeout if the mouse leaves the parent element before 5 seconds
+                                clearInterval(bubbleInterval);
+                        });
+                });
+        });
 //---------------------------------Resetting the variable holding the click event to null---------------------                
-                if (clickedButton){
-                        clickedButton = null;
-                };
+        if (clickedButton){
+                clickedButton = null;
+        };
 
 
 /*TODO:

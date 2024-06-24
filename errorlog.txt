@@ -1,0 +1,1969 @@
+{
+  "count": 118,
+  "overflow": false,
+  "next": "https://api.predicthq.com/v1/events/?category=sports&country=NG&limit=10&offset=10",
+  "previous": null,
+  "results": [
+    {
+      "relevance": 0,
+      "id": "ALDDwdMyrFV2V2PiMM",
+      "title": "NPFL - Niger Tornadoes vs Sunshine Stars",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 66,
+      "local_rank": 77,
+      "phq_attendance": 6266,
+      "entities": [
+        {
+          "entity_id": "pnCt99Dkvi4pwmQFzzHsfB",
+          "name": "Ahmadu Bello Stadium",
+          "type": "venue",
+          "formatted_address": "NR 27 Constitution Rd, Kakuri, Kaduna 800211, Kaduna, Nigeria"
+        }
+      ],
+      "duration": 6670,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T16:51:10Z",
+      "end_local": "2024-06-23T17:51:10",
+      "updated": "2024-06-23T18:00:35Z",
+      "first_seen": "2023-10-02T17:18:16Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        7.42825984954834,
+        10.499780167656938
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            7.42825984954834,
+            10.499780167656938
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b7g-xwz-vzz",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "NR 27 Constitution Rd, Kakuri, Kaduna 800211, Kaduna, Nigeria",
+          "postcode": "800211",
+          "locality": "Kaduna",
+          "region": "Kaduna"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-21",
+              "value": 1254,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 4387,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 6266,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1880,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 2194,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 6266,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 2194,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 376,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 376,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 376,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 1818,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 1943,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 6266,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1379,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 376,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 376,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 376,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 376,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2335722",
+          "7871255",
+          "9412148",
+          "2335859"
+        ],
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2335722",
+          "7871255",
+          "9412275",
+          "2335727"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 205273,
+      "predicted_event_spend_industries": {
+        "accommodation": 100657,
+        "hospitality": 46330,
+        "transportation": 58285
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "BDXJAtMwBVgYUAfrB3",
+      "title": "NPFL - Kano Pillars vs Lobi Stars",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 60,
+      "local_rank": 60,
+      "phq_attendance": 3169,
+      "entities": [
+        {
+          "entity_id": "G8SABTrqek8Pz4WYeB7wGK",
+          "name": "General Sani Abacha Stadium",
+          "type": "venue",
+          "formatted_address": "Kano 700114, Kano, Nigeria"
+        }
+      ],
+      "duration": 7110,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T16:58:30Z",
+      "end_local": "2024-06-23T17:58:30",
+      "updated": "2024-06-23T18:16:03Z",
+      "first_seen": "2023-10-02T17:18:16Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        8.5291909,
+        11.9997995
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            8.5291909,
+            11.9997995
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b7b-3dr-y7q",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "Kano 700114, Kano, Nigeria",
+          "postcode": "700114",
+          "locality": "Kano",
+          "region": "Kano"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 634,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 3169,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 317,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 729,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 3169,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 64,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-23",
+              "value": 3169,
+              "position": "event_day"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2335196",
+          "8633821",
+          "9410954",
+          "2335204"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 60548,
+      "predicted_event_spend_industries": {
+        "accommodation": 33937,
+        "hospitality": 8356,
+        "transportation": 18253
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "BguiMJfL3i9PFKr6d6",
+      "title": "NPFL - Kwara United vs Heartland",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 61,
+      "local_rank": 73,
+      "phq_attendance": 3689,
+      "entities": [
+        {
+          "entity_id": "XG7Yr9BnCnCWMsNseeN4SB",
+          "name": "Kwara Sports Complex",
+          "type": "venue",
+          "formatted_address": "Ganmo–Afon Road / Ibrahim Taiwo Road, Ilorin, Nigeria"
+        }
+      ],
+      "duration": 6988,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T16:56:28Z",
+      "end_local": "2024-06-23T17:56:28",
+      "updated": "2024-06-23T18:22:31Z",
+      "first_seen": "2023-10-02T17:15:56Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        4.5421600341796875,
+        8.475566407147735
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            4.5421600341796875,
+            8.475566407147735
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b8w-mvd-9vf",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "Ganmo–Afon Road / Ibrahim Taiwo Road, Ilorin, Nigeria",
+          "locality": "Ilorin"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 738,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 3689,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 369,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 1292,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 3689,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1292,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 222,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 222,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 222,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 1070,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 1144,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 3689,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 812,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 222,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 222,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 222,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 222,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2332785",
+          "12502117"
+        ],
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2332785",
+          "8635064",
+          "2337639"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 101765,
+      "predicted_event_spend_industries": {
+        "accommodation": 59260,
+        "hospitality": 22763,
+        "transportation": 19741
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "E254BdmFC9H3rENkX5",
+      "title": "NPFL - Enyimba vs Plateau United",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 78,
+      "local_rank": 89,
+      "phq_attendance": 25500,
+      "entities": [
+        {
+          "entity_id": "Sb8nnrSn9qyXAnJDvWSyBH",
+          "name": "Enyimba International Stadium",
+          "type": "venue",
+          "formatted_address": "Ube St, Aba, 450103, Abia, Nigeria"
+        }
+      ],
+      "duration": 7018,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T16:56:58Z",
+      "end_local": "2024-06-23T17:56:58",
+      "updated": "2024-06-23T17:28:49Z",
+      "first_seen": "2023-10-02T17:07:37Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        7.3759246,
+        5.1020848
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            7.3759246,
+            5.1020848
+          ],
+          "type": "Point"
+        },
+        "placekey": "@g4b-rg4-rx5",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "Ube St, Aba, 450103, Abia, Nigeria",
+          "postcode": "450103",
+          "locality": "Aba",
+          "region": "Abia"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-21",
+              "value": 5100,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 17850,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 25500,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 7650,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 8925,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 25500,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 8925,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 1530,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 1530,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 1530,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 7395,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 7905,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 25500,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 5610,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 1530,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 1530,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 1530,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 1530,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2565340",
+          "7701374",
+          "2329278"
+        ],
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2565340",
+          "7701374",
+          "2353151"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 659304,
+      "predicted_event_spend_industries": {
+        "accommodation": 409632,
+        "hospitality": 165577,
+        "transportation": 84094
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "EeyD2fVkTDrN3ZrKsk",
+      "title": "NPFL - Bendel Insurance vs Bayelsa United",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 66,
+      "local_rank": 76,
+      "phq_attendance": 6266,
+      "entities": [
+        {
+          "entity_id": "XxkqSJ8hNLAF8P4Fi8vMFt",
+          "name": "Samuel Ogbemudia Stadium",
+          "type": "venue",
+          "formatted_address": "Stadium Rd, Ogogugbo, Benin City 300102, Edo, Nigeria"
+        }
+      ],
+      "duration": 6690,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T16:51:30Z",
+      "end_local": "2024-06-23T17:51:30",
+      "updated": "2024-06-23T17:51:26Z",
+      "first_seen": "2023-10-02T17:15:56Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        5.610885698672505,
+        6.332044788711919
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            5.610885698672505,
+            6.332044788711919
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b8k-sjy-zpv",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "Stadium Rd, Ogogugbo, Benin City 300102, Edo, Nigeria",
+          "postcode": "300102",
+          "locality": "Benin City",
+          "region": "Edo"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-21",
+              "value": 1254,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 4387,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 6266,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1880,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 2194,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 6266,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 2194,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 376,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 376,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 376,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 1818,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 1943,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 6266,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1379,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 376,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 376,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 376,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 376,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2565343",
+          "8636764",
+          "2347283"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 249689,
+      "predicted_event_spend_industries": {
+        "accommodation": 100657,
+        "hospitality": 39717,
+        "transportation": 109314
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "F6u6vuLGu583GYVb6Z",
+      "title": "NPFL - Akwa United vs Rivers United",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 72,
+      "local_rank": 85,
+      "phq_attendance": 12140,
+      "entities": [
+        {
+          "entity_id": "nKWkvsx7zHm45sDzdzH8sb",
+          "name": "Godswill Akpabio International Stadium",
+          "type": "venue",
+          "formatted_address": "Off New Stadium Rd, Uyo 520102, Akwa Ibom, Nigeria"
+        }
+      ],
+      "duration": 7223,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T17:00:23Z",
+      "end_local": "2024-06-23T18:00:23",
+      "updated": "2024-06-23T17:52:54Z",
+      "first_seen": "2023-10-02T17:12:38Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        7.885730090258522,
+        5.0062652598302195
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            7.885730090258522,
+            5.0062652598302195
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b99-sgz-xyv",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "Off New Stadium Rd, Uyo 520102, Akwa Ibom, Nigeria",
+          "postcode": "520102",
+          "locality": "Uyo",
+          "region": "Akwa Ibom"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-21",
+              "value": 2428,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 8498,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 12140,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 3642,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 4249,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 12140,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 4249,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 729,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 729,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 729,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 3521,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 3764,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 12140,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 2671,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 729,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 729,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 729,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 729,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2350813",
+          "8638455",
+          "2349744"
+        ],
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2350813",
+          "8638455",
+          "2319480"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 437696,
+      "predicted_event_spend_industries": {
+        "accommodation": 195017,
+        "hospitality": 128581,
+        "transportation": 114097
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "GbyECUcFAvdW7bwEZk",
+      "title": "NPFL - Remo Stars vs Katsina United",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 64,
+      "local_rank": 77,
+      "phq_attendance": 5043,
+      "entities": [
+        {
+          "entity_id": "ZMMRvgMgiCm4aaianyWJwr",
+          "name": "Remo Stars Stadium",
+          "type": "venue",
+          "formatted_address": "121103, Ikenne, Ogun State, Nigeria"
+        }
+      ],
+      "duration": 7411,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T17:03:31Z",
+      "end_local": "2024-06-23T18:03:31",
+      "updated": "2024-06-23T18:17:39Z",
+      "first_seen": "2023-10-02T17:07:31Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        3.70410129,
+        6.865596538
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            3.70410129,
+            6.865596538
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b8h-s48-dd9",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "121103, Ikenne, Ogun State, Nigeria",
+          "postcode": "121103",
+          "locality": "Ikenne",
+          "region": "Ogun State"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 1009,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 5043,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 505,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 1766,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 5043,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1766,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 303,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 303,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 303,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 1463,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 1564,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 5043,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1110,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 303,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 303,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 303,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 303,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2327546",
+          "7871303",
+          "2338300"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 197971,
+      "predicted_event_spend_industries": {
+        "accommodation": 81010,
+        "hospitality": 27626,
+        "transportation": 89334
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "HikCXYZAw9ecSJFsqQ",
+      "title": "NPFL - Shooting Stars vs Sporting Lagos",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 62,
+      "local_rank": 73,
+      "phq_attendance": 4201,
+      "entities": [
+        {
+          "entity_id": "dmX4GmCzmBMGL72KTpJzT",
+          "name": "Adamasingba Stadium",
+          "type": "venue",
+          "formatted_address": "Adamasingba Road Ibadan & Lagos, 9VWP+G92, Ibadan 200284, Oyo, Nigeria"
+        }
+      ],
+      "duration": 7347,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T17:02:27Z",
+      "end_local": "2024-06-23T18:02:27",
+      "updated": "2024-06-23T17:52:51Z",
+      "first_seen": "2023-10-02T17:21:24Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        3.8857966661453247,
+        7.39627538289689
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            3.8857966661453247,
+            7.39627538289689
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b8h-tn7-zvf",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "Adamasingba Road Ibadan & Lagos, 9VWP+G92, Ibadan 200284, Oyo, Nigeria",
+          "postcode": "200284",
+          "locality": "Ibadan",
+          "region": "Oyo"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 841,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 4201,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 421,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 1471,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 4201,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1471,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 253,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 253,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 253,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 1219,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 1303,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 4201,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 925,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 253,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 253,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 253,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 253,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2325190",
+          "7873907",
+          "11496173"
+        ],
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2325190",
+          "8555718",
+          "2339354"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 158281,
+      "predicted_event_spend_industries": {
+        "accommodation": 67484,
+        "hospitality": 25979,
+        "transportation": 64817
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "HsdpUzYmikNd5cKT9h",
+      "title": "NPFL - Doma United vs Abia Warriors",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 61,
+      "local_rank": 71,
+      "phq_attendance": 3512,
+      "entities": [
+        {
+          "entity_id": "WciDSK5EirK7SjtpQfYiSH",
+          "name": "Gombe Township Stadium",
+          "type": "venue",
+          "formatted_address": "75G9+725, Pantami Road, Gombe 760251, Gombe, Nigeria"
+        }
+      ],
+      "duration": 7432,
+      "start": "2024-06-23T15:00:00Z",
+      "start_local": "2024-06-23T16:00:00",
+      "end": "2024-06-23T17:03:52Z",
+      "end_local": "2024-06-23T18:03:52",
+      "updated": "2024-06-23T18:20:43Z",
+      "first_seen": "2023-10-02T17:21:40Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        11.1684545,
+        10.2764005
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            11.1684545,
+            10.2764005
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b9f-zcq-t35",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "75G9+725, Pantami Road, Gombe 760251, Gombe, Nigeria",
+          "postcode": "760251",
+          "locality": "Gombe",
+          "region": "Gombe"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 703,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 3512,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 352,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 1230,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 3512,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1230,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 211,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 211,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 211,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 1019,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 1089,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 3512,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 773,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 211,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 211,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 211,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 211,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2595347",
+          "8659793",
+          "2342413"
+        ],
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2595347",
+          "8659793",
+          "2340451"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 126621,
+      "predicted_event_spend_industries": {
+        "accommodation": 56416,
+        "hospitality": 37197,
+        "transportation": 33007
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "relevance": 0,
+      "id": "CAE9od5K63S6eeuJFc",
+      "title": "NPFL - Gombe United vs Enugu Rangers",
+      "description": "Sourced from predicthq.com",
+      "category": "sports",
+      "labels": [
+        "soccer",
+        "sport"
+      ],
+      "rank": 64,
+      "local_rank": 78,
+      "phq_attendance": 4987,
+      "entities": [
+        {
+          "entity_id": "C4eLBprwpvhS595vri7zxH",
+          "name": "Jos International Stadium",
+          "type": "venue",
+          "formatted_address": "a236, 20 Zaria Rd, 930105, Jos, Plateau, Nigeria"
+        }
+      ],
+      "duration": 4984,
+      "start": "2024-06-23T14:40:00Z",
+      "start_local": "2024-06-23T15:40:00",
+      "end": "2024-06-23T16:03:04Z",
+      "end_local": "2024-06-23T17:03:04",
+      "updated": "2024-06-23T17:51:29Z",
+      "first_seen": "2023-10-02T17:29:50Z",
+      "timezone": "Africa/Lagos",
+      "location": [
+        8.86634116931145,
+        9.951378539355863
+      ],
+      "geo": {
+        "geometry": {
+          "coordinates": [
+            8.86634116931145,
+            9.951378539355863
+          ],
+          "type": "Point"
+        },
+        "placekey": "@b9n-ms6-r49",
+        "address": {
+          "country_code": "NG",
+          "formatted_address": "a236, 20 Zaria Rd, 930105, Jos, Plateau, Nigeria",
+          "postcode": "930105",
+          "locality": "Jos",
+          "region": "Plateau"
+        }
+      },
+      "impact_patterns": [
+        {
+          "vertical": "accommodation",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 998,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 4987,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 499,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "hospitality",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-22",
+              "value": 1746,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 4987,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1746,
+              "position": "lagging"
+            }
+          ]
+        },
+        {
+          "vertical": "retail",
+          "impact_type": "phq_attendance",
+          "impacts": [
+            {
+              "date_local": "2024-06-18",
+              "value": 300,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-19",
+              "value": 300,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-20",
+              "value": 300,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-21",
+              "value": 1447,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-22",
+              "value": 1546,
+              "position": "leading"
+            },
+            {
+              "date_local": "2024-06-23",
+              "value": 4987,
+              "position": "event_day"
+            },
+            {
+              "date_local": "2024-06-24",
+              "value": 1098,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-25",
+              "value": 300,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-26",
+              "value": 300,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-27",
+              "value": 300,
+              "position": "lagging"
+            },
+            {
+              "date_local": "2024-06-28",
+              "value": 300,
+              "position": "lagging"
+            }
+          ]
+        }
+      ],
+      "scope": "locality",
+      "country": "NG",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2324828",
+          "8634514",
+          "2347701"
+        ],
+        [
+          "6295630",
+          "6255146",
+          "2328926",
+          "2324828",
+          "8634514",
+          "2335953"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true,
+      "private": false,
+      "predicted_event_spend": 139031,
+      "predicted_event_spend_industries": {
+        "accommodation": 80111,
+        "hospitality": 35197,
+        "transportation": 23722
+      },
+      "phq_labels": [
+        {
+          "label": "soccer",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e9ecef;
+            margin: 0;
+            padding: 20px;
+            color: #343a40;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .event {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .event:hover {
+            background: #f8f9fa;
+            transform: translateY(-5px);
+        }
+        .event:last-child {
+            border-bottom: none;
+        }
+        .event-title {
+            font-size: 1.75em;
+            margin: 0;
+            color: #007BFF;
+        }
+        .event-description {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .event-info {
+            font-size: 0.95em;
+            color: #555;
+        }
+        .event-category {
+            display: inline-block;
+            background: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .event-title {
+                font-size: 1.5em;
+            }
+            .event-description {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="event">
+        <h2 class="event-title">Music Concert</h2>
+        <p class="event-description">Join us for an evening of classical music with performances by world-renowned artists.</p>
+        <div class="event-info">
+            <p>Date: July 25, 2024</p>
+            <p>Location: Symphony Hall, City Center</p>
+            <p>Category: <span class="event-category">Music</span></p>
+        </div>
+    </div>
+    <div class="event">
+        <h2 class="event-title">Art Exhibition</h2>
+        <p class="event-description">Explore contemporary art pieces by local and international artists.</p>
+        <div class="event-info">
+            <p>Date: August 10, 2024</p>
+            <p>Location: Art Gallery, Downtown</p>
+            <p>Category: <span class="event-category">Art</span></p>
+        </div>
+    </div>
+    <div class="event">
+        <h2 class="event-title">Tech Conference</h2>
+        <p class="event-description">Join industry leaders for a day of insightful talks and networking opportunities.</p>
+        <div class="event-info">
+            <p>Date: September 15, 2024</p>
+            <p>Location: Convention Center</p>
+            <p>Category: <span class="event-category">Technology</span></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

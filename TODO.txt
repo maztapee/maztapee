@@ -11,6 +11,7 @@ TODID:
                 a. Delete
                 b. Status Update
                 c. Creation
+        7. Added a bubble animation to the edit buttons whenever the mouse hovers over a todo category item.
 
 
 
@@ -18,7 +19,6 @@ TODID:
 ------------------------------------------------------------------------------------------------------------------------------------
 TODO:
         1. Add Category Name/Todo Task Validator to block same name in Category Creation and Change and Todo Task Creation
-        2. Bubble the edit button with animation after a period of time any category is highlighted or hovered
         3. Add APIs for World Reminder, National Reminders
         4. Construct an architecture for implementing URGENT Reminders
         5. Optimize the other files/functions already scripted
