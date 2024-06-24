@@ -16,6 +16,9 @@ def welcome():
     category_lists = TodoCategory.query.order_by('id').all(), 
     todo_lists = TodoList.query.order_by('id').all())
 
+@app.route('/world_reminder')
+def world_reminder():
+    return render_template('world_reminders.html')
 
 @app.route('/add_reminder')
 def add_reminder():

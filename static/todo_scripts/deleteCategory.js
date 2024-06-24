@@ -53,4 +53,3 @@ const deleteCategoryTrigger = (click_event) =>{
     
 
 };
-deleteCategoryTrigger();

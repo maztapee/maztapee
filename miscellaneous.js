@@ -1,36 +1,30 @@
-// deleteTodoTrigger-------------generative AI improvision 
-const deleteTodoTrigger = () => {
-    const list_display = document.getElementById('list_display');
+function clickEditEvent() {
+    const edit_click = document.querySelectorAll('.button2');
+    
+    // Define a function to handle the click event
+    function handleButtonClick(event) {
+        // You can process the event here if needed
+        // ...
 
-    // Add a single event listener to a higher-level container (e.g., todo_list)
-    const todoList = document.getElementById('todo_list');
-    todoList.addEventListener('click', function (e) {
-        const target = e.target;
+        // Then return the event object
+        return event;
+    }
 
-        if (target.classList.contains('button4')) {
-            if (confirm("You are about to delete a task in this category, please confirm to continue")) {
-                const todo_id = target.dataset['removeid'];
-
-                fetch('/todos/' + todo_id + '/delete', {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(function () {
-                    target.parentElement.parentElement.remove();
-
-                    if (todoList.childElementCount === 0) {
-                        setTimeout(function () {
-                            list_display.style.display = 'block';
-                            list_display.innerHTML = "Click on edit to add a task to this category";
-                            list_display.classList.add("no_task");
-                        }, 1500);
-                    }
-                });
-            }
-        }
+    // Add a click event listener to each element with the class 'button2'
+    edit_click.forEach(edit_button => {
+        edit_button.addEventListener('click', function(event) {
+            const clickedEvent = handleButtonClick(event);
+            // Now, you can pass the 'clickedEvent' to another function or do something with it
+            anotherFunction(clickedEvent);
+        });
     });
-};
+}
 
-deleteTodoTrigger();
+// Define another function to receive the event
+function anotherFunction(event) {
+    // Handle the event here
+    console.log('Received event:', event);
+}
+
+// Call the 'clickEditEvent' function to set up the event listeners
+clickEditEvent();
