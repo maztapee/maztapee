@@ -1,26 +1,70 @@
 {% extends "base.html" %}
 
-{%block title%} {{super()}} Todo Categories {%endblock%}
+{%block title%} {{super()}} About | In Memory {%endblock%}
 
-{% block base_css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}"/> {% endblock %}   
+{% block base_css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}"/> 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}"/> 
+{% endblock %}   
 
 {% block content %}
-In Loving Memory of Mrs. Clara Deshi
+<header>
+    <h1>In Memory of Mrs Clara Deshi (Mummy Desh!)</h1>
+    <nav class="nav-about">
+        <ul>
+            <li><a href="#section1">Early Years</a></li>
+            <li><a href="#section2">Family Life</a></li>
+            <li><a href="#section3">Legacy</a></li>
+            <li><a href="#section4">Memories</a></li>
+        </ul>
+    </nav>
+</header>
 
-(1955 - 2014)
+<main>
+    <section id="section1">
+        <p class="section-title">Early Years</p>
+        <br>
+        <p class="section-description">Describe the early years of Honoring Mummy Deshi, her upbringing, and important milestones.</p>
+    </section>
 
-In our hearts forever, Mrs. Clara Deshi, a beacon of love, order, and timeliness, left an indelible mark on the lives she touched. As we introduce you to our app, we find inspiration in her memory, dedicating this space to the remarkable woman who embodied grace, compassion, and a passion for precision.
+    <section id="section2">
+        <p class="section-title">Family Life</p>
+        <br>
+        <p class="section-description">Highlight her roles as a mother, spouse, and family member. Share anecdotes and memories.</p>
+    </section>
 
-Mrs. Clara Deshi, a devoted mother, passed away on June 6, 2014. Her life was a testament to the beauty of living with purpose, and it is with deep respect and affection that we pay tribute to her on our "About Us" page.
+    <section id="section3">
+        <p class="section-title">Legacy</p>
+        <br>
+        <p class="section-description">Discuss the impact she had on her loved ones and the community, and how her memory lives on.</p>
+    </section>
 
-A paragon of orderliness, Clara approached every aspect of life with a meticulous touch. From arranging family gatherings to managing daily tasks, she infused each moment with a sense of structure and efficiency. Her commitment to doing things concisely and timely was not just a routine; it was a philosophy that she embraced with unwavering dedication.
+    <section id="section4">
+        <p class="section-title">Memories</p>
+        <br>
+        <p class="section-description">Share personal stories, photos, and reflections that honor her memory and celebrate her life.</p>
+    </section>
+</main>
 
-It is this philosophy that we carry forward in the development of our app. Mrs. Clara Deshi's legacy serves as the guiding light, encouraging us to create a tool that reflects the values she held dear. The app is more than a product; it is a tribute to her enduring spirit and the principles she lived by.
+<footer>
+    <p>&copy; 2024 Your App Name. All rights reserved.</p>
+</footer>
 
-As you navigate through the features of our app, know that it was crafted with love, inspired by the essence of a woman who found joy in the harmony of order. We invite you to experience the app's functionality, reflecting the precision and efficiency that Mrs. Clara Deshi cherished.
+<!-- Optional: Add multimedia elements like a video slide or carousel -->
+<section id="video-slide">
+    <p>Video Tribute</p>
+    <video controls>
+        <source src="path_to_your_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
 
-May her memory live on in the seamless, organized, and timely experiences our app provides. In dedicating this space to her, we honor a woman who graced our lives with love, leaving an everlasting impact on the way we approach each day.
-
-With heartfelt gratitude for the inspiration we draw from her remarkable life,
-[Your App Name] Team
+<section id="carousel">
+    <p>Photo Carousel</p>
+    <!-- Replace with your preferred carousel implementation (e.g., Bootstrap carousel) -->
+    <div class="carousel">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+    </div>
+</section>
 {% endblock%}
