@@ -34,9 +34,9 @@
     </div>
     <hr>
     <nav id="reminders">
-        <a id="gen" class="general" href="{{ url_for('world_reminder') }}">World Reminders</a>
-        <a id="foc" class="general" href="focused.html">National Reminders</a>
-        <a id="urg" class="general" href="urgent.html">Urgent Reminders</a>
+        <a id="world" class="general" href="{{ url_for('world_reminder') }}">World Reminders</a>
+        <a id="national" class="general" href="{{ url_for('world_reminder') }}">National Reminders</a>
+        <a id="urgent" class="general" href="{{ url_for('world_reminder') }}">Urgent Reminders</a>
     </nav>
     <br>
     <br>

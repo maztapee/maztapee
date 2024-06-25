@@ -1967,3 +1967,81 @@
 
 </body>
 </html>
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 80%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  width: 30%;
+}
+
+.modal-content p{
+  font-size: x-large;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+
+###############################################Tribute to MUMMY DESHI##############################################
+
+In Loving Memory of Mrs. Clara Deshi
+
+(1955 - 2014)
+
+In our hearts forever, Mrs. Clara Deshi, a beacon of love, order, and timeliness, left an indelible mark on the lives she touched. As we introduce you to our app, we find inspiration in her memory, dedicating this space to the remarkable woman who embodied grace, compassion, and a passion for precision.
+
+Mrs. Clara Deshi, a devoted mother, passed away on June 6, 2014. Her life was a testament to the beauty of living with purpose, and it is with deep respect and affection that we pay tribute to her on our "About Us" page.
+
+A paragon of orderliness, Clara approached every aspect of life with a meticulous touch. From arranging family gatherings to managing daily tasks, she infused each moment with a sense of structure and efficiency. Her commitment to doing things concisely and timely was not just a routine; it was a philosophy that she embraced with unwavering dedication.
+
+It is this philosophy that we carry forward in the development of our app. Mrs. Clara Deshi's legacy serves as the guiding light, encouraging us to create a tool that reflects the values she held dear. The app is more than a product; it is a tribute to her enduring spirit and the principles she lived by.
+
+As you navigate through the features of our app, know that it was crafted with love, inspired by the essence of a woman who found joy in the harmony of order. We invite you to experience the app's functionality, reflecting the precision and efficiency that Mrs. Clara Deshi cherished.
+
+May her memory live on in the seamless, organized, and timely experiences our app provides. In dedicating this space to her, we honor a woman who graced our lives with love, leaving an everlasting impact on the way we approach each day.
+
+With heartfelt gratitude for the inspiration we draw from her remarkable life,
+[Your App Name] Team
+#################################################END OF TRIBUTE######################################################
