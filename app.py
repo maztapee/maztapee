@@ -1,4 +1,5 @@
 import json
+import os
 import sys
 from config import app, todo_db
 from flask import render_template,redirect, url_for, request, jsonify
@@ -9,6 +10,11 @@ from sqlalchemy.exc import IntegrityError
 
 #########################################################
 
+def load_data():
+    with open('results.json') as data:
+        result = json.load(data)
+        return result
+
 @app.route('/')
 def welcome():
     return render_template('welcome.html', 
@@ -16,9 +22,30 @@ def welcome():
     category_lists = TodoCategory.query.order_by('id').all(), 
     todo_lists = TodoList.query.order_by('id').all())
 
-@app.route('/world_reminder')
-def world_reminder():
-    return render_template('world_reminders.html')
+@app.route('/world_reminders', methods=['GET'])
+def world_reminders():
+    page = request.args.get('page', 1, type=int)
+    print(page)
+    per_page = 5
+
+    reminders = load_data()
+
+    print(reminders)
+
+    start = (page-1) * per_page
+    end = start + per_page
+
+    paginated_result = reminders[start:end]
+
+    return render_template('world_reminders.html', reminders=paginated_result, page=page, per_page=per_page)
+
+@app.route('/national_reminders', methods=['GET'])
+def national_reminders():
+    return render_template('national_reminders.html')
+
+@app.route('/urgent_reminder', methods=['GET'])
+def urgent_reminders():
+    return render_template('urgent_reminders.html')
 
 @app.route('/add_reminder')
 def add_reminder():

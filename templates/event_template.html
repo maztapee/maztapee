@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{%block title%} {{super()}} World Reminders {%endblock%}
+
+{% block base_css %} 
+
+{% endblock %}  
+
+{% block content %}
+
+<div id="events_container">
+
+    <ul class="category_type">
+
+        <li class="category_list"></li>
+        
+    </ul>
+
+            <ul class="category">
+
+                <li>
+                    <div class="event_title"></div>
+                    <div class="event_description"></div>
+                    <div class="event_detail"></div>
+                </li>
+
+            </ul>
+
+
+
+</div>
+
+{%endblock%}

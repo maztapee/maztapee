@@ -1,0 +1,249 @@
+[
+    {
+      "title": "FIFA World Cup Final",
+      "date": "2024-07-15",
+      "location": "Los Angeles, USA",
+      "category": "Sports",
+      "description": "The final match of the FIFA World Cup 2024."
+    },
+    {
+      "title": "CES (Consumer Electronics Show)",
+      "date": "2024-01-08",
+      "location": "Las Vegas, USA",
+      "category": "Science & Technology",
+      "description": "One of the largest conventions showcasing the latest in consumer electronics."
+    },
+    {
+      "title": "Diwali Festival",
+      "date": "2024-10-24",
+      "location": "Mumbai, India",
+      "category": "Arts & Entertainment",
+      "description": "Celebration of lights and cultural festivities."
+    },
+    {
+      "title": "Eid al-Fitr",
+      "date": "2024-05-24",
+      "location": "Istanbul, Turkey",
+      "category": "Religion",
+      "description": "Islamic festival marking the end of Ramadan."
+    },
+    {
+      "title": "Oktoberfest",
+      "date": "2024-09-21",
+      "location": "Munich, Germany",
+      "category": "Arts & Entertainment",
+      "description": "World's largest beer festival."
+    },
+    {
+      "title": "Super Bowl",
+      "date": "2024-02-04",
+      "location": "New Orleans, USA",
+      "category": "Sports",
+      "description": "Championship game of the National Football League (NFL)."
+    },
+    {
+      "title": "Mobile World Congress",
+      "date": "2024-02-26",
+      "location": "Barcelona, Spain",
+      "category": "Science & Technology",
+      "description": "Leading conference for the mobile industry."
+    },
+    {
+      "title": "Holi Festival",
+      "date": "2024-03-12",
+      "location": "Delhi, India",
+      "category": "Arts & Entertainment",
+      "description": "Festival of colors celebrated in India."
+    },
+    {
+      "title": "Christmas Day",
+      "date": "2024-12-25",
+      "location": "London, UK",
+      "category": "Religion",
+      "description": "Christian holiday celebrating the birth of Jesus Christ."
+    },
+    {
+      "title": "Tokyo International Film Festival",
+      "date": "2024-10-19",
+      "location": "Tokyo, Japan",
+      "category": "Arts & Entertainment",
+      "description": "Annual film festival showcasing international cinema."
+    },
+    {
+      "title": "Wimbledon Tennis Championships",
+      "date": "2024-07-01",
+      "location": "London, UK",
+      "category": "Sports",
+      "description": "One of the oldest and most prestigious tennis tournaments."
+    },
+    {
+      "title": "Apple Worldwide Developers Conference (WWDC)",
+      "date": "2024-06-03",
+      "location": "San Francisco, USA",
+      "category": "Science & Technology",
+      "description": "Annual conference for Apple developers."
+    },
+    {
+      "title": "La Tomatina Festival",
+      "date": "2024-08-28",
+      "location": "Buñol, Spain",
+      "category": "Arts & Entertainment",
+      "description": "Famous tomato-throwing festival."
+    },
+    {
+      "title": "Easter Sunday",
+      "date": "2024-04-07",
+      "location": "Rome, Italy",
+      "category": "Religion",
+      "description": "Christian celebration of the resurrection of Jesus."
+    },
+    {
+      "title": "UEFA Champions League Final",
+      "date": "2024-05-25",
+      "location": "Paris, France",
+      "category": "Sports",
+      "description": "Final match of the UEFA Champions League."
+    },
+    {
+      "title": "South by Southwest (SXSW)",
+      "date": "2024-03-08",
+      "location": "Austin, USA",
+      "category": "Arts & Entertainment",
+      "description": "Annual festival celebrating music, film, and interactive media."
+    },
+    {
+      "title": "MWC Barcelona",
+      "date": "2024-02-25",
+      "location": "Barcelona, Spain",
+      "category": "Science & Technology",
+      "description": "Mobile World Congress, the world's largest exhibition for the mobile industry."
+    },
+    {
+      "title": "Navratri Festival",
+      "date": "2024-09-29",
+      "location": "Ahmedabad, India",
+      "category": "Arts & Entertainment",
+      "description": "Nine-night Hindu festival celebrating the goddess Durga."
+    },
+    {
+      "title": "Hajj",
+      "date": "2024-08-12",
+      "location": "Mecca, Saudi Arabia",
+      "category": "Religion",
+      "description": "Annual Islamic pilgrimage to Mecca."
+    },
+    {
+      "title": "French Open",
+      "date": "2024-06-02",
+      "location": "Paris, France",
+      "category": "Sports",
+      "description": "Second Grand Slam tennis tournament of the year."
+    },
+    {
+      "title": "Google I/O",
+      "date": "2024-05-15",
+      "location": "Mountain View, USA",
+      "category": "Science & Technology",
+      "description": "Annual developer conference held by Google."
+    },
+    {
+      "title": "Edinburgh Festival Fringe",
+      "date": "2024-08-02",
+      "location": "Edinburgh, UK",
+      "category": "Arts & Entertainment",
+      "description": "World's largest arts festival."
+    },
+    {
+      "title": "Hanukkah",
+      "date": "2024-12-22",
+      "location": "Jerusalem, Israel",
+      "category": "Religion",
+      "description": "Jewish festival of lights."
+    },
+    {
+      "title": "Tour de France",
+      "date": "2024-07-06",
+      "location": "Paris, France",
+      "category": "Sports",
+      "description": "Annual men's multiple-stage bicycle race."
+    },
+    {
+      "title": "IFA Berlin",
+      "date": "2024-09-06",
+      "location": "Berlin, Germany",
+      "category": "Science & Technology",
+      "description": "Leading trade show for consumer electronics and home appliances."
+    },
+    {
+      "title": "Cannes Film Festival",
+      "date": "2024-05-15",
+      "location": "Cannes, France",
+      "category": "Arts & Entertainment",
+      "description": "One of the most prestigious film festivals in the world."
+    },
+    {
+      "title": "Lunar New Year",
+      "date": "2024-02-09",
+      "location": "Beijing, China",
+      "category": "Religion",
+      "description": "Chinese New Year celebration."
+    },
+    {
+      "title": "Olympic Games Opening Ceremony",
+      "date": "2024-07-26",
+      "location": "Paris, France",
+      "category": "Sports",
+      "description": "Opening ceremony of the Summer Olympic Games."
+    },
+    {
+      "title": "Microsoft Build",
+      "date": "2024-05-07",
+      "location": "Seattle, USA",
+      "category": "Science & Technology",
+      "description": "Annual developer conference by Microsoft."
+    },
+    {
+      "title": "Coachella Valley Music and Arts Festival",
+      "date": "2024-04-12",
+      "location": "Indio, USA",
+      "category": "Arts & Entertainment",
+      "description": "Annual music and arts festival."
+    },
+    {
+      "title": "Ramadan begins",
+      "date": "2024-04-02",
+      "location": "Istanbul, Turkey",
+      "category": "Religion",
+      "description": "Islamic holy month of fasting."
+    },
+    {
+      "title": "NBA Finals",
+      "date": "2024-06-18",
+      "location": "Los Angeles, USA",
+      "category": "Sports",
+      "description": "Championship series of the National Basketball Association (NBA)."
+    },
+    {
+      "title": "IFA Shanghai",
+      "date": "2024-06-13",
+      "location": "Shanghai, China",
+      "category": "Science & Technology",
+      "description": "Leading trade show for consumer electronics in Asia."
+    },
+    {
+      "title": "Glastonbury Festival",
+      "date": "2024-06-28",
+      "location": "Pilton, UK",
+      "category": "Arts & Entertainment",
+      "description": "Iconic music festival."
+    },
+    {
+      "title": "Eid al-Adha",
+      "date": "2024-06-30",
+      "location": "Dubai, UAE",
+      "category": "Religion",
+      "description": "Islamic festival of sacrifice."
+    }
+]
+   
+  
