@@ -1,41 +1,32 @@
-{% extends "base.html" %}
+{% extends 'reminders.html' %}
 
-{%block title%} {{super()}} Todo Categories {%endblock%}
 
-{% block base_css %} 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/world_reminder.css') }}"/> 
+{% block world_reminders %}
 
-{% endblock %}   
-
-{% block content %}
-
-<div class="container">
-    <div class="event">
-        <h2 class="event-title">Music Concert</h2>
-        <p class="event-description">Join us for an evening of classical music with performances by world-renowned artists.</p>
-        <div class="event-info">
-            <p>Date: July 25, 2024</p>
-            <p>Location: Symphony Hall, City Center</p>
-            <p>Category: <span class="event-category">Music</span></p>
+<ul>
+    {% for reminder in reminders %}
+    <li>
+        <div>
+            <div class="event_title"> {{ reminder.title }}</div>
+            <div class="event_description"> {{ reminder.category }}</div>
+            <div class="event_detail"> {{ reminder.description }}</div>
         </div>
-    </div>
-    <div class="event">
-        <h2 class="event-title">Art Exhibition</h2>
-        <p class="event-description">Explore contemporary art pieces by local and international artists.</p>
-        <div class="event-info">
-            <p>Date: August 10, 2024</p>
-            <p>Location: Art Gallery, Downtown</p>
-            <p>Category: <span class="event-category">Art</span></p>
-        </div>
-    </div>
-    <div class="event">
-        <h2 class="event-title">Tech Conference</h2>
-        <p class="event-description">Join industry leaders for a day of insightful talks and networking opportunities.</p>
-        <div class="event-info">
-            <p>Date: September 15, 2024</p>
-            <p>Location: Convention Center</p>
-            <p>Category: <span class="event-category">Technology</span></p>
-        </div>
-    </div>
+    </li>
+    {% endfor %}
+</ul>
+
+<!-- Pagination Controls -->
+<div>
+    {% if page > 1 %}
+    <a href="{{ url_for('world_reminders', page=page-1) }}">Previous</a>
+    {% endif %}
+
+    <span>Page {{ page }}</span>
+
+    {% if reminders|length == per_page %}
+    <a href="{{ url_for('world_reminders', page=page+1) }}">Next</a>
+    {% endif %}
 </div>
-{% endblock%}
+
+
+{%endblock%}

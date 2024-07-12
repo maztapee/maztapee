@@ -1,0 +1,9 @@
+Clara's Reminder App's World/National event reminder API (predicthq.com) details
+
+Client ID: FX-fXha_CdE
+
+Client secret: EZQ4GSHpuODEIsA5RKdrbMrAp9Vz-1by0yufFAiUmTgNFBKvCzPgVA
+
+Access Token: _1fVUzeHn5vJ8dhoxqp9ZhKFNEPUylje6qowknby
+
+ 
