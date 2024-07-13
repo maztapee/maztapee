@@ -3,12 +3,13 @@
     justify-content: center;
     border: solid 2px black;
     border-radius: 8px;
-    background-color:rgb(214, 207, 109);
+    background-color:#e7e7dd;
     width: 38%;
     height: 360px;
     transform: translate(0%, 0%) scale(0.1);
     transition: transform 0.4s, top 0.4s;
     visibility: hidden;
+    z-index: 1005;
 }
 .showEditPopup{
         top: 50%;
