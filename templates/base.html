@@ -9,9 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/message.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_todo.css') }}">
 
-    <!-- ----------------------------javascript files imports-------------------------------------------- -->
-    
-
+    <!-- ----------------------------javascript files imports---------------------------------------------->
     
     {% block base_css %} {% endblock %}
     {% block add_remind_css %} {% endblock %}
@@ -38,9 +36,8 @@
         <a id="national" class="general" href="{{ url_for('national_reminders') }}">National Reminders</a>
         <a id="urgent" class="general" href="{{ url_for('urgent_reminders') }}">Urgent Reminders</a>
     </nav>
-    <br>
-    <br>
-    <div id="message" class="message"><h2>I am here</h2></div>
+
+    <div id="active_reminder"> Error Fetching Reminders </div>
     <br>
     <div class="content">
         {% block content %} {% endblock %}
@@ -104,10 +101,11 @@
 
             // Check if there's a saved active link in local storage
             const activeLinkId = localStorage.getItem('activeLinkId');
+            console.log("active link", activeLinkId);
             if (activeLinkId) {
-                const activeLink = document.getElementById(activeLinkId);
-                if (activeLink) {
-                    activeLink.classList.add('active');
+                const active_reminder = document.getElementById("active_reminder");
+                if (active_reminder){
+                    active_reminder.innerHTML = (activeLinkId.toUpperCase() + " REMINDERS");
                 }
             }
 

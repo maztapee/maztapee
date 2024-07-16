@@ -243,6 +243,327 @@
       "location": "Dubai, UAE",
       "category": "Religion",
       "description": "Islamic festival of sacrifice."
+    },
+    {
+      "title": "Lagos Carnival",
+      "date": "2024-04-15",
+      "location": "Lagos, Nigeria",
+      "category": "Cultural",
+      "description": "A vibrant carnival celebrating Lagos' diverse culture and heritage."
+    },
+    {
+      "title": "New Yam Festival",
+      "date": "2024-08-01",
+      "location": "Igbo Land, Nigeria",
+      "category": "Cultural",
+      "description": "A traditional festival celebrating the harvest of the new yam."
+    },
+    {
+      "title": "Durbar Festival",
+      "date": "2024-07-18",
+      "location": "Kano, Nigeria",
+      "category": "Cultural",
+      "description": "A grand parade of horse riders and a celebration of Islamic culture in northern Nigeria."
+    },
+    {
+      "title": "Eyo Festival",
+      "date": "2024-05-18",
+      "location": "Lagos, Nigeria",
+      "category": "Cultural",
+      "description": "A traditional masquerade festival unique to the Yoruba people of Lagos."
+    },
+    {
+      "title": "Calabar Carnival",
+      "date": "2024-12-26",
+      "location": "Calabar, Nigeria",
+      "category": "Cultural",
+      "description": "Africa's biggest street party, featuring colorful parades and performances."
+    },
+    {
+      "title": "Argungu Fishing Festival",
+      "date": "2024-03-12",
+      "location": "Argungu, Nigeria",
+      "category": "Cultural",
+      "description": "An annual fishing festival that includes a competition where fishermen catch fish with their hands."
+    },
+    {
+      "title": "Osun-Osogbo Festival",
+      "date": "2024-08-14",
+      "location": "Osogbo, Nigeria",
+      "category": "Cultural",
+      "description": "An annual festival dedicated to the river goddess Osun, featuring traditional rites and celebrations."
+    },
+    {
+      "title": "Felabration",
+      "date": "2024-10-15",
+      "location": "Lagos, Nigeria",
+      "category": "Music",
+      "description": "An annual music festival celebrating the life and legacy of Afrobeat legend Fela Kuti."
+    },
+    {
+      "title": "Ofala Festival",
+      "date": "2024-10-20",
+      "location": "Onitsha, Nigeria",
+      "category": "Cultural",
+      "description": "A festival celebrated by the Igbo people marking the reign of the traditional ruler."
+    },
+    {
+      "title": "Lagos Fashion Week",
+      "date": "2024-10-24",
+      "location": "Lagos, Nigeria",
+      "category": "Fashion",
+      "description": "A showcase of the latest fashion trends and designs from Nigerian and African designers."
+    },
+    {
+      "title": "Ojude Oba Festival",
+      "date": "2024-09-02",
+      "location": "Ijebu Ode, Nigeria",
+      "category": "Cultural",
+      "description": "An annual festival where the people of Ijebu Ode pay homage to their king, the Awujale."
+    },
+    {
+      "title": "Igue Festival",
+      "date": "2024-12-20",
+      "location": "Benin City, Nigeria",
+      "category": "Cultural",
+      "description": "A traditional festival of the Benin people, celebrating the Oba and the prosperity of the land."
+    },
+    {
+      "title": "Egungun Festival",
+      "date": "2024-07-10",
+      "location": "Oyo, Nigeria",
+      "category": "Cultural",
+      "description": "A masquerade festival celebrating the spirits of ancestors."
+    },
+    {
+      "title": "Sango Festival",
+      "date": "2024-08-23",
+      "location": "Oyo, Nigeria",
+      "category": "Cultural",
+      "description": "A festival in honor of Sango, the god of thunder and lightning."
+    },
+    {
+      "title": "Ankara Festival",
+      "date": "2024-09-15",
+      "location": "Lagos, Nigeria",
+      "category": "Fashion",
+      "description": "A fashion event celebrating the Ankara fabric with runway shows and exhibitions."
+    },
+    {
+      "title": "Nigerian Independence Day",
+      "date": "2024-10-01",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "A celebration of Nigeria's independence from British rule, featuring parades and events across the country."
+    },
+    {
+      "title": "Carnival of Port Harcourt",
+      "date": "2024-12-18",
+      "location": "Port Harcourt, Nigeria",
+      "category": "Cultural",
+      "description": "A cultural festival with parades, music, and dance in Port Harcourt."
+    },
+    {
+      "title": "Abuja Carnival",
+      "date": "2024-11-25",
+      "location": "Abuja, Nigeria",
+      "category": "Cultural",
+      "description": "A national carnival featuring cultural performances from various ethnic groups in Nigeria."
+    },
+    {
+      "title": "Lekki Jazz Festival",
+      "date": "2024-04-27",
+      "location": "Lagos, Nigeria",
+      "category": "Music",
+      "description": "An annual jazz festival in Lekki, featuring performances by local and international artists."
+    },
+    {
+      "title": "Nigeria Music Video Awards",
+      "date": "2024-12-05",
+      "location": "Lagos, Nigeria",
+      "category": "Music",
+      "description": "An annual awards ceremony recognizing the best in Nigerian music videos."
+    },
+    {
+      "title": "Independence Day",
+      "date": "2024-10-01",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "Celebration of Nigeria's independence from British rule in 1960."
+    },
+    {
+      "title": "Democracy Day",
+      "date": "2024-06-12",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "Commemoration of the restoration of democracy in Nigeria in 1999."
+    },
+    {
+      "title": "Armed Forces Remembrance Day",
+      "date": "2024-01-15",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "Honoring Nigerian military personnel who fought in various wars."
+    },
+    {
+      "title": "National Youth Day",
+      "date": "2024-11-01",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "A day to celebrate and promote youth development in Nigeria."
+    },
+    {
+      "title": "Children's Day",
+      "date": "2024-05-27",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "A day dedicated to celebrating children and promoting their welfare."
+    },
+    {
+      "title": "Workers' Day",
+      "date": "2024-05-01",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "International Workers' Day, celebrating labor and workers' rights."
+    },
+    {
+      "title": "International Women's Day",
+      "date": "2024-03-08",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "A global day celebrating the social, economic, cultural, and political achievements of women."
+    },
+    {
+      "title": "National Day of Mourning",
+      "date": "2024-05-28",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "A day to remember and mourn victims of violence and insecurity in Nigeria."
+    },
+    {
+      "title": "National Environment Day",
+      "date": "2024-06-05",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "A day to promote awareness and action for environmental protection."
+    },
+    {
+      "title": "Nigeria's Armed Forces Remembrance Day",
+      "date": "2024-01-15",
+      "location": "Nationwide, Nigeria",
+      "category": "National",
+      "description": "A day to honor fallen heroes of the Nigerian Armed Forces."
+    },
+    {
+      "title": "Eid al-Fitr",
+      "date": "2024-04-10",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Muslim festival marking the end of Ramadan, the holy month of fasting."
+    },
+    {
+      "title": "Good Friday",
+      "date": "2024-03-29",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Christian holiday commemorating the crucifixion of Jesus Christ and his death at Calvary."
+    },
+    {
+      "title": "Ash Wednesday",
+      "date": "2024-02-14",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "The first day of Lent in the Christian calendar, marked by services of penitence."
+    },
+    {
+      "title": "Palm Sunday",
+      "date": "2024-03-24",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Christian feast that commemorates Jesus' triumphal entry into Jerusalem."
+    },
+    {
+      "title": "Pentecost",
+      "date": "2024-05-19",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Christian holiday commemorating the descent of the Holy Spirit upon the apostles and other followers of Jesus Christ."
+    },
+    {
+      "title": "Maulud an-Nabi",
+      "date": "2024-09-16",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Muslim holiday celebrating the birth of the Prophet Muhammad."
+    },
+    {
+      "title": "Lailat al-Qadr",
+      "date": "2024-04-06",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A significant night in the Islamic calendar, believed to be the night when the Quran was first revealed to the Prophet Muhammad."
+    },{
+      "title": "Holy Week",
+      "date": "2024-03-25",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "The week leading up to Easter, observed with special solemnity by Christians."
+    },
+    {
+      "title": "All Saints' Day",
+      "date": "2024-11-01",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Christian festival celebrated in honor of all the saints, known and unknown."
+    },
+    {
+      "title": "All Souls' Day",
+      "date": "2024-11-02",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Christian day of prayer and remembrance for the souls of those who have died."
+    },
+    {
+      "title": "Ascension Day",
+      "date": "2024-05-09",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Christian holiday commemorating the ascension of Jesus Christ into heaven."
+    },
+    {
+      "title": "Corpus Christi",
+      "date": "2024-05-30",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Christian feast celebrating the Real Presence of the Body and Blood, Soul and Divinity of Jesus Christ in the elements of the Eucharist."
+    },
+    {
+      "title": "Advent",
+      "date": "2024-12-01",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A season of expectant waiting and preparation for the celebration of the Nativity of Jesus at Christmas."
+    },
+    {
+      "title": "Epiphany",
+      "date": "2024-01-06",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "A Christian feast day celebrating the revelation of God incarnate as Jesus Christ."
+    },
+    {
+      "title": "Ramadan",
+      "date": "2024-03-10",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "The ninth month of the Islamic calendar, observed by Muslims worldwide as a month of fasting, prayer, reflection, and community."
+    },
+    {
+      "title": "Islamic New Year",
+      "date": "2024-07-18",
+      "location": "Nationwide, Nigeria",
+      "category": "Religious",
+      "description": "The first day of the Islamic lunar calendar, marking the beginning of the Islamic year."
     }
 ]
    

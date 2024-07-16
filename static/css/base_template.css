@@ -1,6 +1,6 @@
 body{
     overflow-x: hidden;
-    background: #e9ecef;;
+    background: #e9ecef;
 }
 #heading {
     height: fit-content;
@@ -137,6 +137,22 @@ h2 {
 .column {
     float: left;
     width: 50%;
+}
+
+#active_reminder{
+    position: sticky;
+    top: 135px;
+    width:max-content;
+    padding: 15px;
+    border-radius: 8px;
+    height: 30px;
+    justify-self: center;
+    background-color: #b2c0cf;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    z-index: 1006;
+
 }
 
 /* Clear floats after the columns */

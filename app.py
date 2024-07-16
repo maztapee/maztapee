@@ -61,10 +61,11 @@ def home1(category_id):
 
 @app.route('/login')
 def login():
-    return render_template('welcome.html', 
-    category = TodoCategory.query.all(),
-    category_lists = TodoCategory.query.order_by('id').all(), 
-    todo_lists = TodoList.query.order_by('id').all())
+    return render_template('login_signup.html')
+    # return render_template('welcome.html', 
+    # category = TodoCategory.query.all(),
+    # category_lists = TodoCategory.query.order_by('id').all(), 
+    # todo_lists = TodoList.query.order_by('id').all())
 
 @app.route('/categories/<category_id>/login')
 def login1(category_id):

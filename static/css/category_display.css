@@ -1,6 +1,11 @@
-/* p:button{
-    text-align: left;
-} */
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: #e9ecef;
+   margin: 0;
+   padding: 2px;
+   color: #343a40;
+   align-content: center;
+}
 h4{
    font-size: large;
 }
