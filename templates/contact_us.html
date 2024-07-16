@@ -2,8 +2,15 @@
 
 {%block title%} {{super()}} Todo Categories {%endblock%}
 
-{% block base_css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}"/> {% endblock %}   
+{% block base_css %} 
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base_template.css') }}"/> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact_us.css') }}"/> 
+
+{% endblock %}   
 
 {% block content %}
-
+<body>
+    <script src="/static/todo_scripts/contact_us.js"></script>
+</body>
 {% endblock%}

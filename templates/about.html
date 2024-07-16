@@ -7,64 +7,67 @@
 {% endblock %}   
 
 {% block content %}
-<header>
-    <h1>In Memory of Mrs Clara Deshi (Mummy Desh!)</h1>
-    <nav class="nav-about">
-        <ul>
-            <li><a href="#section1">Early Years</a></li>
-            <li><a href="#section2">Family Life</a></li>
-            <li><a href="#section3">Legacy</a></li>
-            <li><a href="#section4">Memories</a></li>
-        </ul>
-    </nav>
-</header>
+<body>
+    <header>
+        <h1>In Memory of Mrs Clara Deshi (Mummy Desh!)</h1>
+        <nav class="nav-about">
+            <ul>
+                <li><a href="#section1">Early Years</a></li>
+                <li><a href="#section2">Family Life</a></li>
+                <li><a href="#section3">Legacy</a></li>
+                <li><a href="#section4">Memories</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <section id="section1">
-        <p class="section-title">Early Years</p>
-        <br>
-        <p class="section-description">Describe the early years of Honoring Mummy Deshi, her upbringing, and important milestones.</p>
+    <main>
+        <section id="section1">
+            <p class="section-title">Early Years</p>
+            <br>
+            <p class="section-description">Describe the early years of Honoring Mummy Deshi, her upbringing, and important milestones.</p>
+        </section>
+
+        <section id="section2">
+            <p class="section-title">Family Life</p>
+            <br>
+            <p class="section-description">Highlight her roles as a mother, spouse, and family member. Share anecdotes and memories.</p>
+        </section>
+
+        <section id="section3">
+            <p class="section-title">Legacy</p>
+            <br>
+            <p class="section-description">Discuss the impact she had on her loved ones and the community, and how her memory lives on.</p>
+        </section>
+
+        <section id="section4">
+            <p class="section-title">Memories</p>
+            <br>
+            <p class="section-description">Share personal stories, photos, and reflections that honor her memory and celebrate her life.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your App Name. All rights reserved.</p>
+    </footer>
+
+    <!-- Optional: Add multimedia elements like a video slide or carousel -->
+    <section id="video-slide">
+        <p>Video Tribute</p>
+        <video controls>
+            <source src="path_to_your_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </section>
 
-    <section id="section2">
-        <p class="section-title">Family Life</p>
-        <br>
-        <p class="section-description">Highlight her roles as a mother, spouse, and family member. Share anecdotes and memories.</p>
+    <section id="carousel">
+        <p>Photo Carousel</p>
+        <!-- Replace with your preferred carousel implementation (e.g., Bootstrap carousel) -->
+        <div class="carousel">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
     </section>
-
-    <section id="section3">
-        <p class="section-title">Legacy</p>
-        <br>
-        <p class="section-description">Discuss the impact she had on her loved ones and the community, and how her memory lives on.</p>
-    </section>
-
-    <section id="section4">
-        <p class="section-title">Memories</p>
-        <br>
-        <p class="section-description">Share personal stories, photos, and reflections that honor her memory and celebrate her life.</p>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2024 Your App Name. All rights reserved.</p>
-</footer>
-
-<!-- Optional: Add multimedia elements like a video slide or carousel -->
-<section id="video-slide">
-    <p>Video Tribute</p>
-    <video controls>
-        <source src="path_to_your_video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</section>
-
-<section id="carousel">
-    <p>Photo Carousel</p>
-    <!-- Replace with your preferred carousel implementation (e.g., Bootstrap carousel) -->
-    <div class="carousel">
-        <img src="image1.jpg" alt="Image 1">
-        <img src="image2.jpg" alt="Image 2">
-        <img src="image3.jpg" alt="Image 3">
-    </div>
-</section>
+    <script src="{{ url_for('static', filename='todo_scripts/about_us.js') }}"></script>
+</body>
 {% endblock%}

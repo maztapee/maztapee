@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{%block title%} {{super()}} Welcome! {%endblock%}
+
+{% block base_css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}"/> 
+{% endblock %}   
+
+{% block content %}
+
+<body>
+    <header>
+        <h1> Welcome! </h1>
+    </header>
+    <div class="container fade-in">
+        <div class="search-container">
+            <input type="text" placeholder="Search events, categories, dates, locations...">
+            <button>Search</button>
+        </div>
+        <div class="events-container">
+            <section class="events-category">
+                <h2>Popular Upcoming Events</h2>
+                <div class="events-section">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
+                        <div class="event-card-content">
+                            <h3>Upcoming Music Event</h3>
+                            <p>Date: July 20, 2024</p>
+                            <p>Location: New York</p>
+                            <p>Category: Music</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="events-category">
+                <h2>Ongoing Popular Events</h2>
+                <div class="events-section">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
+                        <div class="event-card-content">
+                            <h3>Upcoming Music Event</h3>
+                            <p>Date: July 20, 2024</p>
+                            <p>Location: New York</p>
+                            <p>Category: Music</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="events-category">
+                <h2>Popular Past Events</h2>
+                <div class="events-section">
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
+                        <div class="event-card-content">
+                            <h3>Upcoming Music Event</h3>
+                            <p>Date: July 20, 2024</p>
+                            <p>Location: New York</p>
+                            <p>Category: Music</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="../static/todo_scripts/homepage.js"></script>
+</body>
+
+{% endblock%}

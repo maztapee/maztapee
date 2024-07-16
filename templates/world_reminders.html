@@ -1,19 +1,25 @@
 {% extends 'reminders.html' %}
 
+{% block base_css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/world_reminder.css') }}"/> 
+{% endblock %}  
 
 {% block world_reminders %}
-
-<ul>
-    {% for reminder in reminders %}
-    <li>
-        <div>
-            <div class="event_title"> {{ reminder.title }}</div>
-            <div class="event_description"> {{ reminder.category }}</div>
-            <div class="event_detail"> {{ reminder.description }}</div>
-        </div>
-    </li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <ul>
+        {% for reminder in reminders %}
+        <li class="event">
+            <p class="event_title"> {{ reminder.title }}</p>
+            <p class="event_description"> {{ reminder.category }}</p>
+            <div class="event_detail">
+                <p > <strong>{{ reminder.date }} </strong></p>
+                <p > <strong>{{ reminder.location }}</strong></p>
+                <p > <strong>{{ reminder.description }}</strong></p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
 <!-- Pagination Controls -->
 <div>

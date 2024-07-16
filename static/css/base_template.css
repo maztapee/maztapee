@@ -1,12 +1,16 @@
 body{
     overflow-x: hidden;
-    background: #e9ecef;;
+    background: #e9ecef;
 }
 #heading {
     height: fit-content;
     font-size: x-large;
     color: blue;
     text-align: center;
+    position: sticky;
+    top: 0px; /* Adjust if needed based on the height of the first nav */
+    background-color: white; /* Ensures the nav has a background */
+    z-index: 1001; /* Ensures the nav stays above other content */
 }
 
 nav {
@@ -34,6 +38,10 @@ hr {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: sticky;
+    top: 20px;
+    background-color: white; /* Ensures the nav has a background */
+    z-index: 1000; /* Ensures the nav stays above other content */
 }
 
 #nav nav a {
@@ -67,6 +75,10 @@ nav#reminders {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 65px; /* Adjust if needed based on the height of the first nav */
+    background-color: white; /* Ensures the nav has a background */
+    z-index: 999; /* Ensures the nav stays above other content */
 }
 
 nav#reminders a.general {
@@ -78,12 +90,21 @@ nav#reminders a.general {
     transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
-nav#reminders a.general:hover {
+nav#reminders a.general:hover{
     background-color: #e0e0e0; /* Change background color brightness */
     transform: scale(1.1); /* Slightly grow */
     font-weight: bold; /* Bolden the text */
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
     color: #000; /* Change text color for contrast */
+}
+
+nav#reminders a.general.active {
+    background-color: #e0e0e0; /* Change background color brightness */
+    transform: scale(1.1); /* Slightly grow */
+    font-weight: bold; /* Bolden the text */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    color: #000; /* Change text color for contrast */
+    transition: all 1.3s ease; /* Smooth transition for all properties */
 }
 
 nav#reminders a.general:active {
@@ -116,6 +137,22 @@ h2 {
 .column {
     float: left;
     width: 50%;
+}
+
+#active_reminder{
+    position: sticky;
+    top: 135px;
+    width:max-content;
+    padding: 15px;
+    border-radius: 8px;
+    height: 30px;
+    justify-self: center;
+    background-color: #b2c0cf;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    z-index: 1006;
+
 }
 
 /* Clear floats after the columns */

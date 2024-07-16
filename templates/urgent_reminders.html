@@ -1,7 +1,17 @@
 {% extends 'reminders.html' %}
 
+{% block base_css %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/urgent_reminder.css') }}"/> 
+{% endblock %}  
 
 {% block urgent_reminders %}
 
+<p id="animated-text"></p>
+
+<p style="font-size: xx-large;"> Check back LATER</p>
 
 {%endblock%}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='todo_scripts/urgent_reminder.js') }}"></script>
+{% endblock %}
