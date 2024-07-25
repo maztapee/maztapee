@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h1> Welcome to Clara's Reminder! </h1>
+        <h1> Welcome! </h1>
     </header>
     <div class="container fade-in">
         <div class="search-container">
@@ -19,106 +19,47 @@
         </div>
         <div class="events-container">
             <section class="events-category">
-                <h2>Upcoming Events</h2>
+                <h2>Popular Upcoming Events</h2>
                 <div class="events-section">
-                    <button id="prevBtnUpcoming" class="scroll-button prev-button" disabled>&lt;</button>
-                    <div class="event-container">
-                        <ul class="event-list">
-                            {% if upcoming_events %}
-                                {% for event in upcoming_events%}
-                                    <li class="event-item">
-                                        <div class="event-card">
-                                            <img src="https://via.placeholder.com/350x150" alt="Event Image">
-                                            <div class="event-card-content">
-                                                <h3>{{event.title}}</h3>
-                                                <p>{{event.date}}</p>
-                                                <p>{{event.location}}</p>
-                                                <h4>{{event.category}}</h4>
-                                                <p>{{event.description}}</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                {% endfor %}
-                                {% else %}
-                                <li id="no-event"></li>
-                            {% endif %}
-                        </ul>
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
+                        <div class="event-card-content">
+                            <h3>Upcoming Music Event</h3>
+                            <p>Date: July 20, 2024</p>
+                            <p>Location: New York</p>
+                            <p>Category: Music</p>
+                        </div>
                     </div>
-                    <button id="nextBtnUpcoming" class="scroll-button next-button" disabled>&gt;</button>
                 </div>
             </section>
     
             <section class="events-category">
-                <h2>Ongoing Events</h2>
+                <h2>Ongoing Popular Events</h2>
                 <div class="events-section">
-                    <button id="prevBtnOngoing" class="scroll-button prev-button" disabled>&lt;</button>
-                    <div class="event-container">
-                        <ul class="event-list">
-                            {% if ongoing_events %}
-                                {% for event in ongoing_events%}
-                                    <li class="event-item">
-                                        <div class="event-card">
-                                            <img src="https://via.placeholder.com/350x150" alt="Event Image">
-                                            <div class="event-card-content">
-                                                <h3>{{event.title}}</h3>
-                                                <p>{{event.date}}</p>
-                                                <p>{{event.location}}</p>
-                                                <h4>{{event.location}}</h4>
-                                                <p>{{event.description}}</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                {% endfor %}
-                            {% else %}
-                                <li id="no-event"></li>
-                            {% endif %}
-                        </ul>
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
+                        <div class="event-card-content">
+                            <h3>Upcoming Music Event</h3>
+                            <p>Date: July 20, 2024</p>
+                            <p>Location: New York</p>
+                            <p>Category: Music</p>
+                        </div>
                     </div>
-                    <button id="nextBtnOngoing" class="scroll-button next-button" disabled >&gt;</button>
                 </div>
             </section>
             <section class="events-category">
-                <h2>Past Events</h2>
+                <h2>Popular Past Events</h2>
                 <div class="events-section">
-                    <button id="prevBtnPast" class="scroll-button prev-button" disabled>&lt;</button>
-                    <div class="event-container">
-                        <ul class="event-list">
-                            {% if past_events %}
-                                {% for event in past_events%}
-                                    <li class="event-item">
-                                        <div class="event-card">
-                                            <img src="https://via.placeholder.com/350x150" alt="Event Image">
-                                            <div class="event-card-content">
-                                                <h3>{{event.title}}</h3>
-                                                <p>{{event.date}}</p>
-                                                <p>{{event.location}}</p>
-                                                <h4>{{event.category}}</h4>
-                                                <p>{{event.description}}</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                {% endfor %}
-                            {% else %}
-                                <li id="no-event"></li>
-                            {% endif %}
-                        </ul>
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
+                        <div class="event-card-content">
+                            <h3>Upcoming Music Event</h3>
+                            <p>Date: July 20, 2024</p>
+                            <p>Location: New York</p>
+                            <p>Category: Music</p>
+                        </div>
                     </div>
-                    <button id="nextBtnPast" class="scroll-button next-button" >&gt;</button>
                 </div>
-                <!-- <div class="carousel-container">
-                    <button id="prevBtn" class="carousel-btn" disabled>Previous</button>
-                    <div class="carousel-wrapper">
-                        <ul class="carousel">
-                            <li class="carousel-item">Card 1</li>
-                            <li class="carousel-item">Card 2</li>
-                            <li class="carousel-item">Card 3</li>
-                            <li class="carousel-item">Card 4</li>
-                            <li class="carousel-item">Card 5</li>
-                            <li class="carousel-item">Card 6</li>
-                        </ul>
-                    </div>
-                    <button id="nextBtn" class="carousel-btn">Next</button>
-                </div> -->
             </section>
         </div>
 
