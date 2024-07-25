@@ -16,11 +16,33 @@ def load_data():
         return result
 
 @app.route('/')
-def welcome():
-    return render_template('homepage.html', 
-    category = TodoCategory.query.all(),
-    category_lists = TodoCategory.query.order_by('id').all(), 
-    todo_lists = TodoList.query.order_by('id').all())
+def homepage():
+    events = load_data() #loading all events
+    current_date = datetime.now() #getting current date/time object
+    today = current_date.date() #extracting today's date part from the current date/time object
+    upcoming_date = today + timedelta(days=7) #setting date object to be 7 days from now to use as query parameter in fetching upcoming events
+    past_date = today - timedelta(days=7)
+
+    #filtering through events loaded
+    #to get upcoming events
+    upcoming_events = [
+        event for event in events 
+        if today <= datetime.strptime(event['date'], '%Y-%m-%d').date() <= upcoming_date 
+        ]
+    #to get ongoing events
+    ongoing_events = [
+        event for event in events 
+        if today == datetime.strptime(event['date'], '%Y-%m-%d').date() 
+        ]
+        #to get upcoming events
+    past_events = [
+        event for event in events 
+        if past_date <= datetime.strptime(event['date'], '%Y-%m-%d').date() < today 
+        ]
+    
+    print("Past Event in the last 7 days are: ", past_events) #{debugging statement}
+
+    return render_template('homepage.html', upcoming_events = upcoming_events, ongoing_events = ongoing_events, past_events = past_events)
 
 @app.route('/world_reminders', methods=['GET'])
 def world_reminders():
@@ -51,9 +73,12 @@ def urgent_reminders():
 def add_reminder():
     return render_template('add_reminder.html')
 
-@app.route('/home')
-def home():
-    return redirect(url_for('welcome'))
+@app.route('/my_reminders')
+def my_reminders():
+    return render_template('my_reminders.html',
+    category = TodoCategory.query.all(),
+    category_lists = TodoCategory.query.order_by('id').all(), 
+    todo_lists = TodoList.query.order_by('id').all())
 
 @app.route('/categories/<category_id>/home')
 def home1(category_id):
@@ -62,10 +87,6 @@ def home1(category_id):
 @app.route('/login')
 def login():
     return render_template('login_signup.html')
-    # return render_template('welcome.html', 
-    # category = TodoCategory.query.all(),
-    # category_lists = TodoCategory.query.order_by('id').all(), 
-    # todo_lists = TodoList.query.order_by('id').all())
 
 @app.route('/categories/<category_id>/login')
 def login1(category_id):
@@ -214,7 +235,7 @@ def deleteTask(cat_id):
         todo_db.session.rollback()
     finally:
         todo_db.session.close()
-        welcome()
+        my_reminders()
         return delete_body
 
 @app.route('/todos/<todo_id>/delete', methods = ['DELETE'])
@@ -228,7 +249,7 @@ def deleteTodo(todo_id):
         todo_db.session.rollback()
     finally:
         todo_db.session.close()
-    return welcome()
+    return my_reminders()
 
 @app.route('/recent_todos', methods=['POST'])
 def recent_todos():
