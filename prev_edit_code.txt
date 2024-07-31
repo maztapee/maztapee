@@ -66,3 +66,18 @@ for _ in range(10000):
     )
 
 db.session.commit()
+
+
+
+
+
+
+
+
+
+
+
+
+    category = TodoCategory.query.all(),
+    category_lists = TodoCategory.query.order_by('id').all(), 
+    todo_lists = TodoList.query.order_by('id').all()

@@ -12,57 +12,104 @@
     <header>
         <h1> Welcome! </h1>
     </header>
-    <div class="container fade-in">
-        <div class="search-container">
-            <input type="text" placeholder="Search events, categories, dates, locations...">
-            <button>Search</button>
-        </div>
-        <div class="events-container">
-            <section class="events-category">
-                <h2>Popular Upcoming Events</h2>
-                <div class="events-section">
-                    <div class="event-card">
-                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
-                        <div class="event-card-content">
-                            <h3>Upcoming Music Event</h3>
-                            <p>Date: July 20, 2024</p>
-                            <p>Location: New York</p>
-                            <p>Category: Music</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    
-            <section class="events-category">
-                <h2>Ongoing Popular Events</h2>
-                <div class="events-section">
-                    <div class="event-card">
-                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
-                        <div class="event-card-content">
-                            <h3>Upcoming Music Event</h3>
-                            <p>Date: July 20, 2024</p>
-                            <p>Location: New York</p>
-                            <p>Category: Music</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="events-category">
-                <h2>Popular Past Events</h2>
-                <div class="events-section">
-                    <div class="event-card">
-                        <img src="https://via.placeholder.com/350x150" alt="Event Image">
-                        <div class="event-card-content">
-                            <h3>Upcoming Music Event</h3>
-                            <p>Date: July 20, 2024</p>
-                            <p>Location: New York</p>
-                            <p>Category: Music</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <div class="main-container">
+
+<!-- ---------------------------------Start of Upcoming Event Cards Display----------------------------- -->
+
+        <div class="carousel-section">
+            <h3>Upcoming Events</h3>
+            
+            <div class="carousel" id="carousel1">
+                <button class="prev" onclick="moveSlide(-1, 'carousel1')">&#10094;</button>
+                
+                 <ul class="event-list">
+                    {% if upcoming_events | length > 0 %}
+                        {% for event in upcoming_events%}
+                            <li>
+                                <div class="card">
+                                    <p>{{event.title}}</p>
+                                    <p>{{event.description}}</p>
+                                    <p>{{event.location}}</p>
+                                    <p>{{event.date}}</p>
+                                    <p>{{event.category}}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                            <li><p>No Upcoming Events</p></li>
+                    {% endif %}
+                </ul>
+                 
+                 <button class="next" onclick="moveSlide(1, 'carousel1')">&#10095;</button>
+            </div>
+            
         </div>
 
+<!-- ---------------------------------End of Upcoming Event Cards Display----------------------------- -->
+
+
+<!-- ---------------------------------Start of Ongoing Event Cards Display----------------------------- -->
+
+        <div class="carousel-section">
+            <h3>Ongoing Events</h3>
+            <div class="carousel" id="carousel2">
+                <button class="prev" onclick="moveSlide(-1, 'carousel2')">&#10094;</button>
+                <ul class="event-list">
+                    {% if ongoing_events | length > 0 %}
+                        {% for event in ongoing_events%}
+                            <li>
+                                <div class="card">
+                                    <p>{{event.title}}</p>
+                                    <p>{{event.description}}</p>
+                                    <p>{{event.location}}</p>
+                                    <p>{{event.date}}</p>
+                                    <p>{{event.category}}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <li><p>No Ongoing Events</p></li>
+                    {% endif%}
+                </ul>
+                <button class="next" onclick="moveSlide(1, 'carousel2')">&#10095;</button>
+            </div>
+        </div>
+
+<!-- ---------------------------------End of Ongoing Event Cards Display------------------------------- -->
+
+
+<!-- ---------------------------------Start of Past Event Cards Display----------------------------- -->
+
+        <div class="carousel-section">
+            <h3>Past Events</h3>
+            
+            <div class="carousel" id="carousel3">
+                <button class="prev" onclick="moveSlide(-1, 'carousel3')">&#10094;</button>
+                <ul class="event-list">
+                    {% if past_events | length > 0 %}
+                        {% for event in past_events%}
+                            <li>
+                                <div class="card">
+                                    <p>{{event.title}}</p>
+                                    <p>{{event.description}}</p>
+                                    <p>{{event.location}}</p>
+                                    <p>{{event.date}}</p>
+                                    <p>{{event.category}}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <li><p>No Past Events</p></li>
+                    {% endif %}
+                </ul>
+                 <button class="next" onclick="moveSlide(1, 'carousel3')">&#10095;</button>
+            </div>
+            
+        </div>
+
+<!-- ---------------------------------Start of Past Event Cards Display----------------------------- -->
+
+            
     </div>
 
     <script src="../static/todo_scripts/homepage.js"></script>

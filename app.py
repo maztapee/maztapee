@@ -17,10 +17,37 @@ def load_data():
 
 @app.route('/')
 def welcome():
+
+    # Load the JSON data
+    events = load_data()
+
+    # Current date
+    current_date = datetime.now().date()
+
+    # Helper function to parse event dates
+    def parse_date(event):
+        return datetime.strptime(event['date'], '%Y-%m-%d').date()
+
+    # Categorize events
+    upcoming_events = []
+    ongoing_events = []
+    past_events = []
+
+    for event in events:
+        event_date = parse_date(event)
+        
+        if current_date <= event_date <= current_date + timedelta(days=7):
+            upcoming_events.append(event)
+        elif event_date == current_date:
+            ongoing_events.append(event)
+        elif current_date - timedelta(days=7) <= event_date < current_date:
+            past_events.append(event)
+
     return render_template('homepage.html', 
-    category = TodoCategory.query.all(),
-    category_lists = TodoCategory.query.order_by('id').all(), 
-    todo_lists = TodoList.query.order_by('id').all())
+                           upcoming_events=upcoming_events, 
+                           ongoing_events=ongoing_events, 
+                           past_events = past_events
+                           )
 
 @app.route('/world_reminders', methods=['GET'])
 def world_reminders():
