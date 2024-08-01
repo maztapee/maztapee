@@ -23,6 +23,7 @@ header {
     align-items: center;
     position: relative;
     width: 80%;
+    height: 90%;
     margin: 0 auto;
     overflow: hidden;
     border: 1px solid #ddd;
@@ -57,6 +58,7 @@ header {
     display: flex;
     overflow: hidden;
     list-style: none;
+    height: max-content;
     padding: 0;
     margin: 0;
     transition: transform 0.5s ease-in-out;
@@ -71,14 +73,28 @@ header {
 }
 
 .card {
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
+    margin-right: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 300px;
     text-align: center;
+    height: 80%;
+    z-index: 1000; */
+    /* flex: 0 0 calc(33.333% - 20px); */
+    flex: 0 0 30%;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    display: none; /* Hide cards by default */
 }
 
 .card:hover {
@@ -87,10 +103,14 @@ header {
 }
 
 .card p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #555;
+    font-size: 15px;
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    margin: 10px;
+    color: #555;
+    box-sizing: border-box;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Hides overflow text */
+    text-overflow: ellipsis; /* Adds ellipsis for overflowing text */
 }
 
 .card p:hover {

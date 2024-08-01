@@ -1,7 +1,7 @@
 [
     {
       "title": "FIFA World Cup Final",
-      "date": "2024-07-15",
+      "date": "2024-07-31",
       "location": "Los Angeles, USA",
       "category": "Sports",
       "description": "The final match of the FIFA World Cup 2024."
@@ -29,7 +29,7 @@
     },
     {
       "title": "Oktoberfest",
-      "date": "2024-09-21",
+      "date": "2024-07-31",
       "location": "Munich, Germany",
       "category": "Arts & Entertainment",
       "description": "World's largest beer festival."
@@ -64,7 +64,7 @@
     },
     {
       "title": "Tokyo International Film Festival",
-      "date": "2024-10-19",
+      "date": "2024-07-31",
       "location": "Tokyo, Japan",
       "category": "Arts & Entertainment",
       "description": "Annual film festival showcasing international cinema."
@@ -169,7 +169,7 @@
     },
     {
       "title": "IFA Berlin",
-      "date": "2024-09-06",
+      "date": "2024-07-31",
       "location": "Berlin, Germany",
       "category": "Science & Technology",
       "description": "Leading trade show for consumer electronics and home appliances."
@@ -246,7 +246,7 @@
     },
     {
       "title": "Lagos Carnival",
-      "date": "2024-04-15",
+      "date": "2024-07-31",
       "location": "Lagos, Nigeria",
       "category": "Cultural",
       "description": "A vibrant carnival celebrating Lagos' diverse culture and heritage."
@@ -288,7 +288,7 @@
     },
     {
       "title": "Osun-Osogbo Festival",
-      "date": "2024-08-14",
+      "date": "2024-07-31",
       "location": "Osogbo, Nigeria",
       "category": "Cultural",
       "description": "An annual festival dedicated to the river goddess Osun, featuring traditional rites and celebrations."

@@ -36,7 +36,7 @@ def welcome():
     for event in events:
         event_date = parse_date(event)
         
-        if current_date <= event_date <= current_date + timedelta(days=7):
+        if current_date < event_date <= current_date + timedelta(days=7):
             upcoming_events.append(event)
         elif event_date == current_date:
             ongoing_events.append(event)
